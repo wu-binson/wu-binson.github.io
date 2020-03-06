@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="myos," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本章介绍了屏幕输出的原理，并在此基础上实现简单的屏幕输出功能，包括了重要的格式化输出函数printf。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="myos(二)之屏幕输出函数">
+<meta property="og:url" content="https://wu-binson.github.io/myos/printing-to-screen/index.html">
+<meta property="og:site_name" content="binson&#39;s blog">
+<meta property="og:description" content="本章介绍了屏幕输出的原理，并在此基础上实现简单的屏幕输出功能，包括了重要的格式化输出函数printf。">
+<meta property="og:image" content="https://wu-binson.github.io/img/myos/chapter-2_rbg.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/myos/chapter-2_stack.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/myos/chapter-2_hello-myos.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/myos/chapter-2_dir.png">
+<meta property="article:published_time" content="2020-03-06T01:31:51.998Z">
+<meta property="article:modified_time" content="2020-03-06T01:25:49.251Z">
+<meta property="article:author" content="Binson">
+<meta property="article:tag" content="myos">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wu-binson.github.io/img/myos/chapter-2_rbg.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://wu-binson.github.io/myos/printing-to-screen/"/>
+
+
+
+
+
+  <title>myos(二)之屏幕输出函数 | binson's blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">binson's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-index">
+          <a href="/index/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            index
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wu-binson.github.io/myos/printing-to-screen/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Binson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="binson's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">myos(二)之屏幕输出函数</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-06T09:31:51+08:00">
+                2020-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/operating-system/" itemprop="url" rel="index">
+                    <span itemprop="name">operating system</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  本章介绍了屏幕输出的原理，并在此基础上实现简单的屏幕输出功能，包括了重要的格式化输出函数printf。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>上章成功搭建了编写内核的工作环境，为了能跟内核进行初步的交互，紧接着要实现的便是内核的屏幕输出功能。</p>
+<h3 id="2-1-ensp-屏幕输出的原理"><a href="#2-1-ensp-屏幕输出的原理" class="headerlink" title="2.1&ensp;屏幕输出的原理"></a>2.1&ensp;屏幕输出的原理</h3><p>为了在显示器显示文字，我们需要显卡的帮忙。显卡的作模式包括文本模式和图片模式，我们这里只讲简单的文本模式。既然显卡需要显示数据，这些数据肯定需要内存空间来存储。内存中存储显卡的数据的区域被称为显存，而物理内存的0xB8000-0xBFFFF这段内存区域映射了文本模式的显存。</p>
+<p>计算机在加电自检后会自动将文本模式初始化为80*25的模式，在这种分辨率下，一个屏幕可以显示25行，一行显示80个字符。其中，每个字符占用了内存16 bits的空间，高8位定义了字符的backcolor和forecolor，后面8位存储这个字符的ascii码。它的结构如下：</p>
+<p><img src="/img/myos/chapter-2_rbg.png" alt="rbg"></p>
+<p>至于backcolor和forecolor字段什么值对应什么颜色，读者可以自己查阅资料。</p>
+<p>除了这些显示的存储内容之外，我们还需要去使用显示的控制单元来完成一些特定的功能，比如设置光标的位置。为了读写这些控制单元，我们需要用到特殊的in/out指令来完成，这里将使用端口来作为内部寄存器的索引。</p>
+<p><strong>在pc机上，0x3d4和0x3d5两个端口用来读写显卡的内部寄存器。</strong>其中，我们要往0x3d4端口写入要访问的寄存器编号，再通过0x3d5端口读写寄存器数据。</p>
+<h3 id="2-2-ensp-屏幕输出的代码实现"><a href="#2-2-ensp-屏幕输出的代码实现" class="headerlink" title="2.2&ensp;屏幕输出的代码实现"></a>2.2&ensp;屏幕输出的代码实现</h3><h4 id="2-2-1-ensp-端口读写函数"><a href="#2-2-1-ensp-端口读写函数" class="headerlink" title="2.2.1&ensp;端口读写函数"></a>2.2.1&ensp;端口读写函数</h4><p>首先我们需要实现端口读写函数的实现，而c语言里面没有直接操作端口的方法，我们将借助c语言的内联汇编。代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/////////////////端口读///////////////////////////////////////////</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">uint8_t</span> <span class="title">inportb</span> <span class="params">(<span class="keyword">uint16_t</span> _port)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">uint8_t</span> rv;</span><br><span class="line">    __asm__ __volatile__ (<span class="string">"inb %1, %0"</span> : <span class="string">"=a"</span> (rv) : <span class="string">"dN"</span> (_port));</span><br><span class="line">    <span class="keyword">return</span> rv;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">uint16_t</span> <span class="title">inportw</span> <span class="params">(<span class="keyword">uint16_t</span> _port)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">uint16_t</span> rv;</span><br><span class="line">    __asm__ __volatile__ (<span class="string">"inw %1, %0"</span> : <span class="string">"=a"</span> (rv) : <span class="string">"Nd"</span> (_port));</span><br><span class="line">    <span class="keyword">return</span> rv;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////端口写///////////////////////////////////////////</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">outportb</span> <span class="params">(<span class="keyword">uint16_t</span> _port, <span class="keyword">uint8_t</span> _data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    __asm__ __volatile__ (<span class="string">"outb %1, %0"</span> : : <span class="string">"dN"</span> (_port), <span class="string">"a"</span> (_data));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">outportw</span> <span class="params">(<span class="keyword">uint16_t</span> _port, <span class="keyword">uint16_t</span> _data)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    __asm__ __volatile__ (<span class="string">"outw %1, %0"</span> : : <span class="string">"dN"</span> (_port), <span class="string">"a"</span> (_data));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-2-ensp-宏定义、变量定义和函数原型"><a href="#2-2-2-ensp-宏定义、变量定义和函数原型" class="headerlink" title="2.2.2&ensp;宏定义、变量定义和函数原型"></a>2.2.2&ensp;宏定义、变量定义和函数原型</h4><p>接着，为了代码可读性，我们定义相关的宏定义：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//显卡文本模式的屏幕分辨率</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_SCREEN_ROW 25</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_SCREEN_COL 80</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//文本模式显存的物理内存起始地址</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VIDEO_START  0xb8000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//通过0x3d4端口告知需要访问哪个显卡的寄存器</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VIDEO_REGISTER_PORT 0x3d4</span></span><br><span class="line"><span class="comment">//通过0x3d5端口读写显卡的寄存器数据</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VIDEO_DATA_PORT 0x3d5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//存放光标的高8位的显卡寄存器编号</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CUR_REG_HIGH   14</span></span><br><span class="line"><span class="comment">//存放光标的低8位的显卡寄存器编号</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CUR_REG_LOW    15</span></span><br></pre></td></tr></table></figure>
+<p>以及定义重要的变量：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//显卡文本模式显存的指针</span></span><br><span class="line"><span class="keyword">uint16_t</span>* video_pointer;</span><br><span class="line"><span class="comment">//光标的x,y坐标</span></span><br><span class="line"><span class="keyword">uint8_t</span>  x_cur=<span class="number">0</span>,y_cur=<span class="number">0</span>;</span><br><span class="line"><span class="comment">//前景，背景的颜色，默认黑底白字</span></span><br><span class="line"><span class="keyword">uint16_t</span> text_color;</span><br></pre></td></tr></table></figure>
+
+<p>屏幕输出操作的函数原型：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置指向文本模式显存的指针,以及清屏</span></span><br><span class="line"><span class="comment">//必须在使用console模块其他函数之前调用此函数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init_video</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear_screen</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set_text_color</span><span class="params">( <span class="keyword">text_color_t</span> backcolor,<span class="keyword">text_color_t</span> forecolor)</span></span>;</span><br><span class="line"><span class="comment">//重置输出文本的颜色，默认黑底白字</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reset_test_color</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出一个字符</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">putch</span><span class="params">(<span class="keyword">char</span> c)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出字符串</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">puts</span><span class="params">(<span class="keyword">const</span>  <span class="keyword">char</span> * str)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printf</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *format, ...)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>这里为了直观，给出三个静态函数的原型，实际上在该文件并不用声明静态函数。</p>
+<h4 id="2-2-3-ensp-光标位置更新"><a href="#2-2-3-ensp-光标位置更新" class="headerlink" title="2.2.3&ensp;光标位置更新"></a>2.2.3&ensp;光标位置更新</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//光标移动</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">update_cursor</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>为了一步步实现以上函数，我们需要实现作为基础的更新光标位置函数，它是一个静态函数，只在console模块里被使用到。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">udpate_cursor</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//光标的一维线性位置</span></span><br><span class="line">    <span class="keyword">uint16_t</span> cursor_location= y_cur * MAX_SCREEN_COL + x_cur; </span><br><span class="line"></span><br><span class="line">    <span class="comment">//光标位置的线性数据存放在两个显卡寄存器里，分别是它的高8位和低8位数据</span></span><br><span class="line"></span><br><span class="line">    outportb(CUR_REGISTER_PORT,CUR_REG_HIGH);   <span class="comment">//告知要操作光标的高8位寄存器</span></span><br><span class="line">    outportb(CUR_DATA_PORT,cursor_location&gt;&gt;<span class="number">8</span>); <span class="comment">//往高8位寄存器里写数据</span></span><br><span class="line"></span><br><span class="line">    outportb(CUR_REGISTER_PORT,CUR_REG_LOW);   <span class="comment">//告知要操作光标的低8位寄存器</span></span><br><span class="line">    outportb(CUR_DATA_PORT,cursor_location);   <span class="comment">//往低8位寄存器里写数据</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-4-ensp-清屏"><a href="#2-2-4-ensp-清屏" class="headerlink" title="2.2.4&ensp;清屏"></a>2.2.4&ensp;清屏</h4><p>说白了，清屏就是将文本模式的显存全部设置成空格符。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear_screen</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">uint8_t</span>  t_color = colorcat(t_white, t_black);</span><br><span class="line">    <span class="comment">//空格符</span></span><br><span class="line">    <span class="keyword">uint16_t</span> blank = (t_color&lt;&lt;<span class="number">8</span>) | BLANK;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//将文本模式的显存全部设置成空格符</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;MAX_SCREEN_ROW * MAX_SCREEN_COL; i++)</span><br><span class="line">        video_pointer[i]=blank;</span><br><span class="line"></span><br><span class="line">    x_cur=y_cur=<span class="number">0</span>;</span><br><span class="line">    update_cursor();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-5-ensp-屏幕滚动显示"><a href="#2-2-5-ensp-屏幕滚动显示" class="headerlink" title="2.2.5&ensp;屏幕滚动显示"></a>2.2.5&ensp;屏幕滚动显示</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//屏幕滚动显示</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">scroll_screen</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>当字符占满屏幕时，屏幕就要向上滚动，以显示接下来的字符。简单地说，它的逻辑实际就是将后24行的数据全部向上挪动一行，最后一行清空：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">scroll_screen</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">uint8_t</span>  t_color = colorcat(t_white, t_black);</span><br><span class="line">    <span class="comment">//空格符</span></span><br><span class="line">    <span class="keyword">uint16_t</span> blank = (t_color&lt;&lt;<span class="number">8</span>) | BLANK;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//光标到达最下方，该滚动屏幕</span></span><br><span class="line">    <span class="keyword">if</span> ( y_cur &gt;= MAX_SCREEN_ROW )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="comment">//将前面除了第一行外的所有行数据复制到上一行</span></span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt; MAX_SCREEN_ROW * MAX_SCREEN_COL - MAX_SCREEN_COL; i++)</span><br><span class="line">            video_pointer[i]=video_pointer[i+MAX_SCREEN_COL];</span><br><span class="line"></span><br><span class="line">        <span class="comment">//最后一行设置成空格符</span></span><br><span class="line">        <span class="keyword">for</span> (; i&lt; MAX_SCREEN_ROW * MAX_SCREEN_COL ;i++)</span><br><span class="line">            video_pointer[i]=blank;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//屏幕滚动一行，所以光标要向上移动一行</span></span><br><span class="line">        y_cur--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-6-ensp-显示字符串"><a href="#2-2-6-ensp-显示字符串" class="headerlink" title="2.2.6&ensp;显示字符串"></a>2.2.6&ensp;显示字符串</h4><p>这部分重点在于实现putch函数，puts只是在其基础上重复输出。而putch函数一开始还是要识别出输出字符是可打印字符还是一些有特殊含义的字符。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//输出一个字符</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">putch</span><span class="params">(<span class="keyword">char</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">uint16_t</span> * char_location;</span><br><span class="line">    <span class="comment">/*Carriage Return*/</span></span><br><span class="line">    <span class="keyword">if</span>(c==<span class="string">'\r'</span>)</span><br><span class="line">        x_cur = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(c==<span class="string">'\n'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x_cur=<span class="number">0</span>;</span><br><span class="line">        y_cur++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//退格</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(c==BACKSPACE)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x_cur&gt;<span class="number">0</span>)</span><br><span class="line">            x_cur--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*Handles a tab by incrementing the cursor's x*/</span></span><br><span class="line">    <span class="comment">/*but only to a point that will make it divisible by 8*/</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(c==TAB)</span><br><span class="line">        x_cur=(x_cur+<span class="number">8</span>)&amp;~(<span class="number">8</span><span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//any charactor greater than and inclu-</span></span><br><span class="line">    <span class="comment">//ding a space  is a printfable charactor</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (c &gt;= <span class="string">' '</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        char_location= video_pointer + y_cur * MAX_SCREEN_COL + x_cur;</span><br><span class="line"></span><br><span class="line">        *char_location = c | (text_color&lt;&lt;<span class="number">8</span>);</span><br><span class="line"></span><br><span class="line">        x_cur++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(x_cur&gt;=MAX_SCREEN_COL)</span><br><span class="line">    &#123;</span><br><span class="line">        x_cur=<span class="number">0</span>;</span><br><span class="line">        y_cur++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//有必要的话滚动屏幕</span></span><br><span class="line">    scroll_srceen();</span><br><span class="line">    <span class="comment">//更新光标位置</span></span><br><span class="line">    update_cursor();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出字符串</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">puts</span><span class="params">(<span class="keyword">const</span>  <span class="keyword">char</span> * str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len=<span class="built_in">strlen</span>(str);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len; i++)</span><br><span class="line">        putch(str[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-7-ensp-printf函数"><a href="#2-2-7-ensp-printf函数" class="headerlink" title="2.2.7&ensp;printf函数"></a>2.2.7&ensp;printf函数</h4><p>前面已经实现了输出字符串的功能，但我们还缺少一个基本的格式化屏幕输出函数，下面一步步实现printf函数。首先我们看看调用printf函数时候堆栈会发生什么。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"these numbers are : %d,%d,%d,%d"</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+<p>这句话的汇编代码大概是这样子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">push 4</span><br><span class="line">push 3</span><br><span class="line">push 2</span><br><span class="line">push 1</span><br><span class="line">push $0xaddr</span><br><span class="line">call printf</span><br><span class="line">sub esp,20</span><br></pre></td></tr></table></figure>
+<p>根据cdecl约定，函数参数会依照从右到左的顺序入栈。上面$0xaddr代表字符串“these numbers are : %d,%d,%d,%d”的地址。在这之后它的栈内容是：</p>
+<p><img src="/img/myos/chapter-2_stack.png" alt="stack"></p>
+<p>上图的内存地址只是相对地址，指向格式化字符串的指针format string addr占用了4字节的空间。如果我们想将格式化字符串正确打印出来，换句话就是找到每个%d对应的值，必须根据内存栈正确处理printf的变长参数。我们这里用宏定义辅助：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span>* va_list;</span><br><span class="line"></span><br><span class="line"><span class="comment">//让args_pointer指向变长参数的起始地址，format代表格式化字符串</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> va_start(args_pointer,format) \</span></span><br><span class="line">    (args_pointer = (va_list)&amp;format + <span class="keyword">sizeof</span>(format) )</span><br><span class="line"><span class="comment">//返回当前参数的值，并让args_pointer指向下一个参数的地址,type表示当前参数的数据类型</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> va_args(args_pointer,type) \</span></span><br><span class="line">    (*(type*) ( (args_pointer + =<span class="keyword">sizeof</span>(type)) - <span class="keyword">sizeof</span>(type) ) )</span><br><span class="line"><span class="comment">//置为空指针</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> va_end(args_pointer) \</span></span><br><span class="line">    (args_pointer=(va_list)<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>上面的是va_start，va_args，va_end的简单版本实现。我们将它用在printf函数的代码里：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printf</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> * format, ...)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buff[<span class="number">1024</span>];  <span class="comment">//将格式化字符串的%-形式的字符串替换成对应的值，处理后的字符串将存储在buff中</span></span><br><span class="line">    <span class="keyword">int</span> buff_index;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//list将指向可变参数列表的第一个参数</span></span><br><span class="line">    va_list <span class="built_in">list</span>;</span><br><span class="line">    va_start(<span class="built_in">list</span>,format);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//vsprintf将格式化字符串的%-形式的字符串替换成对应的值，将处理后的字符串存储在buff中</span></span><br><span class="line">    buff_index=<span class="built_in">vsprintf</span>(buff,format,<span class="built_in">list</span>); <span class="comment">//buf_index将表示存储在buff的字符串后面一位的下标。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//置为空指针</span></span><br><span class="line">    va_end(<span class="built_in">list</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//输出处理过的字符串</span></span><br><span class="line">    buff[buff_index]=<span class="string">'\0'</span>;</span><br><span class="line">    <span class="built_in">puts</span>(buff);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面很容易看出，vsprintf将是完成printf函数的关键。vsprintf的功能主要是将格式化字符串的%-形式的字符串替换成对应的值，将处理后的字符串存储在buff中。这里的vsprintf很简单，也仅仅实现了处理%d、%x、%c、%s的情况，以后有需要会增加其他情况。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将格式化字符串的%-形式的字符串替换成对应的值，将处理后的字符串存储在buff中</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param buff : 存储处理后的字符串</span></span><br><span class="line"><span class="comment"> * @param format : 格式化字符串，即待处理字符串</span></span><br><span class="line"><span class="comment"> * @param list :   指向可变参数列表里的参数的指针</span></span><br><span class="line"><span class="comment"> * @return int :   buff字符串末尾下一位的下标</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">vsprintf</span><span class="params">(<span class="keyword">char</span> *buff,<span class="keyword">const</span> <span class="keyword">char</span>*format,va_list <span class="built_in">list</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> buff_index=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> itoa_str[<span class="number">32</span>];          <span class="comment">//存放整型转换后的字符串</span></span><br><span class="line">    <span class="keyword">int</span> len;</span><br><span class="line">    <span class="keyword">int</span>  int_value;             <span class="comment">//用于%d</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> uint_value;    <span class="comment">//用于%x</span></span><br><span class="line">    <span class="keyword">char</span> char_value;            <span class="comment">//用于%c</span></span><br><span class="line">    <span class="keyword">char</span> * string_addr;         <span class="comment">//用于%s</span></span><br><span class="line">    <span class="comment">//顺序处理format字符串每一个字符</span></span><br><span class="line">    <span class="keyword">for</span>(; *format; format++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//当前字符是普通字符,直接复制</span></span><br><span class="line">        <span class="keyword">if</span>(*format!=<span class="string">'%'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            buff[buff_index++]=*format;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">//当前字符是‘%’</span></span><br><span class="line">    format++;</span><br><span class="line">    <span class="keyword">switch</span>(*format)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//整型</span></span><br><span class="line">            <span class="keyword">case</span> <span class="string">'d'</span>:</span><br><span class="line">                <span class="comment">//取出这个整型</span></span><br><span class="line">                int_value=va_args(<span class="built_in">list</span>,<span class="keyword">int</span>);</span><br><span class="line">                <span class="comment">//10进制转换</span></span><br><span class="line">                itoa(int_value,itoa_str,<span class="number">10</span>);</span><br><span class="line">                len=<span class="built_in">strlen</span>(itoa_str);</span><br><span class="line">                <span class="comment">//将转换后的字符串复制到buff上</span></span><br><span class="line">                <span class="built_in">memcpy</span>(&amp;buff[buff_index], itoa_str, len);</span><br><span class="line">                buff_index+=len;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">//字符</span></span><br><span class="line">            <span class="keyword">case</span> <span class="string">'c'</span>:</span><br><span class="line">                <span class="comment">//注意，因为入栈用的push，即使是char变量，esp也要加4，所以不能用va_args(list,char)</span></span><br><span class="line">                char_value=va_args(<span class="built_in">list</span>,<span class="keyword">int32_t</span>);</span><br><span class="line">                buff[buff_index]=char_value;</span><br><span class="line">                buff_index++;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">//字符串</span></span><br><span class="line">            <span class="keyword">case</span> <span class="string">'s'</span>:</span><br><span class="line">                string_addr=va_args(<span class="built_in">list</span>,<span class="keyword">char</span>*);</span><br><span class="line">                len=<span class="built_in">strlen</span>(string_addr);</span><br><span class="line">                <span class="comment">//将字符串复制到buff上</span></span><br><span class="line">                <span class="built_in">memcpy</span>(&amp;buff[buff_index],string_addr,len);</span><br><span class="line">                buff_index+=len;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">//16进制</span></span><br><span class="line">            <span class="keyword">case</span><span class="number">'</span>x<span class="number">'</span>:</span><br><span class="line">                uint_value=va_args(<span class="built_in">list</span>,<span class="keyword">unsigned</span> <span class="keyword">int</span>);</span><br><span class="line">                <span class="comment">//16进制转换</span></span><br><span class="line">                itoa(uint_value,itoa_str,<span class="number">16</span>);</span><br><span class="line">                len=<span class="built_in">strlen</span>(itoa_str);</span><br><span class="line">                <span class="comment">//将转换后的字符串复制到buff上</span></span><br><span class="line">                <span class="built_in">memcpy</span>(&amp;buff[buff_index], itoa_str, len);</span><br><span class="line">                buff_index+=len;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//不符合以上情况</span></span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="comment">//TODO panic</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;<span class="comment">//end of switch</span></span><br><span class="line">    &#125;<span class="comment">//end of for</span></span><br><span class="line">    <span class="keyword">return</span> buff_index;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-8-ensp-测试屏幕输出函数"><a href="#2-2-8-ensp-测试屏幕输出函数" class="headerlink" title="2.2.8&ensp;测试屏幕输出函数"></a>2.2.8&ensp;测试屏幕输出函数</h4><p>最后，我们在main函数测试下我们的console模块</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    init_video();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span>* name=<span class="string">"binson"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"hello myos!\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置成黑底红字</span></span><br><span class="line">    set_text_color( t_black, t_red  );</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"hello myos!\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"The string \"%s\" has %d characters beginning with \'%c\',and its address is 0x%x\n"</span>, \</span><br><span class="line">            name,<span class="built_in">strlen</span>(name),name[<span class="number">0</span>],name);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//重置颜色</span></span><br><span class="line">    reset_test_color();</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"hello myos!\n"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>它的效果如下：</p>
+<p><img src="/img/myos/chapter-2_hello-myos.png" alt="hello-myos"></p>
+<h3 id="2-3-ensp-文件目录结构以及变更"><a href="#2-3-ensp-文件目录结构以及变更" class="headerlink" title="2.3&ensp;文件目录结构以及变更"></a>2.3&ensp;文件目录结构以及变更</h3><p><img src="/img/myos/chapter-2_dir.png" alt="dir"></p>
+<p>这里新增了一种文件状态描述符 r，代表rename操作。它的语法是 r&emsp;filename&emsp;:旧路径+旧文件名&emsp; -&gt; ./ ，其中filename是现在的文件名，旧路径会以/开头，表示此os项目的根目录，后面的-&gt; ./ 表示移动到当前目录。上面的 r&emsp;boot.s&emsp;/boot.s&emsp;-&gt; ./ 的意思就是从原来在项目根目录下的boot.s移动到当前目录下，而名字并没有改变。</p>
+<p>还有就是dir和floppy.img这些文件起始也有变化，但我们这里只关注源码文件。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Binson
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://wu-binson.github.io/myos/printing-to-screen/" title="myos(二)之屏幕输出函数">https://wu-binson.github.io/myos/printing-to-screen/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/myos/" rel="tag"># myos</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/myos/assert/" rel="next" title="myos(三)之断言">
+                <i class="fa fa-chevron-left"></i> myos(三)之断言
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/myos/environment-setup/" rel="prev" title="myos(一)之搭建环境">
+                myos(一)之搭建环境 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/avatar.png"
+                alt="Binson" />
+            
+              <p class="site-author-name" itemprop="name">Binson</p>
+              <p class="site-description motion-element" itemprop="description">No Pain, No Gain</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wu-binson" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/87544177/" target="_blank" title="豆瓣">
+                      
+                        <i class="fa fa-fw fa-globe"></i>豆瓣</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-ensp-屏幕输出的原理"><span class="nav-number">1.</span> <span class="nav-text">2.1&amp;ensp;屏幕输出的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-ensp-屏幕输出的代码实现"><span class="nav-number">2.</span> <span class="nav-text">2.2&amp;ensp;屏幕输出的代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-ensp-端口读写函数"><span class="nav-number">2.1.</span> <span class="nav-text">2.2.1&amp;ensp;端口读写函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-ensp-宏定义、变量定义和函数原型"><span class="nav-number">2.2.</span> <span class="nav-text">2.2.2&amp;ensp;宏定义、变量定义和函数原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-ensp-光标位置更新"><span class="nav-number">2.3.</span> <span class="nav-text">2.2.3&amp;ensp;光标位置更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-4-ensp-清屏"><span class="nav-number">2.4.</span> <span class="nav-text">2.2.4&amp;ensp;清屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-5-ensp-屏幕滚动显示"><span class="nav-number">2.5.</span> <span class="nav-text">2.2.5&amp;ensp;屏幕滚动显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-6-ensp-显示字符串"><span class="nav-number">2.6.</span> <span class="nav-text">2.2.6&amp;ensp;显示字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-7-ensp-printf函数"><span class="nav-number">2.7.</span> <span class="nav-text">2.2.7&amp;ensp;printf函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-8-ensp-测试屏幕输出函数"><span class="nav-number">2.8.</span> <span class="nav-text">2.2.8&amp;ensp;测试屏幕输出函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-ensp-文件目录结构以及变更"><span class="nav-number">3.</span> <span class="nav-text">2.3&amp;ensp;文件目录结构以及变更</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Binson</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
