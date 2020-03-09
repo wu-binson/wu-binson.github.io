@@ -102,7 +102,7 @@
 
 
 
-  <meta name="keywords" content="critical thinking," />
+  <meta name="keywords" content="csapp,assembly code," />
 
 
 
@@ -115,17 +115,31 @@
 
 
 
-<meta name="description" content="批判性提问技能是一项强大的思维工具，适用于所有涉及到观点的领域，当然它也有自身的缺点。想要掌握这种技能需要一定量的训练。">
+<meta name="description" content="主要讲述机器层级的汇编代码，有些知识点不需要记，只需要用于后面查阅便可。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学会提问(一)之批判性提问技能">
-<meta property="og:url" content="https://wu-binson.github.io/note/critical_thinking/summary/index.html">
+<meta property="og:title" content="程序的机器级表示">
+<meta property="og:url" content="https://wu-binson.github.io/IT/csapp/asm/index.html">
 <meta property="og:site_name" content="binson&#39;s blog">
-<meta property="og:description" content="批判性提问技能是一项强大的思维工具，适用于所有涉及到观点的领域，当然它也有自身的缺点。想要掌握这种技能需要一定量的训练。">
-<meta property="article:published_time" content="2020-03-06T01:31:52.013Z">
-<meta property="article:modified_time" content="2020-03-06T01:25:49.205Z">
+<meta property="og:description" content="主要讲述机器层级的汇编代码，有些知识点不需要记，只需要用于后面查阅便可。">
+<meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/i-register.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/mov.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/movz.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/movs.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/arithmetic.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/sp-arithmetic.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/condition-code.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/diff.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/csource.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/switch-asm.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/jump-table.png">
+<meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/float-register.png">
+<meta property="article:published_time" content="2020-03-09T02:33:40.641Z">
+<meta property="article:modified_time" content="2020-03-09T02:33:40.638Z">
 <meta property="article:author" content="Binson">
-<meta property="article:tag" content="critical thinking">
+<meta property="article:tag" content="csapp">
+<meta property="article:tag" content="assembly code">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/i-register.png">
 
 
 
@@ -155,13 +169,13 @@
 
 
 
-  <link rel="canonical" href="https://wu-binson.github.io/note/critical_thinking/summary/"/>
+  <link rel="canonical" href="https://wu-binson.github.io/IT/csapp/asm/"/>
 
 
 
 
 
-  <title>学会提问(一)之批判性提问技能 | binson's blog</title>
+  <title>程序的机器级表示 | binson's blog</title>
   
 
 
@@ -322,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wu-binson.github.io/note/critical_thinking/summary/">
+    <link itemprop="mainEntityOfPage" href="https://wu-binson.github.io/IT/csapp/asm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Binson">
@@ -339,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">学会提问(一)之批判性提问技能</h1>
+          <h1 class="post-title" itemprop="name headline">程序的机器级表示</h1>
         
 
         <div class="post-meta">
@@ -351,8 +365,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-06T09:31:52+08:00">
-                2020-03-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-09T10:33:40+08:00">
+                2020-03-09
               </time>
             
 
@@ -374,8 +388,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
+                  <a href="/categories/IT/" itemprop="url" rel="index">
+                    <span itemprop="name">IT</span>
                   </a>
                 </span>
 
@@ -392,9 +406,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/note/critical_thinking/summary/#comments" itemprop="discussionUrl">
+                <a href="/IT/csapp/asm/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="note/critical_thinking/summary/" itemprop="commentCount"></span>
+                        data-disqus-identifier="IT/csapp/asm/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,7 +428,7 @@
 
           
               <div class="post-description">
-                  批判性提问技能是一项强大的思维工具，适用于所有涉及到观点的领域，当然它也有自身的缺点。想要掌握这种技能需要一定量的训练。
+                  主要讲述机器层级的汇编代码，有些知识点不需要记，只需要用于后面查阅便可。
               </div>
           
 
@@ -431,43 +445,30 @@
       
 
       
-        <h3 id="批判性提问技能的适用场景和重要性"><a href="#批判性提问技能的适用场景和重要性" class="headerlink" title="批判性提问技能的适用场景和重要性"></a>批判性提问技能的适用场景和重要性</h3><p>批判性提问技能是一项非常重要的技能，它的适用范围非常广，几乎可以运用到生活的各个角落。</p>
-<p>随着互联网和物联网对现代文明的进一步渗透，以及近年来自媒体的兴起，每个上网的人都可以发出自己的声音。这些信息的质量有高有低，这个时候理性地分辨出哪些是虚假信息，哪些言论存在漏洞，哪些是经得起推敲的观点，是非常重要的。而批判性提问技能可以帮助我们在信息洪流里站稳脚跟。</p>
-<p>在与互联网不相关的地方，比如学习和阅读，批判性提问也能够让我们比较充分地参与到这个过程中，能够帮助我们集中精神。当我们针对书籍材料的观点提出一些问题并尝试着去思考时，我们将可以对这些材料有着更深入的理解，这过程还会附带成就感。</p>
-<p>这种技能还适用另外一个重要的场景，就是科学研究的过程。科学研究的本质就是站在前人的理论上提出自己的理论（<em>理论是特殊的观点</em>）。科学理论几乎都有着自身时代的局限性，比如牛顿力学只能解释宏观层面的现象。用批判性思维看待科学理论有助于我们提出新的，更先进的理论。</p>
-<p>除了上面提到的，还有很多其它的场景，所以这种技能的重要性便不言而喻了。结合上面的场景，个人认为，它的重要性主要体现在以下三大方面：</p>
-<ol>
-<li><strong>帮助你选择性过滤掉来自外界的观点。</strong>在充分思考后，你可以自主选择地支持一些观点，这时的你应该可以说出自己支持这些观点的理由，甚至还可以找到瑕疵之处。同时，你可能会不赞成一些观点，在这过程中顺便能找到反驳的理由。</li>
-<li><strong>除了过滤外界的观点，批判性提问法能让我们审视自己的观点。</strong>在批判性看待自己的观点后，我们可以更加肯定或者修正甚至否定之前的观点。提出一个由许多小观点组成的大观点，或者写文章等类似活动类似于程序员写各种软件系统，程序员都知道，几乎很少有不存在漏洞的完美系统，而且系统越大出漏洞的概率就越大，所以我们能做的只是尽可能地填上漏洞。而批判提问法帮助我们发现自己的文章或者观点里面的漏洞所在，及时修补上。</li>
-<li>如上面所说，<strong>批判性提问技能帮助我们充分参与到学习，阅读，各种会议等活动中</strong>。另外，我们可以凭借提出的关键问题顺藤摸瓜，搜寻到某类问题的答案。</li>
-</ol>
-<h3 id="何为批判性提问和批判性思维"><a href="#何为批判性提问和批判性思维" class="headerlink" title="何为批判性提问和批判性思维"></a>何为批判性提问和批判性思维</h3><p>这里先解释下批判性提问(critical-questioning)，批判性提问这个术语由两个部分组成，分别是批判性思维和提问。提问的目的自然是提出关键问题，而批判性思维就是为了这个目标所服务。至于批判性思维，书中给出了这样的解释，它主要涵盖了以下几个方面：</p>
-<ul>
-<li>有一套相互关联、环环相扣的关键问题的意识。</li>
-<li>恰如其分地提出和回答关键问题的能力。</li>
-<li>积极主动地利用关键问题的强烈愿望。</li>
-</ul>
-<p>书的目的便是激发读者朝这三个方面全面发展。
-从批判性思维用途的角度出发，可以将批判性思维分成<strong>弱势批判性思维</strong>和<strong>强势批判性思维</strong>。其中弱势批判性思维的目的是抵制和驳倒与你观点不同的论述，并不关心自己的观点能否更接近真理。弱势批判性思维最大的问题在于尽力维护的观点可能一开始就是错的。强势批判性思维的目的恰恰相反，它要求我们一视同仁地对待别人和自己的观点。</p>
-<h3 id="批判性提问的可操作步骤"><a href="#批判性提问的可操作步骤" class="headerlink" title="批判性提问的可操作步骤"></a>批判性提问的可操作步骤</h3><h4 id="关键问题"><a href="#关键问题" class="headerlink" title="关键问题"></a>关键问题</h4><ol>
-<li><a href="https://wubinson.github.io/note/critical_thinking/thesis/" target="_blank" rel="noopener">论题和结论是什么</a></li>
-<li><a href="https://wubinson.github.io/note/critical_thinking/reason/" target="_blank" rel="noopener">理由是什么</a></li>
-<li>哪些词语不明确</li>
-<li>什么是价值观假设和描述性假设</li>
-<li>推理过程有没有谬误</li>
-<li>证据的效力如何</li>
-<li>有没有替代原因</li>
-<li>数据有没有欺骗性</li>
-<li>有什么重要信息被省略了</li>
-<li>能得出哪些合理的结论</li>
-</ol>
-<p>上面的步骤暂时仅需要初步了解下，<strong>每一个步骤都是后面的章节</strong>，后面会详细讲解。</p>
-<h4 id="勤加练习"><a href="#勤加练习" class="headerlink" title="勤加练习"></a>勤加练习</h4><p>只知道这种技能的存在却不会使用之仅仅比不知道概念强一点，想掌握技能需要大量的练习。除了书中每章节后面的练习题，生活中的各种观点都应该被视为我们潜在的练习题。</p>
-<h3 id="两个重要的意识"><a href="#两个重要的意识" class="headerlink" title="两个重要的意识"></a>两个重要的意识</h3><h4 id="对话交流可以促进进步"><a href="#对话交流可以促进进步" class="headerlink" title="对话交流可以促进进步"></a>对话交流可以促进进步</h4><p>不要封堵住与别人交流对话的渠道，甚至需要我们主动去创造交流的机会。与别人的交流可以修正你的观点，即使你对自己的观点很有信心，即使对方看似各方面都不如你（<em>很多时候是错觉</em>）。</p>
-<h4 id="你有没有可能是错的"><a href="#你有没有可能是错的" class="headerlink" title="你有没有可能是错的"></a>你有没有可能是错的</h4><p>在你对自己的观点很有自信，快要到”蔑视”其它观点的时候，都应该问问自己，你有没有可能是错的。很多程序员都有这样的经历：在开发复杂的软件系统的过程，许多躲藏在思维盲区的bug会不停地冲击他们的自以为是。而实现世界又是一个极其复杂的系统。</p>
-<h3 id="批判性思维的弊端"><a href="#批判性思维的弊端" class="headerlink" title="批判性思维的弊端"></a>批判性思维的弊端</h3><p>批判性思维的好处很多，当然它也会有弊端。它比海绵思维需要更多的注意力，在使用批判性思维这个工具的时候，它会消耗掉使用者一定的精力。人的精力是有限的，所以<strong>我们应该将这个强大的工具使用在重要的场景</strong>。掌握起来不容易也算是这个工具的弊端之一。</p>
-<p>还有就是，生活上很多观点有很多细节是不能证实或者不能证伪的，有部分是因为人类使用的语言系统的原因，比如“很多程序员喜欢写c”这句话，里面的“很多”是很模糊的，“很多”到底是多少，占了多大的比例，这些都是不得而知的。碰到这种情况，批判性思维会建议我们保持怀疑的态度，这也是一个追求真理的学者必须具备的素质。但生活里有些情况是需要快速决断的，比如一个领导者在重大决断前面对下属的犹豫时间越长，有时候给团队带来的危害会越严重（开始是精神层面的，后面可能导致团队瓦解），甚至会比做出错误决断还要严重。</p>
-<h3 id="一个小问题——关于批判思维的思考对象"><a href="#一个小问题——关于批判思维的思考对象" class="headerlink" title="一个小问题——关于批判思维的思考对象"></a>一个小问题——关于批判思维的思考对象</h3><p>查阅了一些关于批判性思维的材料和定义，似乎没有个统一或者明确点的说法。<strong>个人更倾向认为，批判性思维这个工具剖析的对象是各种被假设或者逻辑支撑起来的观点（<em>因为观点都是人提出来的，所以都与人相关</em>），而不是自然界客观存在的事物。至少书中教导我们的批判性提问技能就是这种</strong>。这种技能是“提出关键问题”技能的子集，前者没有后者的范围广。比如，在科研面对一些自然现象，科学家会提出一些关于客观存在的事物的关键问题，来驱动自己的研究。批判性提问技能在这里是不适用的（看看本文3.1的步骤）,它适用的场景是当你面对别人的论文和理论的时候。虽然如此，它仍然是非常重要的工具，知道它的局限性可以让我们使用起来更加游刃有余。</p>
+        <h3 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h3><p><font color="#ff0000"><strong>Intel</strong>使用术语表示16位数据类型。所以32位数被称为double word，同理，64位被称为quad word。</font></p>
+<h3 id="整数寄存器和数据传送指令"><a href="#整数寄存器和数据传送指令" class="headerlink" title="整数寄存器和数据传送指令"></a>整数寄存器和数据传送指令</h3><p>·<img src="/img/books/csapp/chapter3/i-register.png" alt="整数寄存器">
+·<img src="/img/books/csapp/chapter3/mov.png" alt="mov">
+<font color="#ff0000">比较特别的是，当movl指令以寄存器作为目的，它会把寄存器的高4位字节设置为0.</font></p>
+<p>以下两类数据移动指令，<strong>用于较小的源值复制到较大的目的寄存器的时候</strong>。
+·<img src="/img/books/csapp/chapter3/movz.png" alt="movz">
+·<img src="/img/books/csapp/chapter3/movs.png" alt="movs"></p>
+<p>考虑到以下的指令:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">src_t</span> *sp;</span><br><span class="line"><span class="keyword">dest_t</span> *dp;</span><br><span class="line"></span><br><span class="line">*dp=(<span class="keyword">dest_t</span>)*sp;</span><br></pre></td></tr></table></figure>
+<p>假设sp和dp的值分别存储在%rdi和%rsi的寄存器里，src_t是char，dest_t是unsigned。那么*dp=(dest_t)*sp;对应的汇编代码
+是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">movsbl (%rdi),%eax;</span><br><span class="line">movl %eax,(%rsi);</span><br></pre></td></tr></table></figure>
+<h3 id="算术和逻辑操作"><a href="#算术和逻辑操作" class="headerlink" title="算术和逻辑操作"></a>算术和逻辑操作</h3><p><img src="/img/books/csapp/chapter3/arithmetic.png" alt="arithmetic">
+关于IMUL指令，当乘积截取到64位，无符号乘法和有符号乘法的位级是一样的。而下图的mulq和imulq指令分别实现了$*^u_{64}$和$*^t_{64}$
+<img src="/img/books/csapp/chapter3/sp-arithmetic.png" alt="sp-arithmetic"></p>
+<h3 id="控制"><a href="#控制" class="headerlink" title="控制"></a>控制</h3><h4 id="条件码"><a href="#条件码" class="headerlink" title="条件码"></a>条件码</h4><p><img src="/img/books/csapp/chapter3/condition-code.png" alt="condition-code"></p>
+<p><img src="/img/books/csapp/chapter3/diff.png" alt="difference"></p>
+<h4 id="switch跳转表"><a href="#switch跳转表" class="headerlink" title="switch跳转表"></a>switch跳转表</h4><p>c源码：
+<img src="/img/books/csapp/chapter3/csource.png" alt="c-source">
+汇编代码：
+<img src="/img/books/csapp/chapter3/switch-asm.png" alt="switch-asm">
+跳转表(<strong>空间换时间</strong>)：
+<img src="/img/books/csapp/chapter3/jump-table.png" alt="jump-table"></p>
+<h3 id="浮点的机器层级代码（次要）"><a href="#浮点的机器层级代码（次要）" class="headerlink" title="浮点的机器层级代码（次要）"></a>浮点的机器层级代码（次要）</h3><p><img src="/img/books/csapp/chapter3/float-register.png" alt="f-register"></p>
 
       
     </div>
@@ -488,7 +489,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://wu-binson.github.io/note/critical_thinking/summary/" title="学会提问(一)之批判性提问技能">https://wu-binson.github.io/note/critical_thinking/summary/</a>
+    <a href="https://wu-binson.github.io/IT/csapp/asm/" title="程序的机器级表示">https://wu-binson.github.io/IT/csapp/asm/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -503,7 +504,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/critical-thinking/" rel="tag"># critical thinking</a>
+            <a href="/tags/csapp/" rel="tag"># csapp</a>
+          
+            <a href="/tags/assembly-code/" rel="tag"># assembly code</a>
           
         </div>
       
@@ -516,8 +519,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/note/critical_thinking/thesis/" rel="next" title="学会提问(二)之论题和结论">
-                <i class="fa fa-chevron-left"></i> 学会提问(二)之论题和结论
+              <a href="/IT/myos/environment-setup/" rel="next" title="myos(一)之搭建环境">
+                <i class="fa fa-chevron-left"></i> myos(一)之搭建环境
               </a>
             
           </div>
@@ -526,8 +529,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/note/critical_thinking/reason/" rel="prev" title="学会提问(三)之理由是什么">
-                学会提问(三)之理由是什么 <i class="fa fa-chevron-right"></i>
+              <a href="/IT/csapp/integer%20and%20floating-point%20number/" rel="prev" title="整数和浮点数的表示">
+                整数和浮点数的表示 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -630,7 +633,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -697,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#批判性提问技能的适用场景和重要性"><span class="nav-number">1.</span> <span class="nav-text">批判性提问技能的适用场景和重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何为批判性提问和批判性思维"><span class="nav-number">2.</span> <span class="nav-text">何为批判性提问和批判性思维</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批判性提问的可操作步骤"><span class="nav-number">3.</span> <span class="nav-text">批判性提问的可操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关键问题"><span class="nav-number">3.1.</span> <span class="nav-text">关键问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#勤加练习"><span class="nav-number">3.2.</span> <span class="nav-text">勤加练习</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两个重要的意识"><span class="nav-number">4.</span> <span class="nav-text">两个重要的意识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对话交流可以促进进步"><span class="nav-number">4.1.</span> <span class="nav-text">对话交流可以促进进步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#你有没有可能是错的"><span class="nav-number">4.2.</span> <span class="nav-text">你有没有可能是错的</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批判性思维的弊端"><span class="nav-number">5.</span> <span class="nav-text">批判性思维的弊端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个小问题——关于批判思维的思考对象"><span class="nav-number">6.</span> <span class="nav-text">一个小问题——关于批判思维的思考对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据格式"><span class="nav-number">1.</span> <span class="nav-text">数据格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整数寄存器和数据传送指令"><span class="nav-number">2.</span> <span class="nav-text">整数寄存器和数据传送指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算术和逻辑操作"><span class="nav-number">3.</span> <span class="nav-text">算术和逻辑操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制"><span class="nav-number">4.</span> <span class="nav-text">控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#条件码"><span class="nav-number">4.1.</span> <span class="nav-text">条件码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#switch跳转表"><span class="nav-number">4.2.</span> <span class="nav-text">switch跳转表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点的机器层级代码（次要）"><span class="nav-number">5.</span> <span class="nav-text">浮点的机器层级代码（次要）</span></a></li></ol></div>
             
 
           </div>
@@ -887,9 +890,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://wu-binson.github.io/note/critical_thinking/summary/';
-          this.page.identifier = 'note/critical_thinking/summary/';
-          this.page.title = '学会提问(一)之批判性提问技能';
+          this.page.url = 'https://wu-binson.github.io/IT/csapp/asm/';
+          this.page.identifier = 'IT/csapp/asm/';
+          this.page.title = '程序的机器级表示';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://binson.disqus.com/embed.js';
