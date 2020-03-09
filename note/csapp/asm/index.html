@@ -133,8 +133,8 @@
 <meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/switch-asm.png">
 <meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/jump-table.png">
 <meta property="og:image" content="https://wu-binson.github.io/img/books/csapp/chapter3/float-register.png">
-<meta property="article:published_time" content="2020-03-06T01:31:52.013Z">
-<meta property="article:modified_time" content="2020-03-06T01:25:49.236Z">
+<meta property="article:published_time" content="2020-03-09T02:14:18.557Z">
+<meta property="article:modified_time" content="2020-03-09T02:14:18.553Z">
 <meta property="article:author" content="Binson">
 <meta property="article:tag" content="csapp">
 <meta property="article:tag" content="assembly code">
@@ -365,8 +365,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-06T09:31:52+08:00">
-                2020-03-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-09T10:14:18+08:00">
+                2020-03-09
               </time>
             
 
@@ -445,8 +445,8 @@
       
 
       
-        <h3 id="1-ensp-数据格式"><a href="#1-ensp-数据格式" class="headerlink" title="1.&ensp;数据格式"></a>1.&ensp;数据格式</h3><p><font color="#ff0000"><strong>Intel</strong>使用术语表示16位数据类型。所以32位数被称为double word，同理，64位被称为quad word。</font></p>
-<h3 id="2-ensp-整数寄存器和数据传送指令"><a href="#2-ensp-整数寄存器和数据传送指令" class="headerlink" title="2.&ensp;整数寄存器和数据传送指令"></a>2.&ensp;整数寄存器和数据传送指令</h3><p>·<img src="/img/books/csapp/chapter3/i-register.png" alt="整数寄存器">
+        <h3 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h3><p><font color="#ff0000"><strong>Intel</strong>使用术语表示16位数据类型。所以32位数被称为double word，同理，64位被称为quad word。</font></p>
+<h3 id="整数寄存器和数据传送指令"><a href="#整数寄存器和数据传送指令" class="headerlink" title="整数寄存器和数据传送指令"></a>整数寄存器和数据传送指令</h3><p>·<img src="/img/books/csapp/chapter3/i-register.png" alt="整数寄存器">
 ·<img src="/img/books/csapp/chapter3/mov.png" alt="mov">
 <font color="#ff0000">比较特别的是，当movl指令以寄存器作为目的，它会把寄存器的高4位字节设置为0.</font></p>
 <p>以下两类数据移动指令，<strong>用于较小的源值复制到较大的目的寄存器的时候</strong>。
@@ -457,18 +457,18 @@
 <p>假设sp和dp的值分别存储在%rdi和%rsi的寄存器里，src_t是char，dest_t是unsigned。那么*dp=(dest_t)*sp;对应的汇编代码
 是</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">movsbl (%rdi),%eax;</span><br><span class="line">movl %eax,(%rsi);</span><br></pre></td></tr></table></figure>
-<h3 id="3-ensp-算术和逻辑操作"><a href="#3-ensp-算术和逻辑操作" class="headerlink" title="3.&ensp;算术和逻辑操作"></a>3.&ensp;算术和逻辑操作</h3><p><img src="/img/books/csapp/chapter3/arithmetic.png" alt="arithmetic">
+<h3 id="算术和逻辑操作"><a href="#算术和逻辑操作" class="headerlink" title="算术和逻辑操作"></a>算术和逻辑操作</h3><p><img src="/img/books/csapp/chapter3/arithmetic.png" alt="arithmetic">
 关于IMUL指令，当乘积截取到64位，无符号乘法和有符号乘法的位级是一样的。而下图的mulq和imulq指令分别实现了$*^u_{64}$和$*^t_{64}$
 <img src="/img/books/csapp/chapter3/sp-arithmetic.png" alt="sp-arithmetic"></p>
-<h3 id="4-ensp-控制"><a href="#4-ensp-控制" class="headerlink" title="4.&ensp;控制"></a>4.&ensp;控制</h3><h4 id="4-1-ensp-条件码"><a href="#4-1-ensp-条件码" class="headerlink" title="4.1&ensp;条件码"></a>4.1&ensp;条件码</h4><p><img src="/img/books/csapp/chapter3/condition-code.png" alt="condition-code"></p>
+<h3 id="控制"><a href="#控制" class="headerlink" title="控制"></a>控制</h3><h4 id="条件码"><a href="#条件码" class="headerlink" title="条件码"></a>条件码</h4><p><img src="/img/books/csapp/chapter3/condition-code.png" alt="condition-code"></p>
 <p><img src="/img/books/csapp/chapter3/diff.png" alt="difference"></p>
-<h4 id="4-2-ensp-switch跳转表"><a href="#4-2-ensp-switch跳转表" class="headerlink" title="4.2&ensp;switch跳转表"></a>4.2&ensp;switch跳转表</h4><p>c源码：
+<h4 id="switch跳转表"><a href="#switch跳转表" class="headerlink" title="switch跳转表"></a>switch跳转表</h4><p>c源码：
 <img src="/img/books/csapp/chapter3/csource.png" alt="c-source">
 汇编代码：
 <img src="/img/books/csapp/chapter3/switch-asm.png" alt="switch-asm">
 跳转表(<strong>空间换时间</strong>)：
 <img src="/img/books/csapp/chapter3/jump-table.png" alt="jump-table"></p>
-<h3 id="5-ensp-浮点的机器层级代码（次要）"><a href="#5-ensp-浮点的机器层级代码（次要）" class="headerlink" title="5.&ensp;浮点的机器层级代码（次要）"></a>5.&ensp;浮点的机器层级代码（次要）</h3><p><img src="/img/books/csapp/chapter3/float-register.png" alt="f-register"></p>
+<h3 id="浮点的机器层级代码（次要）"><a href="#浮点的机器层级代码（次要）" class="headerlink" title="浮点的机器层级代码（次要）"></a>浮点的机器层级代码（次要）</h3><p><img src="/img/books/csapp/chapter3/float-register.png" alt="f-register"></p>
 
       
     </div>
@@ -519,8 +519,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/note/csapp/integer%20and%20floating-point%20number/" rel="next" title="整数和浮点数的表示">
-                <i class="fa fa-chevron-left"></i> 整数和浮点数的表示
+              <a href="/myos/assert/" rel="next" title="myos(三)之断言">
+                <i class="fa fa-chevron-left"></i> myos(三)之断言
               </a>
             
           </div>
@@ -529,8 +529,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/note/critical_thinking/thesis/" rel="prev" title="学会提问(二)之论题和结论">
-                学会提问(二)之论题和结论 <i class="fa fa-chevron-right"></i>
+              <a href="/note/csapp/integer%20and%20floating-point%20number/" rel="prev" title="整数和浮点数的表示">
+                整数和浮点数的表示 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -622,7 +622,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -644,7 +644,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -700,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-ensp-数据格式"><span class="nav-number">1.</span> <span class="nav-text">1.&amp;ensp;数据格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-ensp-整数寄存器和数据传送指令"><span class="nav-number">2.</span> <span class="nav-text">2.&amp;ensp;整数寄存器和数据传送指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-ensp-算术和逻辑操作"><span class="nav-number">3.</span> <span class="nav-text">3.&amp;ensp;算术和逻辑操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-ensp-控制"><span class="nav-number">4.</span> <span class="nav-text">4.&amp;ensp;控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-ensp-条件码"><span class="nav-number">4.1.</span> <span class="nav-text">4.1&amp;ensp;条件码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-ensp-switch跳转表"><span class="nav-number">4.2.</span> <span class="nav-text">4.2&amp;ensp;switch跳转表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-ensp-浮点的机器层级代码（次要）"><span class="nav-number">5.</span> <span class="nav-text">5.&amp;ensp;浮点的机器层级代码（次要）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据格式"><span class="nav-number">1.</span> <span class="nav-text">数据格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整数寄存器和数据传送指令"><span class="nav-number">2.</span> <span class="nav-text">整数寄存器和数据传送指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算术和逻辑操作"><span class="nav-number">3.</span> <span class="nav-text">算术和逻辑操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制"><span class="nav-number">4.</span> <span class="nav-text">控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#条件码"><span class="nav-number">4.1.</span> <span class="nav-text">条件码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#switch跳转表"><span class="nav-number">4.2.</span> <span class="nav-text">switch跳转表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点的机器层级代码（次要）"><span class="nav-number">5.</span> <span class="nav-text">浮点的机器层级代码（次要）</span></a></li></ol></div>
             
 
           </div>
@@ -720,11 +720,11 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">true</span>
+  <span class="author" itemprop="copyrightHolder">Binson</span>
 
   
 </div>
