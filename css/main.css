@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8e6cc1;
+  background: #b6b53e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3015,4 +3015,12 @@ pre .javascript .function {
 }
 .douban:before {
   content: "\e638";
+}
+.posts-expand .post-eof {
+  display: block;
+  margin: 80px auto 60px;
+  width: 80%;
+  height: 2px;
+  background: #ccc;
+  text-align: center;
 }
