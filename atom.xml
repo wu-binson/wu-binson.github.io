@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wu-binson.github.io/"/>
-  <updated>2020-03-10T12:35:32.844Z</updated>
+  <updated>2020-03-10T13:16:59.281Z</updated>
   <id>https://wu-binson.github.io/</id>
   
   <author>
@@ -17,27 +17,58 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Feynman Technology</title>
-    <link href="https://wu-binson.github.io/study-method/Feynman-Technology/"/>
-    <id>https://wu-binson.github.io/study-method/Feynman-Technology/</id>
-    <published>2020-03-10T12:35:32.848Z</published>
-    <updated>2020-03-10T12:35:32.844Z</updated>
+    <title>Expectation, Variance, Standard Deviation</title>
+    <link href="https://wu-binson.github.io/math/probability-theory/Expectation-Variance-Standard-Deviation/"/>
+    <id>https://wu-binson.github.io/math/probability-theory/Expectation-Variance-Standard-Deviation/</id>
+    <published>2020-03-10T13:16:59.284Z</published>
+    <updated>2020-03-10T13:16:59.281Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>“I couldn’t reduce it to the freshman level. That means we really don’t understand it.”<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; ————Feynman</p></blockquote><a id="more"></a><h2 id="重量级学习方法"><a href="#重量级学习方法" class="headerlink" title="重量级学习方法"></a>重量级学习方法</h2><ol><li>Use this technique to deeply understand an idea in <strong>20 minutes</strong>, that will stick with you for years.</li><li>慎重选择<h2 id="适用场景及其学习阶段"><a href="#适用场景及其学习阶段" class="headerlink" title="适用场景及其学习阶段"></a>适用场景及其学习阶段</h2><h3 id="主要-理解阶段-当理解困难时"><a href="#主要-理解阶段-当理解困难时" class="headerlink" title="(主要) 理解阶段-当理解困难时"></a>(主要) 理解阶段-当理解困难时</h3></li><li>慎重选择</li><li>Feynman Technology With Books</li><li>不必当场解决，但要总结出理解有问题的点(标上问号)<h3 id="复习阶段"><a href="#复习阶段" class="headerlink" title="复习阶段"></a>复习阶段</h3>Understand ideas that you don’t really “get”To remember ideas that you can understand, but forgets on tests</li></ol><h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><p><img src="/img/study-method/_1565787172882.png" alt="Alt text"><strong>Question-Driven</strong></p><ol><li>Choose Your  ConceptThe first step is to choose the concept you want to understand. <strong>Take a blank piece of paper and write the name of that concept at the top of the page.</strong></li><li>Explain like I’m 5-在纸上使用<strong>简单</strong>的语言写下解释</li><li>1 <strong>What’s the concept</strong>?</li><li>2 <strong>How many parts does it consist of</strong>? Break it into atoms.</li><li>3 <strong>Other Important Questions</strong>  </li><li>Whenever You’re Get Stuck, Go Back to the Book and step 2.(<strong>pinpoint knowledge gap</strong>)</li><li>Use <strong>Analogies</strong></li><li><strong>Review</strong>: Can you further <strong>Simplify the concept</strong>?</li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="Probability-Space"><a href="#Probability-Space" class="headerlink" title="Probability Space"></a>Probability Space</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>A <strong>probability space</strong> or a <strong>probability triple</strong> $(\Omega, \mathcal F, P)$:</p><ol><li>A <strong>sample space</strong>, $\Omega$, which is <strong>the set of all possible outcomes</strong>.</li><li><strong>A set of events</strong> $\mathcal F$, which each event is a set containing zero or more outcomes: $\mathcal F\subseteq2^\Omega$— a set of subsets of $\Omega$.</li><li>The Assignment of Probability to the events; that is a <strong>function</strong> $P$ from events to probability:$P:\mathcal F \mapsto [0,1]$<a id="more"></a></li></ol><h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>If the experiment consists of just one flip of a <strong>fair coin</strong>, then the outcome is either <em>heads</em> or <em>tails</em>: $\Omega=\lbrace \mathbf{H},\mathbf{T} \rbrace $.</p><p>The $\sigma$-algebra $\mathcal{F}=2^{\Omega}$ contains $2^{2}=4$ events, namely: $\lbrace\mathbf{H} \rbrace$(“heads”), $ \lbrace \mathbf{T} \rbrace$(“tails”), $\lbrace\rbrace$ (“neither heads nor tails”), and $ \lbrace \mathbf{H},\mathbf{T} \rbrace$ (“either heads or tails”); in other words, $\mathcal{F}= \lbrace \lbrace \rbrace , \lbrace \mathbf{H} \rbrace ,\lbrace \mathbf{T} \rbrace ,\lbrace \mathbf{H},\mathbf{T} \rbrace \rbrace $. There is a fifty percent chance of tossing heads and fifty percent for tails, so the probability measure in this example is $P(\lbrace \rbrace)=0$, $P(\lbrace\mathbf{H}\rbrace)=0.5$,$P(\lbrace\mathbf{T}\rbrace)=0.5$,$P(\lbrace\mathbf{H},\mathbf{T}\rbrace)=1$.</p><p><a href="https://en.m.wikipedia.org/wiki/Probability_space" target="_blank" rel="noopener">More Examples In Wiki</a></p><h2 id="Expectation"><a href="#Expectation" class="headerlink" title="Expectation"></a>Expectation</h2><p>In probability theory, the <strong>expected value</strong> of a random variable, intuitively, is the long-run average value of repetitions of the same experiment it represents. </p><h3 id="Definition-1"><a href="#Definition-1" class="headerlink" title="Definition"></a>Definition</h3><h4 id="Discrete-Random-Variable"><a href="#Discrete-Random-Variable" class="headerlink" title="Discrete Random Variable"></a>Discrete Random Variable</h4><p>Probability-weighted average:<img src="/img/probability-theory/1564841575752.png" alt="Alt text"><img src="/img/probability-theory/1564841601028.png" alt="Alt text"></p><h4 id="Continuous-Random-Variable"><a href="#Continuous-Random-Variable" class="headerlink" title="Continuous Random Variable"></a>Continuous Random Variable</h4><p><img src="/img/probability-theory/1564841493338.png" alt="Alt text"></p><h3 id="Basic-Properties"><a href="#Basic-Properties" class="headerlink" title="Basic Properties"></a>Basic Properties</h3><h4 id="Expected-value-of-a-constant"><a href="#Expected-value-of-a-constant" class="headerlink" title="Expected value of a constant"></a>Expected value of a constant</h4><p>$\mathbb E[C] = c$</p><h4 id="Linearity"><a href="#Linearity" class="headerlink" title="Linearity"></a>Linearity</h4><p>The expected value operator (or <strong>expectation operator</strong>) $\mathbb{E}[\cdot ]$ is linear in the sense that [^linearity-proof]<img src="/img/probability-theory/1564841673004.png" alt="Alt text"></p><h2 id="Variance"><a href="#Variance" class="headerlink" title="Variance"></a>Variance</h2><p>The variance of a random variable $X$ is the expected value of the squared Deviation from the mean of $X$, $\mu = \mathbb E[X]$:$$\sigma^2=Var(X)=\mathbb E[(X-\mu)^2]$$<img src="/img/probability-theory/1564841423475.png" alt="Alt text"></p><h2 id="Standard-Deviation"><a href="#Standard-Deviation" class="headerlink" title="Standard Deviation"></a>Standard Deviation</h2><p>$$\sigma = \sqrt {Var(X)}$$<strong>Standard deviation</strong> measures the spread of a data distribution. It measures the typical distance between each data point and the mean(<strong>One-dimension data point</strong>).</p><h3 id="Understanding-Standard-Deviation"><a href="#Understanding-Standard-Deviation" class="headerlink" title="Understanding Standard Deviation"></a>Understanding Standard Deviation</h3><ol><li>$\sigma = 147$<img src="/img/probability-theory/1564838154518.gif" alt="Alt text"></li><li><a href="https://www.mathsisfun.com/data/standard-deviation.html" target="_blank" rel="noopener">Why square the differences?</a></li></ol><h3 id="Population-Standard-Deviation"><a href="#Population-Standard-Deviation" class="headerlink" title="Population Standard Deviation"></a>Population Standard Deviation</h3><p><img src="/img/probability-theory/1564841365890.png" alt="Alt text"></p><h3 id="Sample-Standard-Deviation"><a href="#Sample-Standard-Deviation" class="headerlink" title="Sample Standard Deviation"></a>Sample Standard Deviation</h3><p>The estimation of population standard deviation<img src="/img/probability-theory/1564841270504.png" alt="Alt text"></p><h4 id="Why-n-1"><a href="#Why-n-1" class="headerlink" title="Why n-1 ?"></a>Why n-1 ?</h4><p><a href="https://en.m.wikipedia.org/wiki/Bessel' target="_blank" rel="noopener"s_correction">Bessel’s Correction-Wiki</a>[^linearity-proof]: <img src="/img/probability-theory/11565079091271.png" alt="Alt text"></p>]]></content>
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;“I couldn’t reduce it to the freshman level. That means we really don’t understand it.”&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp; ————Feynman&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;h2 id=&quot;Probability-Space&quot;&gt;&lt;a href=&quot;#Probability-Space&quot; class=&quot;headerlink&quot; title=&quot;Probability Space&quot;&gt;&lt;/a&gt;Probability Space&lt;/h2&gt;&lt;h3 id=&quot;Definition&quot;&gt;&lt;a href=&quot;#Definition&quot; class=&quot;headerlink&quot; title=&quot;Definition&quot;&gt;&lt;/a&gt;Definition&lt;/h3&gt;&lt;p&gt;A &lt;strong&gt;probability space&lt;/strong&gt; or a &lt;strong&gt;probability triple&lt;/strong&gt; $(\Omega, \mathcal F, P)$:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A &lt;strong&gt;sample space&lt;/strong&gt;, $\Omega$, which is &lt;strong&gt;the set of all possible outcomes&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A set of events&lt;/strong&gt; $\mathcal F$, which each event is a set containing zero or more outcomes: $\mathcal F\subseteq2^\Omega$— a set of subsets of $\Omega$.&lt;/li&gt;
+&lt;li&gt;The Assignment of Probability to the events; that is a &lt;strong&gt;function&lt;/strong&gt; $P$ from events to probability:$P:\mathcal F \mapsto [0,1]$
     
     </summary>
     
     
-      <category term="学习方法" scheme="https://wu-binson.github.io/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
     
     
-      <category term="Feynman Technology" scheme="https://wu-binson.github.io/tags/Feynman-Technology/"/>
+      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
+    
+      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
+    
+      <category term="mathematical proof" scheme="https://wu-binson.github.io/tags/mathematical-proof/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Random Variable</title>
+    <link href="https://wu-binson.github.io/math/probability-theory/Random-Variable/"/>
+    <id>https://wu-binson.github.io/math/probability-theory/Random-Variable/</id>
+    <published>2020-03-10T13:14:38.569Z</published>
+    <updated>2020-03-10T13:14:38.566Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Random-Variables"><a href="#Random-Variables" class="headerlink" title="Random Variables"></a>Random Variables</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>In probability and statistics, a random variable is described <strong>informally</strong> as a variable whose values depend on outcomes of a random phenomenon.</p><a id="more"></a><p>In Probability theory, a random variable is understood as a <strong>measurable function</strong> whose outcomes are typically real numbers.<img src="/img/probability-theory/640px-RandomVariable_as_a_Function-en.svg.png" alt="Alt text"></p><p>This graph shows how random variable is a function from all possible outcomes to numerical quantities and also how it is used for defining probability mass functions.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Random-Variables&quot;&gt;&lt;a href=&quot;#Random-Variables&quot; class=&quot;headerlink&quot; title=&quot;Random Variables&quot;&gt;&lt;/a&gt;Random Variables&lt;/h2&gt;&lt;h3 id=&quot;Definition&quot;&gt;&lt;a href=&quot;#Definition&quot; class=&quot;headerlink&quot; title=&quot;Definition&quot;&gt;&lt;/a&gt;Definition&lt;/h3&gt;&lt;p&gt;In probability and statistics, a random variable is described &lt;strong&gt;informally&lt;/strong&gt; as a variable whose values depend on outcomes of a random phenomenon.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
+    
+      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
     
   </entry>
   
@@ -45,10 +76,10 @@
     <title>Matrix Multiplication</title>
     <link href="https://wu-binson.github.io/math/linear_algebra/Matrix-Multiplication/"/>
     <id>https://wu-binson.github.io/math/linear_algebra/Matrix-Multiplication/</id>
-    <published>2020-03-10T12:35:20.759Z</published>
-    <updated>2020-03-10T12:35:20.756Z</updated>
+    <published>2020-03-10T13:08:43.310Z</published>
+    <updated>2020-03-10T13:08:43.307Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Row-Matrix-and-Column-Matrix"><a href="#Row-Matrix-and-Column-Matrix" class="headerlink" title="Row Matrix and Column Matrix"></a>Row Matrix and Column Matrix</h2><ol><li>A <strong>column vector</strong>, also called <strong>column matrix</strong> is an $m\times 1$ matrix.<img src="/img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg" alt="Alt text"><a id="more"></a></li><li>A <strong>row vector</strong> or <strong>row matrix</strong> is a $1 × m$ matrix<img src="/img/probability-theory/_4e58956e7c9ecc89a70ce2b336332cf42508f0e9.svg" alt="Alt text"> </li><li>The <strong>dot product</strong> of two vectors <strong>a</strong> and <strong>b</strong> is <strong>equivalent</strong> to the <strong>matrix product</strong> of the row vector representation of <strong>a</strong> and the column vector representation of <strong>b</strong>.<img src="/img/probability-theory/_796235a4561101d9b2b41a14ebb03fb65fc946d3.svg" alt="Alt text"><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2>If <strong>A</strong> is an $n × m$ matrix and <strong>B</strong> is an $m \times p$ matrix<img src="/img/probability-theory/_16b1644351bc2041175b19cbc65da03ef78130c7.svg" alt="Alt text">the matrix product <strong>C *<em>= *</em>AB</strong> is defined to be the $n × p$ matrix<img src="/img/probability-theory/_00ac0c831c365b7424cc43239aae8cebea27c56c.svg" alt="Alt text"><img src="/img/probability-theory/_3cfeccef1c8c7e6da0ddf08daed8dbf3c6f50c5e.svg" alt="Alt text"></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="Row-Matrix-and-Column-Matrix"><a href="#Row-Matrix-and-Column-Matrix" class="headerlink" title="Row Matrix and Column Matrix"></a>Row Matrix and Column Matrix</h2><ol><li>A <strong>column vector</strong>, also called <strong>column matrix</strong> is an $m\times 1$ matrix.<img src="/img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg" alt="Alt text"><a id="more"></a></li><li>A <strong>row vector</strong> or <strong>row matrix</strong> is a $1 × m$ matrix<img src="/img/probability-theory/4e58956e7c9ecc89a70ce2b336332cf42508f0e9.svg" alt="Alt text"> </li><li>The <strong>dot product</strong> of two vectors <strong>a</strong> and <strong>b</strong> is <strong>equivalent</strong> to the <strong>matrix product</strong> of the row vector representation of <strong>a</strong> and the column vector representation of <strong>b</strong>.<img src="/img/probability-theory/796235a4561101d9b2b41a14ebb03fb65fc946d3.svg" alt="Alt text"><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2>If <strong>A</strong> is an $n × m$ matrix and <strong>B</strong> is an $m \times p$ matrix<img src="/img/probability-theory/16b1644351bc2041175b19cbc65da03ef78130c7.svg" alt="Alt text">the matrix product <strong>C *<em>= *</em>AB</strong> is defined to be the $n × p$ matrix<img src="/img/probability-theory/00ac0c831c365b7424cc43239aae8cebea27c56c.svg" alt="Alt text"><img src="/img/probability-theory/3cfeccef1c8c7e6da0ddf08daed8dbf3c6f50c5e.svg" alt="Alt text"></li></ol>]]></content>
     
     <summary type="html">
     
@@ -69,6 +100,31 @@
       <category term="mathematical proof" scheme="https://wu-binson.github.io/tags/mathematical-proof/"/>
     
       <category term="linear algebra" scheme="https://wu-binson.github.io/tags/linear-algebra/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Feynman Technology</title>
+    <link href="https://wu-binson.github.io/study-method/Feynman-Technology/"/>
+    <id>https://wu-binson.github.io/study-method/Feynman-Technology/</id>
+    <published>2020-03-10T13:04:07.467Z</published>
+    <updated>2020-03-10T13:04:07.464Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>“I couldn’t reduce it to the freshman level. That means we really don’t understand it.”<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; ————Feynman</p></blockquote><a id="more"></a><h2 id="重量级学习方法"><a href="#重量级学习方法" class="headerlink" title="重量级学习方法"></a>重量级学习方法</h2><ol><li>Use this technique to deeply understand an idea in <strong>20 minutes</strong>, that will stick with you for years.</li><li>慎重选择<h2 id="适用场景及其学习阶段"><a href="#适用场景及其学习阶段" class="headerlink" title="适用场景及其学习阶段"></a>适用场景及其学习阶段</h2><h3 id="主要-理解阶段-当理解困难时"><a href="#主要-理解阶段-当理解困难时" class="headerlink" title="(主要) 理解阶段-当理解困难时"></a>(主要) 理解阶段-当理解困难时</h3></li><li>慎重选择</li><li>Feynman Technology With Books</li><li>不必当场解决，但要总结出理解有问题的点(标上问号)<h3 id="复习阶段"><a href="#复习阶段" class="headerlink" title="复习阶段"></a>复习阶段</h3>Understand ideas that you don’t really “get”To remember ideas that you can understand, but forgets on tests</li></ol><h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><p><img src="/img/study-method/1565787172882.png" alt="Alt text"><strong>Question-Driven</strong></p><ol><li>Choose Your  ConceptThe first step is to choose the concept you want to understand. <strong>Take a blank piece of paper and write the name of that concept at the top of the page.</strong></li><li>Explain like I’m 5-在纸上使用<strong>简单</strong>的语言写下解释</li><li>1 <strong>What’s the concept</strong>?</li><li>2 <strong>How many parts does it consist of</strong>? Break it into atoms.</li><li>3 <strong>Other Important Questions</strong>  </li><li>Whenever You’re Get Stuck, Go Back to the Book and step 2.(<strong>pinpoint knowledge gap</strong>)</li><li>Use <strong>Analogies</strong></li><li><strong>Review</strong>: Can you further <strong>Simplify the concept</strong>?</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“I couldn’t reduce it to the freshman level. That means we really don’t understand it.”&lt;br&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp; ————Feynman&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="学习方法" scheme="https://wu-binson.github.io/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    
+    
+      <category term="Feynman Technology" scheme="https://wu-binson.github.io/tags/Feynman-Technology/"/>
     
   </entry>
   
@@ -124,62 +180,6 @@ $$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$&lt;/p&gt;
       <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
     
       <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Random Variable</title>
-    <link href="https://wu-binson.github.io/math/probability-theory/Random-Variable/"/>
-    <id>https://wu-binson.github.io/math/probability-theory/Random-Variable/</id>
-    <published>2020-03-10T10:58:08.599Z</published>
-    <updated>2020-03-10T10:58:08.596Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Random-Variables"><a href="#Random-Variables" class="headerlink" title="Random Variables"></a>Random Variables</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>In probability and statistics, a random variable is described <strong>informally</strong> as a variable whose values depend on outcomes of a random phenomenon.</p><a id="more"></a><p>In Probability theory, a random variable is understood as a <strong>measurable function</strong> whose outcomes are typically real numbers.<img src="/img/probability-theory/640px-Random_Variable_as_a_Function-en.svg.png" alt="Alt text"></p><p>This graph shows how random variable is a function from all possible outcomes to numerical quantities and also how it is used for defining probability mass functions.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Random-Variables&quot;&gt;&lt;a href=&quot;#Random-Variables&quot; class=&quot;headerlink&quot; title=&quot;Random Variables&quot;&gt;&lt;/a&gt;Random Variables&lt;/h2&gt;&lt;h3 id=&quot;Definition&quot;&gt;&lt;a href=&quot;#Definition&quot; class=&quot;headerlink&quot; title=&quot;Definition&quot;&gt;&lt;/a&gt;Definition&lt;/h3&gt;&lt;p&gt;In probability and statistics, a random variable is described &lt;strong&gt;informally&lt;/strong&gt; as a variable whose values depend on outcomes of a random phenomenon.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
-    
-      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Expectation, Variance, Standard Deviation</title>
-    <link href="https://wu-binson.github.io/math/probability-theory/Expectation-Variance-Standard-Deviation/"/>
-    <id>https://wu-binson.github.io/math/probability-theory/Expectation-Variance-Standard-Deviation/</id>
-    <published>2020-03-10T09:58:55.473Z</published>
-    <updated>2020-03-10T09:58:55.470Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Probability-Space"><a href="#Probability-Space" class="headerlink" title="Probability Space"></a>Probability Space</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>A <strong>probability space</strong> or a <strong>probability triple</strong> $(\Omega, \mathcal F, P)$:</p><ol><li>A <strong>sample space</strong>, $\Omega$, which is <strong>the set of all possible outcomes</strong>.</li><li><strong>A set of events</strong> $\mathcal F$, which each event is a set containing zero or more outcomes: $\mathcal F\subseteq2^\Omega$— a set of subsets of $\Omega$.</li><li>The Assignment of Probability to the events; that is a <strong>function</strong> $P$ from events to probability:$P:\mathcal F \mapsto [0,1]$<a id="more"></a></li></ol><h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>If the experiment consists of just one flip of a <strong>fair coin</strong>, then the outcome is either <em>heads</em> or <em>tails</em>: $\Omega=\lbrace \mathbf{H},\mathbf{T} \rbrace $.</p><p>The $\sigma$-algebra $\mathcal{F}=2^{\Omega}$ contains $2^{2}=4$ events, namely: $\lbrace\mathbf{H} \rbrace$(“heads”), $ \lbrace \mathbf{T} \rbrace$(“tails”), $\lbrace\rbrace$ (“neither heads nor tails”), and $ \lbrace \mathbf{H},\mathbf{T} \rbrace$ (“either heads or tails”); in other words, $\mathcal{F}= \lbrace \lbrace \rbrace , \lbrace \mathbf{H} \rbrace ,\lbrace \mathbf{T} \rbrace ,\lbrace \mathbf{H},\mathbf{T} \rbrace \rbrace $. There is a fifty percent chance of tossing heads and fifty percent for tails, so the probability measure in this example is $P(\lbrace \rbrace)=0$, $P(\lbrace\mathbf{H}\rbrace)=0.5$,$P(\lbrace\mathbf{T}\rbrace)=0.5$,$P(\lbrace\mathbf{H},\mathbf{T}\rbrace)=1$.</p><p><a href="https://en.m.wikipedia.org/wiki/Probability_space" target="_blank" rel="noopener">More Examples In Wiki</a></p><h2 id="Expectation"><a href="#Expectation" class="headerlink" title="Expectation"></a>Expectation</h2><p>In probability theory, the <strong>expected value</strong> of a random variable, intuitively, is the long-run average value of repetitions of the same experiment it represents. </p><h3 id="Definition-1"><a href="#Definition-1" class="headerlink" title="Definition"></a>Definition</h3><h4 id="Discrete-Random-Variable"><a href="#Discrete-Random-Variable" class="headerlink" title="Discrete Random Variable"></a>Discrete Random Variable</h4><p>Probability-weighted average:<img src="./img/probability-theory/_1564841575752.png" alt="Alt text"><img src="./img/probability-theory/_1564841601028.png" alt="Alt text"></p><h4 id="Continuous-Random-Variable"><a href="#Continuous-Random-Variable" class="headerlink" title="Continuous Random Variable"></a>Continuous Random Variable</h4><p><img src="./img/probability-theory/_11564841493338.png" alt="Alt text"></p><h3 id="Basic-Properties"><a href="#Basic-Properties" class="headerlink" title="Basic Properties"></a>Basic Properties</h3><h4 id="Expected-value-of-a-constant"><a href="#Expected-value-of-a-constant" class="headerlink" title="Expected value of a constant"></a>Expected value of a constant</h4><p>$\mathbb E[C] = c$</p><h4 id="Linearity"><a href="#Linearity" class="headerlink" title="Linearity"></a>Linearity</h4><p>The expected value operator (or <strong>expectation operator</strong>) $\mathbb{E}[\cdot ]$ is linear in the sense that [^linearity-proof]<img src="./img/probability-theory/_11564841673004.png" alt="Alt text"></p><h2 id="Variance"><a href="#Variance" class="headerlink" title="Variance"></a>Variance</h2><p>The variance of a random variable $X$ is the expected value of the squared Deviation from the mean of $X$, $\mu = \mathbb E[X]$:$$\sigma^2=Var(X)=\mathbb E[(X-\mu)^2]$$<img src="./img/probability-theory/_11564841423475.png" alt="Alt text"></p><h2 id="Standard-Deviation"><a href="#Standard-Deviation" class="headerlink" title="Standard Deviation"></a>Standard Deviation</h2><p>$$\sigma = \sqrt {Var(X)}$$<strong>Standard deviation</strong> measures the spread of a data distribution. It measures the typical distance between each data point and the mean(<strong>One-dimension data point</strong>).</p><h3 id="Understanding-Standard-Deviation"><a href="#Understanding-Standard-Deviation" class="headerlink" title="Understanding Standard Deviation"></a>Understanding Standard Deviation</h3><ol><li>$\sigma = 147$<img src="./img/probability-theory/11564838154518.gif" alt="Alt text"></li><li><a href="https://www.mathsisfun.com/data/standard-deviation.html" target="_blank" rel="noopener">Why square the differences?</a></li></ol><h3 id="Population-Standard-Deviation"><a href="#Population-Standard-Deviation" class="headerlink" title="Population Standard Deviation"></a>Population Standard Deviation</h3><p><img src="./img/probability-theory/_11564841365890.png" alt="Alt text"></p><h3 id="Sample-Standard-Deviation"><a href="#Sample-Standard-Deviation" class="headerlink" title="Sample Standard Deviation"></a>Sample Standard Deviation</h3><p>The estimation of population standard deviation<img src="./img/probability-theory/_11564841270504.png" alt="Alt text"></p><h4 id="Why-n-1"><a href="#Why-n-1" class="headerlink" title="Why n-1 ?"></a>Why n-1 ?</h4><p><a href="https://en.m.wikipedia.org/wiki/Bessel' target="_blank" rel="noopener"s_correction">Bessel’s Correction-Wiki</a>[^linearity-proof]: <img src="./img/probability-theory/_11565079091271.png" alt="Alt text"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Probability-Space&quot;&gt;&lt;a href=&quot;#Probability-Space&quot; class=&quot;headerlink&quot; title=&quot;Probability Space&quot;&gt;&lt;/a&gt;Probability Space&lt;/h2&gt;&lt;h3 id=&quot;Definition&quot;&gt;&lt;a href=&quot;#Definition&quot; class=&quot;headerlink&quot; title=&quot;Definition&quot;&gt;&lt;/a&gt;Definition&lt;/h3&gt;&lt;p&gt;A &lt;strong&gt;probability space&lt;/strong&gt; or a &lt;strong&gt;probability triple&lt;/strong&gt; $(\Omega, \mathcal F, P)$:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;A &lt;strong&gt;sample space&lt;/strong&gt;, $\Omega$, which is &lt;strong&gt;the set of all possible outcomes&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;A set of events&lt;/strong&gt; $\mathcal F$, which each event is a set containing zero or more outcomes: $\mathcal F\subseteq2^\Omega$— a set of subsets of $\Omega$.&lt;/li&gt;
-&lt;li&gt;The Assignment of Probability to the events; that is a &lt;strong&gt;function&lt;/strong&gt; $P$ from events to probability:$P:\mathcal F \mapsto [0,1]$
-    
-    </summary>
-    
-    
-      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
-    
-      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
-    
-      <category term="mathematical proof" scheme="https://wu-binson.github.io/tags/mathematical-proof/"/>
     
   </entry>
   
