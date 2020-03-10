@@ -1,6 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Feynman Technology</title>
+    <url>/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/Feynman-Technology/</url>
+    <content><![CDATA[<blockquote>
+<p>“I couldn’t reduce it to the freshman level. That means we really don’t understand it.”<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; ————Feynman</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="重量级学习方法"><a href="#重量级学习方法" class="headerlink" title="重量级学习方法"></a>重量级学习方法</h2><ol>
+<li>Use this technique to deeply understand an idea in <strong>20 minutes</strong>, that will stick with you for years.</li>
+<li>慎重选择<h2 id="适用场景及其学习阶段"><a href="#适用场景及其学习阶段" class="headerlink" title="适用场景及其学习阶段"></a>适用场景及其学习阶段</h2><h3 id="主要-理解阶段-当理解困难时"><a href="#主要-理解阶段-当理解困难时" class="headerlink" title="(主要) 理解阶段-当理解困难时"></a>(主要) 理解阶段-当理解困难时</h3></li>
+<li>慎重选择</li>
+<li>Feynman Technology With Books</li>
+<li>不必当场解决，但要总结出理解有问题的点(标上问号)<h3 id="复习阶段"><a href="#复习阶段" class="headerlink" title="复习阶段"></a>复习阶段</h3>Understand ideas that you don’t really “get”
+To remember ideas that you can understand, but forgets on tests</li>
+</ol>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><p><img src="./img/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/_1565787172882.png" alt="Alt text">
+<strong>Question-Driven</strong></p>
+<ol>
+<li>Choose Your  Concept
+The first step is to choose the concept you want to understand. <strong>Take a blank piece of paper and write the name of that concept at the top of the page.</strong></li>
+<li>Explain like I’m 5-在纸上使用<strong>简单</strong>的语言写下解释</li>
+<li>1 <strong>What’s the concept</strong>?</li>
+<li>2 <strong>How many parts does it consist of</strong>? Break it into atoms.</li>
+<li>3 <strong>Other Important Questions</strong>  </li>
+<li>Whenever You’re Get Stuck, Go Back to the Book and step 2.(<strong>pinpoint knowledge gap</strong>)</li>
+<li>Use <strong>Analogies</strong></li>
+<li><strong>Review</strong>: Can you further <strong>Simplify the concept</strong>?</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习方法</category>
+      </categories>
+      <tags>
+        <tag>Feynman Technology</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Expectation, Variance, Standard Deviation</title>
+    <url>/math/probability-theory/Expectation-Variance-Standard-Deviation/</url>
+    <content><![CDATA[<h2 id="Probability-Space"><a href="#Probability-Space" class="headerlink" title="Probability Space"></a>Probability Space</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>A <strong>probability space</strong> or a <strong>probability triple</strong> $(\Omega, \mathcal F, P)$:</p>
+<ol>
+<li>A <strong>sample space</strong>, $\Omega$, which is <strong>the set of all possible outcomes</strong>.</li>
+<li><strong>A set of events</strong> $\mathcal F$, which each event is a set containing zero or more outcomes: $\mathcal F\subseteq2^\Omega$— a set of subsets of $\Omega$.</li>
+<li>The Assignment of Probability to the events; that is a <strong>function</strong> $P$ from events to probability:$P:\mathcal F \mapsto [0,1]$<a id="more"></a>
+
+</li>
+</ol>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><p>If the experiment consists of just one flip of a <strong>fair coin</strong>, then the outcome is either <em>heads</em> or <em>tails</em>: $\Omega=\lbrace \mathbf{H},\mathbf{T} \rbrace $.</p>
+<p>The $\sigma$-algebra $\mathcal{F}=2^{\Omega}$ contains $2^{2}=4$ events, namely: $\lbrace\mathbf{H} \rbrace$(“heads”), $ \lbrace \mathbf{T} \rbrace$(“tails”), $\lbrace\rbrace$ (“neither heads nor tails”), and $ \lbrace \mathbf{H},\mathbf{T} \rbrace$ (“either heads or tails”); in other words, $\mathcal{F}= \lbrace \lbrace \rbrace , \lbrace \mathbf{H} \rbrace ,\lbrace \mathbf{T} \rbrace ,\lbrace \mathbf{H},\mathbf{T} \rbrace \rbrace $. There is a fifty percent chance of tossing heads and fifty percent for tails, so the probability measure in this example is $P(\lbrace \rbrace)=0$, $P(\lbrace\mathbf{H}\rbrace)=0.5$,$P(\lbrace\mathbf{T}\rbrace)=0.5$,$P(\lbrace\mathbf{H},\mathbf{T}\rbrace)=1$.</p>
+<p><a href="https://en.m.wikipedia.org/wiki/Probability_space" target="_blank" rel="noopener">More Examples In Wiki</a></p>
+<h2 id="Expectation"><a href="#Expectation" class="headerlink" title="Expectation"></a>Expectation</h2><p>In probability theory, the <strong>expected value</strong> of a random variable, intuitively, is the long-run average value of repetitions of the same experiment it represents. </p>
+<h3 id="Definition-1"><a href="#Definition-1" class="headerlink" title="Definition"></a>Definition</h3><h4 id="Discrete-Random-Variable"><a href="#Discrete-Random-Variable" class="headerlink" title="Discrete Random Variable"></a>Discrete Random Variable</h4><p>Probability-weighted average:
+<img src="./img/probability-theory/_1564841575752.png" alt="Alt text">
+<img src="./img/probability-theory/_1564841601028.png" alt="Alt text"></p>
+<h4 id="Continuous-Random-Variable"><a href="#Continuous-Random-Variable" class="headerlink" title="Continuous Random Variable"></a>Continuous Random Variable</h4><p><img src="./img/probability-theory/_11564841493338.png" alt="Alt text"></p>
+<h3 id="Basic-Properties"><a href="#Basic-Properties" class="headerlink" title="Basic Properties"></a>Basic Properties</h3><h4 id="Expected-value-of-a-constant"><a href="#Expected-value-of-a-constant" class="headerlink" title="Expected value of a constant"></a>Expected value of a constant</h4><p>$\mathbb E[C] = c$</p>
+<h4 id="Linearity"><a href="#Linearity" class="headerlink" title="Linearity"></a>Linearity</h4><p>The expected value operator (or <strong>expectation operator</strong>) $\mathbb
+{E}[\cdot ]$ is linear in the sense that [^linearity-proof]
+<img src="./img/probability-theory/_11564841673004.png" alt="Alt text"></p>
+<h2 id="Variance"><a href="#Variance" class="headerlink" title="Variance"></a>Variance</h2><p>The variance of a random variable $X$ is the expected value of the squared Deviation from the mean of $X$, $\mu = \mathbb E[X]$:
+$$\sigma^2=Var(X)=\mathbb E[(X-\mu)^2]$$
+<img src="./img/probability-theory/_11564841423475.png" alt="Alt text"></p>
+<h2 id="Standard-Deviation"><a href="#Standard-Deviation" class="headerlink" title="Standard Deviation"></a>Standard Deviation</h2><p>$$\sigma = \sqrt {Var(X)}$$
+<strong>Standard deviation</strong> measures the spread of a data distribution. It measures the typical distance between each data point and the mean(<strong>One-dimension data point</strong>).</p>
+<h3 id="Understanding-Standard-Deviation"><a href="#Understanding-Standard-Deviation" class="headerlink" title="Understanding Standard Deviation"></a>Understanding Standard Deviation</h3><ol>
+<li>$\sigma = 147$
+<img src="./img/probability-theory/11564838154518.gif" alt="Alt text"></li>
+<li><a href="https://www.mathsisfun.com/data/standard-deviation.html" target="_blank" rel="noopener">Why square the differences?</a></li>
+</ol>
+<h3 id="Population-Standard-Deviation"><a href="#Population-Standard-Deviation" class="headerlink" title="Population Standard Deviation"></a>Population Standard Deviation</h3><p><img src="./img/probability-theory/_11564841365890.png" alt="Alt text"></p>
+<h3 id="Sample-Standard-Deviation"><a href="#Sample-Standard-Deviation" class="headerlink" title="Sample Standard Deviation"></a>Sample Standard Deviation</h3><p>The estimation of population standard deviation
+<img src="./img/probability-theory/_11564841270504.png" alt="Alt text"></p>
+<h4 id="Why-n-1"><a href="#Why-n-1" class="headerlink" title="Why n-1 ?"></a>Why n-1 ?</h4><p><a href="https://en.m.wikipedia.org/wiki/Bessel' target="_blank" rel="noopener"s_correction">Bessel’s Correction-Wiki</a>
+[^linearity-proof]: <img src="./img/probability-theory/_11565079091271.png" alt="Alt text"></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>mathematical foundation</tag>
+        <tag>probability theory</tag>
+        <tag>mathematical proof</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bayes&#39;s Rule and Parameter Estimation</title>
+    <url>/math/probability-theory/Bayes-Rule-and-Parameter-Estimation/</url>
+    <content><![CDATA[<h2 id="Unbiased-Estimators"><a href="#Unbiased-Estimators" class="headerlink" title="Unbiased Estimators"></a>Unbiased Estimators</h2><p>If $\mathbb E[\hat \theta(S_X)]=\theta$, $\hat \theta$ is called <strong>Unbiased Estimators</strong>.
+where$\hat \theta$ is a sample statistic, obtained using a sample $S_X$ and not the real statistic $\theta$ that can be obtained only knowing $f_X$.</p>
+<a id="more"></a>
+<h2 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h2><p>The conditional probability $Pr(X = x|Y = y)$:
+$$Pr(X = x|Y = y) =\frac{Pr(Y = y|X = x)Pr(X = x)}{Pr(Y = y)}$$</p>
+<h2 id="Parameter-Estimation"><a href="#Parameter-Estimation" class="headerlink" title="Parameter Estimation"></a>Parameter Estimation</h2><ol>
+<li>Now, we have a model of $X$’s distribution, and this model $f_\theta$ is a function that has some parameters in the form of a vector $\theta$.</li>
+<li>Using the principle of <strong>maximum a posterior</strong>. the best value of the parameters
+<img src="./img/probability-theory/1564927982340.png" alt="Alt text">
+where $x_i$ is a example of the dataset.</li>
+<li>If the set of possible values for $\theta$ is finite, then we calculate 
+<img src="./img/probability-theory/1564927541516.png" alt="Alt text"></li>
+<li>The initial value  $\Pr(\theta=\hat \theta)$ can be guessed such that $\sum_{\hat \theta}Pr(\theta=\hat \theta)=1$. This guess of father probabilities for different $\hat \theta$ is called <strong>prior</strong>.</li>
+<li><img src="./img/probability-theory/1564927857796.png" alt="Alt text"></li>
+<li>If the set of possible values for θ isn’t finite, then we need to optimize eq. 5 directly using a numerical optimization routine, such as gradient descent.</li>
+<li>Usually, we optimize the natural logarithm of the right-hand side expression in eq. 5 because the logarithm of a product becomes the sum of logarithms and it’s easier for the machine to work with a sum than with a product.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>mathematical foundation</tag>
+        <tag>probability theory</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Probability Density Function vs Probability Mass Function</title>
+    <url>/math/probability-theory/Probability-Density-Function-vs-Probability-Mass-Function/</url>
+    <content><![CDATA[<h2 id="Probability-Mass-Function"><a href="#Probability-Mass-Function" class="headerlink" title="Probability Mass Function"></a>Probability Mass Function</h2><p>The <strong>probability distribution</strong> of a discrete random variable is described by a list of probabilities associated with each of its possible values.</p>
+<a id="more"></a>
+<p>The list of probabilities is called a <strong>probability mass function</strong>
+<img src="./img/probability-theory/1564770746906.png" alt="Alt text"></p>
+<h2 id="Probability-Density-Function"><a href="#Probability-Density-Function" class="headerlink" title="Probability Density Function"></a>Probability Density Function</h2><p>Because the number of values of a continuous random variable X is infinite, the probability Pr(X = c) for any c is 0. Therefore, instead of the list of probabilities, the <strong>probability distribution</strong>of a CRV (a continuous probability distribution) is described by a <strong>probability density function</strong> (pdf)
+<img src="./img/probability-theory/1564770909541.png" alt="Alt text"></p>
+<h2 id="A-Question"><a href="#A-Question" class="headerlink" title="A Question"></a>A Question</h2><p><strong>Why do we call mass or density instead of something else</strong>?</p>
+<ol>
+<li>First, to understand why we use these terms in the first place we have to start with what we call the <strong>density function</strong>.</li>
+<li>Let’s say we have some function $f(x)$ that we haven’t named yet but we know that $\int^b_af(x)dx$ yields the probability that we see an outcome between $a$ and $b$. What should we call $f(x)$? </li>
+<li>We know that, in general, the units on a definite integral $\int^b_af(x)dx$ are the units of $f(x)$ times the units of $dx$.<br/>In our setting, the integral gives a probability, and $dx$ has units in say, length. So the units of $f(x)$ must be probability per unit length. <br/>This means that $f(x)$ must be telling us something about how much probability is concentrated per unit length near $x$.i.e., how <em>dense</em> the probability is near $x$. So it makes sense to call $f(x)$ a “probability density function.” </li>
+<li>Now that we’ve named $f(x)$ a density function, what should we call the corresponding function in the <em>discrete</em> setting? It’s not a density function; <strong>its units are probability rather than probability per unit length</strong>. So what is it?</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>mathematical foundation</tag>
+        <tag>probability theory</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Matrix Multiplication</title>
+    <url>/math/probability-theory/Matrix-Multiplication/</url>
+    <content><![CDATA[<h2 id="Row-Matrix-and-Column-Matrix"><a href="#Row-Matrix-and-Column-Matrix" class="headerlink" title="Row Matrix and Column Matrix"></a>Row Matrix and Column Matrix</h2><ol>
+<li>A <strong>column vector</strong>, also called <strong>column matrix</strong> is an $m\times 1$ matrix.
+<img src="./img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg" alt="Alt text"><a id="more"></a></li>
+<li>A <strong>row vector</strong> or <strong>row matrix</strong> is a $1 × m$ matrix
+<img src="./img/probability-theory/_4e58956e7c9ecc89a70ce2b336332cf42508f0e9.svg" alt="Alt text"> </li>
+<li>The <strong>dot product</strong> of two vectors <strong>a</strong> and <strong>b</strong> is <strong>equivalent</strong> to the <strong>matrix product</strong> of the row vector representation of <strong>a</strong> and the column vector representation of <strong>b</strong>.
+<img src="./img/probability-theory/_796235a4561101d9b2b41a14ebb03fb65fc946d3.svg" alt="Alt text"><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2>If <strong>A</strong> is an $n × m$ matrix and <strong>B</strong> is an $m \times p$ matrix
+<img src="./img/probability-theory/_16b1644351bc2041175b19cbc65da03ef78130c7.svg" alt="Alt text">
+the matrix product <strong>C *<em>= *</em>AB</strong> is defined to be the $n × p$ matrix
+<img src="./img/probability-theory/_00ac0c831c365b7424cc43239aae8cebea27c56c.svg" alt="Alt text">
+<img src="./img/probability-theory/_3cfeccef1c8c7e6da0ddf08daed8dbf3c6f50c5e.svg" alt="Alt text"></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>mathematical foundation</tag>
+        <tag>probability theory</tag>
+        <tag>mathematical proof</tag>
+        <tag>linear algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dot Product</title>
+    <url>/math/probability-theory/Dot-Product/</url>
+    <content><![CDATA[<h2 id="Algebraic-Definition"><a href="#Algebraic-Definition" class="headerlink" title="Algebraic Definition"></a>Algebraic Definition</h2><p><strong>Dot Product</strong>, also called <strong>Scalar Product</strong>:
+$$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$</p>
+<a id="more"></a>
+<h2 id="Geometric-Definition"><a href="#Geometric-Definition" class="headerlink" title="Geometric Definition"></a>Geometric Definition</h2><p><strong>Inner Product</strong>:
+<img src="./img/probability-theory/640px-Inner-product-angle.svg.png" alt="Alt text">
+$$\textbf{ab}=\left|\textbf{a}\right|\left|\textbf{b}\right|cos\theta$$</p>
+<h2 id="The-Equivalence-of-the-definitions"><a href="#The-Equivalence-of-the-definitions" class="headerlink" title="The Equivalence of the definitions"></a>The Equivalence of the definitions</h2><ol>
+<li>If $e_1, …, e_n$ are the standard basis vectors in $\mathbf{R}^n$, Then
+$e_i\cdot e_j=0$
+$e_i\cdot e_i=1$
+<img src="./img/probability-theory/1564854254181.png" alt="Alt text"></li>
+<li>Applying Geometric Definition 
+<img src="./img/probability-theory/1564854508569.png" alt="Alt text"></li>
+<li>Applying Algebraic Definition and Distributivity Law
+<img src="./img/probability-theory/1564854448702.png" alt="Alt text"></li>
+</ol>
+<h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><h3 id="Commutative"><a href="#Commutative" class="headerlink" title="Commutative:"></a>Commutative:</h3><p>$a\cdot b=b\cdot a$</p>
+<p><strong>Because</strong>:
+<img src="./img/probability-theory/1564854627098.png" alt="Alt text"></p>
+<h3 id="Distributive"><a href="#Distributive" class="headerlink" title="Distributive"></a>Distributive</h3><p>$a\cdot(b+c)=a\cdot b + a \cdot c$</p>
+<p><strong>Because</strong>:
+It’s algebraic definition</p>
+<h3 id="Not-Associative"><a href="#Not-Associative" class="headerlink" title="Not Associative"></a>Not Associative</h3><p>$(a\cdot b)\cdot c$ And $a\cdot (b\cdot c)$ are both ill-defined </p>
+<p><strong>Because</strong> the dot product between a scalar and a vector is not defined.</p>
+<h3 id="Not-Cancellation"><a href="#Not-Cancellation" class="headerlink" title="Not Cancellation"></a>Not Cancellation</h3><p>Unlike multiplication of ordinary numbers, where if ab = ac, then b always equals c unless a is zero, the dot product does not obey the cancellation law</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>mathematical foundation</tag>
+        <tag>probability theory</tag>
+        <tag>mathematical proof</tag>
+        <tag>linear algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Random Variable</title>
+    <url>/math/probability-theory/Random-Variable/</url>
+    <content><![CDATA[<h2 id="Random-Variables"><a href="#Random-Variables" class="headerlink" title="Random Variables"></a>Random Variables</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>In probability and statistics, a random variable is described <strong>informally</strong> as a variable whose values depend on outcomes of a random phenomenon.</p>
+<a id="more"></a>
+<p>In Probability theory, a random variable is understood as a <strong>measurable function</strong> whose outcomes are typically real numbers.
+<img src="./img/probability-theory/640px-Random_Variable_as_a_Function-en.svg.png" alt="Alt text"></p>
+<p>This graph shows how random variable is a function from all possible outcomes to numerical quantities and also how it is used for defining probability mass functions.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>mathematical foundation</tag>
+        <tag>probability theory</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Notion In The Hundred-Page Machine Learning Book</title>
+    <url>/math/probability-theory/Notion-In-The-Hundred-Page-Machine-Learning-Book/</url>
+    <content><![CDATA[<ol>
+<li>A <strong>vector</strong> is denoted as <strong>bold lowercase letter,</strong> such as <strong>x or w</strong></li>
+<li>$x^{(j)}$: the index $j$ denotes specific <strong>dimension</strong> of the vector. </li>
+<li><strong>Matrices</strong> are denoted with <strong>bold capital letters</strong>, such as <strong>A</strong>, <strong>W</strong>.</li>
+<li>A <strong>Set</strong> is denoted as a <strong>calligraphic capital letters</strong>,  such as $\mathcal{S}$</li>
+<li>A <strong>random variable</strong>, usually written as an <strong>italic capital letter</strong>, like $\textit{X}$</li>
+<li>The <strong>Expectation</strong> of $\textit X$ denoted as $\mathbb{E}[\textit X]=\mu$.</li>
+<li>Standard deviation: $\sigma = \sqrt{\mathbb E[{(\textit X-\mu)}^2]}$</li>
+<li>Variance: $\sigma^2$ or $var(\textit X)$</li>
+<li>Sample Standard Deviation: $\mathcal s$</li>
+<li>If $\mathbb E[\hat \theta(S_X)]=\theta$, where $\hat \theta$ Is a sample statistic, $\hat \theta$ is called unbiased Estimator.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>mathematical foundation</tag>
+        <tag>probability theory</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>运动改造大脑</title>
     <url>/brain/%E8%BF%90%E5%8A%A8%E6%94%B9%E9%80%A0%E5%A4%A7%E8%84%91/</url>
     <content><![CDATA[<h3 id="运动可以锻炼，改善，重塑大脑。"><a href="#运动可以锻炼，改善，重塑大脑。" class="headerlink" title="运动可以锻炼，改善，重塑大脑。"></a>运动可以锻炼，改善，重塑大脑。</h3><p>按《<a href="https://book.douban.com/subject/25755874/" target="_blank" rel="noopener">运动改造大脑</a>》中所述，运动对大脑的良性影响主要分为以下几种：</p>
