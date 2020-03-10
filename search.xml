@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Feynman Technology</title>
+    <url>/study-method/Feynman-Technology/</url>
+    <content><![CDATA[<blockquote>
+<p>“I couldn’t reduce it to the freshman level. That means we really don’t understand it.”<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; ————Feynman</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="重量级学习方法"><a href="#重量级学习方法" class="headerlink" title="重量级学习方法"></a>重量级学习方法</h2><ol>
+<li>Use this technique to deeply understand an idea in <strong>20 minutes</strong>, that will stick with you for years.</li>
+<li>慎重选择<h2 id="适用场景及其学习阶段"><a href="#适用场景及其学习阶段" class="headerlink" title="适用场景及其学习阶段"></a>适用场景及其学习阶段</h2><h3 id="主要-理解阶段-当理解困难时"><a href="#主要-理解阶段-当理解困难时" class="headerlink" title="(主要) 理解阶段-当理解困难时"></a>(主要) 理解阶段-当理解困难时</h3></li>
+<li>慎重选择</li>
+<li>Feynman Technology With Books</li>
+<li>不必当场解决，但要总结出理解有问题的点(标上问号)<h3 id="复习阶段"><a href="#复习阶段" class="headerlink" title="复习阶段"></a>复习阶段</h3>Understand ideas that you don’t really “get”
+To remember ideas that you can understand, but forgets on tests</li>
+</ol>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><p><img src="/img/study-method/_1565787172882.png" alt="Alt text">
+<strong>Question-Driven</strong></p>
+<ol>
+<li>Choose Your  Concept
+The first step is to choose the concept you want to understand. <strong>Take a blank piece of paper and write the name of that concept at the top of the page.</strong></li>
+<li>Explain like I’m 5-在纸上使用<strong>简单</strong>的语言写下解释</li>
+<li>1 <strong>What’s the concept</strong>?</li>
+<li>2 <strong>How many parts does it consist of</strong>? Break it into atoms.</li>
+<li>3 <strong>Other Important Questions</strong>  </li>
+<li>Whenever You’re Get Stuck, Go Back to the Book and step 2.(<strong>pinpoint knowledge gap</strong>)</li>
+<li>Use <strong>Analogies</strong></li>
+<li><strong>Review</strong>: Can you further <strong>Simplify the concept</strong>?</li>
+</ol>
+]]></content>
+      <categories>
+        <category>学习方法</category>
+      </categories>
+      <tags>
+        <tag>Feynman Technology</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Dot Product</title>
     <url>/math/linear_algebra/Dot-Product/</url>
     <content><![CDATA[<h2 id="Algebraic-Definition"><a href="#Algebraic-Definition" class="headerlink" title="Algebraic Definition"></a>Algebraic Definition</h2><p><strong>Dot Product</strong>, also called <strong>Scalar Product</strong>:
@@ -79,42 +115,6 @@ It’s algebraic definition</p>
       <tags>
         <tag>mathematical foundation</tag>
         <tag>probability theory</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Feynman Technology</title>
-    <url>/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/Feynman-Technology/</url>
-    <content><![CDATA[<blockquote>
-<p>“I couldn’t reduce it to the freshman level. That means we really don’t understand it.”<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; ————Feynman</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="重量级学习方法"><a href="#重量级学习方法" class="headerlink" title="重量级学习方法"></a>重量级学习方法</h2><ol>
-<li>Use this technique to deeply understand an idea in <strong>20 minutes</strong>, that will stick with you for years.</li>
-<li>慎重选择<h2 id="适用场景及其学习阶段"><a href="#适用场景及其学习阶段" class="headerlink" title="适用场景及其学习阶段"></a>适用场景及其学习阶段</h2><h3 id="主要-理解阶段-当理解困难时"><a href="#主要-理解阶段-当理解困难时" class="headerlink" title="(主要) 理解阶段-当理解困难时"></a>(主要) 理解阶段-当理解困难时</h3></li>
-<li>慎重选择</li>
-<li>Feynman Technology With Books</li>
-<li>不必当场解决，但要总结出理解有问题的点(标上问号)<h3 id="复习阶段"><a href="#复习阶段" class="headerlink" title="复习阶段"></a>复习阶段</h3>Understand ideas that you don’t really “get”
-To remember ideas that you can understand, but forgets on tests</li>
-</ol>
-<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><p><img src="/img/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/_1565787172882.png" alt="Alt text">
-<strong>Question-Driven</strong></p>
-<ol>
-<li>Choose Your  Concept
-The first step is to choose the concept you want to understand. <strong>Take a blank piece of paper and write the name of that concept at the top of the page.</strong></li>
-<li>Explain like I’m 5-在纸上使用<strong>简单</strong>的语言写下解释</li>
-<li>1 <strong>What’s the concept</strong>?</li>
-<li>2 <strong>How many parts does it consist of</strong>? Break it into atoms.</li>
-<li>3 <strong>Other Important Questions</strong>  </li>
-<li>Whenever You’re Get Stuck, Go Back to the Book and step 2.(<strong>pinpoint knowledge gap</strong>)</li>
-<li>Use <strong>Analogies</strong></li>
-<li><strong>Review</strong>: Can you further <strong>Simplify the concept</strong>?</li>
-</ol>
-]]></content>
-      <categories>
-        <category>学习方法</category>
-      </categories>
-      <tags>
-        <tag>Feynman Technology</tag>
       </tags>
   </entry>
   <entry>
@@ -288,7 +288,7 @@ where $x_i$ is a example of the dataset.</li>
   </entry>
   <entry>
     <title>阅读的四个层次</title>
-    <url>/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/How-to-Read-A-Book/</url>
+    <url>/study-method/How-to-Read-A-Book/</url>
     <content><![CDATA[<p>虽然我们经常阅读，但不一定懂得如何高效地阅读。大多数人的阅读过程仅仅是一种<strong>消极式阅读</strong>(Passive Reading)，无法充分消化成自己的知识。《<a href="https://book.douban.com/subject/1383525//" target="_blank" rel="noopener">How to Read a Book</a>》教导我们如何阅读。</p>
 <a id="more"></a>
 <p>就阅读目的来说，可分成Reading for Information和Reading for Understanding。前者以获取资讯为主要目的，可以是消遣式阅读，后者则是为了理解，相对前者是一种重量级的阅读，需要消耗更多的精力时间。本书教导的阅读技巧更多是为了后者服务的。</p>
