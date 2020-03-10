@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wu-binson.github.io/"/>
-  <updated>2020-03-10T05:22:38.482Z</updated>
+  <updated>2020-03-10T10:59:49.949Z</updated>
   <id>https://wu-binson.github.io/</id>
   
   <author>
@@ -17,44 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Matrix Multiplication</title>
-    <link href="https://wu-binson.github.io/math/linear_algebra/Matrix-Multiplication/"/>
-    <id>https://wu-binson.github.io/math/linear_algebra/Matrix-Multiplication/</id>
-    <published>2020-03-10T10:43:13.273Z</published>
-    <updated>2020-03-10T05:22:38.482Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Row-Matrix-and-Column-Matrix"><a href="#Row-Matrix-and-Column-Matrix" class="headerlink" title="Row Matrix and Column Matrix"></a>Row Matrix and Column Matrix</h2><ol><li>A <strong>column vector</strong>, also called <strong>column matrix</strong> is an $m\times 1$ matrix.<img src="./img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg" alt="Alt text"><a id="more"></a></li><li>A <strong>row vector</strong> or <strong>row matrix</strong> is a $1 × m$ matrix<img src="./img/probability-theory/_4e58956e7c9ecc89a70ce2b336332cf42508f0e9.svg" alt="Alt text"> </li><li>The <strong>dot product</strong> of two vectors <strong>a</strong> and <strong>b</strong> is <strong>equivalent</strong> to the <strong>matrix product</strong> of the row vector representation of <strong>a</strong> and the column vector representation of <strong>b</strong>.<img src="./img/probability-theory/_796235a4561101d9b2b41a14ebb03fb65fc946d3.svg" alt="Alt text"><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2>If <strong>A</strong> is an $n × m$ matrix and <strong>B</strong> is an $m \times p$ matrix<img src="./img/probability-theory/_16b1644351bc2041175b19cbc65da03ef78130c7.svg" alt="Alt text">the matrix product <strong>C *<em>= *</em>AB</strong> is defined to be the $n × p$ matrix<img src="./img/probability-theory/_00ac0c831c365b7424cc43239aae8cebea27c56c.svg" alt="Alt text"><img src="./img/probability-theory/_3cfeccef1c8c7e6da0ddf08daed8dbf3c6f50c5e.svg" alt="Alt text"></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Row-Matrix-and-Column-Matrix&quot;&gt;&lt;a href=&quot;#Row-Matrix-and-Column-Matrix&quot; class=&quot;headerlink&quot; title=&quot;Row Matrix and Column Matrix&quot;&gt;&lt;/a&gt;Row Matrix and Column Matrix&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;A &lt;strong&gt;column vector&lt;/strong&gt;, also called &lt;strong&gt;column matrix&lt;/strong&gt; is an $m\times 1$ matrix.
-&lt;img src=&quot;./img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg&quot; alt=&quot;Alt text&quot;&gt;
-    
-    </summary>
-    
-    
-      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
-    
-      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
-    
-      <category term="mathematical proof" scheme="https://wu-binson.github.io/tags/mathematical-proof/"/>
-    
-      <category term="linear algebra" scheme="https://wu-binson.github.io/tags/linear-algebra/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Dot Product</title>
     <link href="https://wu-binson.github.io/math/linear_algebra/Dot-Product/"/>
     <id>https://wu-binson.github.io/math/linear_algebra/Dot-Product/</id>
-    <published>2020-03-10T10:43:05.160Z</published>
-    <updated>2020-03-10T05:17:00.271Z</updated>
+    <published>2020-03-10T10:59:49.949Z</published>
+    <updated>2020-03-10T10:59:49.949Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Algebraic-Definition"><a href="#Algebraic-Definition" class="headerlink" title="Algebraic Definition"></a>Algebraic Definition</h2><p><strong>Dot Product</strong>, also called <strong>Scalar Product</strong>:$$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$</p><a id="more"></a><h2 id="Geometric-Definition"><a href="#Geometric-Definition" class="headerlink" title="Geometric Definition"></a>Geometric Definition</h2><p><strong>Inner Product</strong>:<img src="./img/probability-theory/640px-Inner-product-angle.svg.png" alt="Alt text">$$\textbf{ab}=\left|\textbf{a}\right|\left|\textbf{b}\right|cos\theta$$</p><h2 id="The-Equivalence-of-the-definitions"><a href="#The-Equivalence-of-the-definitions" class="headerlink" title="The Equivalence of the definitions"></a>The Equivalence of the definitions</h2><ol><li>If $e_1, …, e_n$ are the standard basis vectors in $\mathbf{R}^n$, Then$e_i\cdot e_j=0$$e_i\cdot e_i=1$<img src="./img/probability-theory/1564854254181.png" alt="Alt text"></li><li>Applying Geometric Definition <img src="./img/probability-theory/1564854508569.png" alt="Alt text"></li><li>Applying Algebraic Definition and Distributivity Law<img src="./img/probability-theory/1564854448702.png" alt="Alt text"></li></ol><h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><h3 id="Commutative"><a href="#Commutative" class="headerlink" title="Commutative:"></a>Commutative:</h3><p>$a\cdot b=b\cdot a$</p><p><strong>Because</strong>:<img src="./img/probability-theory/1564854627098.png" alt="Alt text"></p><h3 id="Distributive"><a href="#Distributive" class="headerlink" title="Distributive"></a>Distributive</h3><p>$a\cdot(b+c)=a\cdot b + a \cdot c$</p><p><strong>Because</strong>:It’s algebraic definition</p><h3 id="Not-Associative"><a href="#Not-Associative" class="headerlink" title="Not Associative"></a>Not Associative</h3><p>$(a\cdot b)\cdot c$ And $a\cdot (b\cdot c)$ are both ill-defined </p><p><strong>Because</strong> the dot product between a scalar and a vector is not defined.</p><h3 id="Not-Cancellation"><a href="#Not-Cancellation" class="headerlink" title="Not Cancellation"></a>Not Cancellation</h3><p>Unlike multiplication of ordinary numbers, where if ab = ac, then b always equals c unless a is zero, the dot product does not obey the cancellation law</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Algebraic-Definition"><a href="#Algebraic-Definition" class="headerlink" title="Algebraic Definition"></a>Algebraic Definition</h2><p><strong>Dot Product</strong>, also called <strong>Scalar Product</strong>:$$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$</p><a id="more"></a><h2 id="Geometric-Definition"><a href="#Geometric-Definition" class="headerlink" title="Geometric Definition"></a>Geometric Definition</h2><p><strong>Inner Product</strong>:<img src="/img/probability-theory/640px-Inner-product-angle.svg.png" alt="Alt text">$$\textbf{ab}=\left|\textbf{a}\right|\left|\textbf{b}\right|cos\theta$$</p><h2 id="The-Equivalence-of-the-definitions"><a href="#The-Equivalence-of-the-definitions" class="headerlink" title="The Equivalence of the definitions"></a>The Equivalence of the definitions</h2><ol><li>If $e_1, …, e_n$ are the standard basis vectors in $\mathbf{R}^n$, Then$e_i\cdot e_j=0$$e_i\cdot e_i=1$<img src="/img/probability-theory/1564854254181.png" alt="Alt text"></li><li>Applying Geometric Definition <img src="/img/probability-theory/1564854508569.png" alt="Alt text"></li><li>Applying Algebraic Definition and Distributivity Law<img src="/img/probability-theory/1564854448702.png" alt="Alt text"></li></ol><h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><h3 id="Commutative"><a href="#Commutative" class="headerlink" title="Commutative:"></a>Commutative:</h3><p>$a\cdot b=b\cdot a$</p><p><strong>Because</strong>:<img src="/img/probability-theory/1564854627098.png" alt="Alt text"></p><h3 id="Distributive"><a href="#Distributive" class="headerlink" title="Distributive"></a>Distributive</h3><p>$a\cdot(b+c)=a\cdot b + a \cdot c$</p><p><strong>Because</strong>:It’s algebraic definition</p><h3 id="Not-Associative"><a href="#Not-Associative" class="headerlink" title="Not Associative"></a>Not Associative</h3><p>$(a\cdot b)\cdot c$ And $a\cdot (b\cdot c)$ are both ill-defined </p><p><strong>Because</strong> the dot product between a scalar and a vector is not defined.</p><h3 id="Not-Cancellation"><a href="#Not-Cancellation" class="headerlink" title="Not Cancellation"></a>Not Cancellation</h3><p>Unlike multiplication of ordinary numbers, where if ab = ac, then b always equals c unless a is zero, the dot product does not obey the cancellation law</p>]]></content>
     
     <summary type="html">
     
@@ -78,13 +47,63 @@ $$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$&lt;/p&gt;
   </entry>
   
   <entry>
+    <title>Probability Density Function vs Probability Mass Function</title>
+    <link href="https://wu-binson.github.io/math/probability-theory/Probability-Density-Function-vs-Probability-Mass-Function/"/>
+    <id>https://wu-binson.github.io/math/probability-theory/Probability-Density-Function-vs-Probability-Mass-Function/</id>
+    <published>2020-03-10T10:58:18.129Z</published>
+    <updated>2020-03-10T10:58:18.125Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Probability-Mass-Function"><a href="#Probability-Mass-Function" class="headerlink" title="Probability Mass Function"></a>Probability Mass Function</h2><p>The <strong>probability distribution</strong> of a discrete random variable is described by a list of probabilities associated with each of its possible values.</p><a id="more"></a><p>The list of probabilities is called a <strong>probability mass function</strong><img src="/img/probability-theory/1564770746906.png" alt="Alt text"></p><h2 id="Probability-Density-Function"><a href="#Probability-Density-Function" class="headerlink" title="Probability Density Function"></a>Probability Density Function</h2><p>Because the number of values of a continuous random variable X is infinite, the probability Pr(X = c) for any c is 0. Therefore, instead of the list of probabilities, the <strong>probability distribution</strong>of a CRV (a continuous probability distribution) is described by a <strong>probability density function</strong> (pdf)<img src="/img/probability-theory/1564770909541.png" alt="Alt text"></p><h2 id="A-Question"><a href="#A-Question" class="headerlink" title="A Question"></a>A Question</h2><p><strong>Why do we call mass or density instead of something else</strong>?</p><ol><li>First, to understand why we use these terms in the first place we have to start with what we call the <strong>density function</strong>.</li><li>Let’s say we have some function $f(x)$ that we haven’t named yet but we know that $\int^b_af(x)dx$ yields the probability that we see an outcome between $a$ and $b$. What should we call $f(x)$? </li><li>We know that, in general, the units on a definite integral $\int^b_af(x)dx$ are the units of $f(x)$ times the units of $dx$.<br/>In our setting, the integral gives a probability, and $dx$ has units in say, length. So the units of $f(x)$ must be probability per unit length. <br/>This means that $f(x)$ must be telling us something about how much probability is concentrated per unit length near $x$.i.e., how <em>dense</em> the probability is near $x$. So it makes sense to call $f(x)$ a “probability density function.” </li><li>Now that we’ve named $f(x)$ a density function, what should we call the corresponding function in the <em>discrete</em> setting? It’s not a density function; <strong>its units are probability rather than probability per unit length</strong>. So what is it?</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Probability-Mass-Function&quot;&gt;&lt;a href=&quot;#Probability-Mass-Function&quot; class=&quot;headerlink&quot; title=&quot;Probability Mass Function&quot;&gt;&lt;/a&gt;Probability Mass Function&lt;/h2&gt;&lt;p&gt;The &lt;strong&gt;probability distribution&lt;/strong&gt; of a discrete random variable is described by a list of probabilities associated with each of its possible values.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
+    
+      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Random Variable</title>
+    <link href="https://wu-binson.github.io/math/probability-theory/Random-Variable/"/>
+    <id>https://wu-binson.github.io/math/probability-theory/Random-Variable/</id>
+    <published>2020-03-10T10:58:08.599Z</published>
+    <updated>2020-03-10T10:58:08.596Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Random-Variables"><a href="#Random-Variables" class="headerlink" title="Random Variables"></a>Random Variables</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>In probability and statistics, a random variable is described <strong>informally</strong> as a variable whose values depend on outcomes of a random phenomenon.</p><a id="more"></a><p>In Probability theory, a random variable is understood as a <strong>measurable function</strong> whose outcomes are typically real numbers.<img src="/img/probability-theory/640px-Random_Variable_as_a_Function-en.svg.png" alt="Alt text"></p><p>This graph shows how random variable is a function from all possible outcomes to numerical quantities and also how it is used for defining probability mass functions.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Random-Variables&quot;&gt;&lt;a href=&quot;#Random-Variables&quot; class=&quot;headerlink&quot; title=&quot;Random Variables&quot;&gt;&lt;/a&gt;Random Variables&lt;/h2&gt;&lt;h3 id=&quot;Definition&quot;&gt;&lt;a href=&quot;#Definition&quot; class=&quot;headerlink&quot; title=&quot;Definition&quot;&gt;&lt;/a&gt;Definition&lt;/h3&gt;&lt;p&gt;In probability and statistics, a random variable is described &lt;strong&gt;informally&lt;/strong&gt; as a variable whose values depend on outcomes of a random phenomenon.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
+    
+      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Feynman Technology</title>
     <link href="https://wu-binson.github.io/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/Feynman-Technology/"/>
     <id>https://wu-binson.github.io/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/Feynman-Technology/</id>
-    <published>2020-03-10T10:10:48.960Z</published>
-    <updated>2020-03-10T10:10:48.957Z</updated>
+    <published>2020-03-10T10:55:49.982Z</published>
+    <updated>2020-03-10T10:55:49.980Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>“I couldn’t reduce it to the freshman level. That means we really don’t understand it.”<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; ————Feynman</p></blockquote><a id="more"></a><h2 id="重量级学习方法"><a href="#重量级学习方法" class="headerlink" title="重量级学习方法"></a>重量级学习方法</h2><ol><li>Use this technique to deeply understand an idea in <strong>20 minutes</strong>, that will stick with you for years.</li><li>慎重选择<h2 id="适用场景及其学习阶段"><a href="#适用场景及其学习阶段" class="headerlink" title="适用场景及其学习阶段"></a>适用场景及其学习阶段</h2><h3 id="主要-理解阶段-当理解困难时"><a href="#主要-理解阶段-当理解困难时" class="headerlink" title="(主要) 理解阶段-当理解困难时"></a>(主要) 理解阶段-当理解困难时</h3></li><li>慎重选择</li><li>Feynman Technology With Books</li><li>不必当场解决，但要总结出理解有问题的点(标上问号)<h3 id="复习阶段"><a href="#复习阶段" class="headerlink" title="复习阶段"></a>复习阶段</h3>Understand ideas that you don’t really “get”To remember ideas that you can understand, but forgets on tests</li></ol><h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><p><img src="./img/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/_1565787172882.png" alt="Alt text"><strong>Question-Driven</strong></p><ol><li>Choose Your  ConceptThe first step is to choose the concept you want to understand. <strong>Take a blank piece of paper and write the name of that concept at the top of the page.</strong></li><li>Explain like I’m 5-在纸上使用<strong>简单</strong>的语言写下解释</li><li>1 <strong>What’s the concept</strong>?</li><li>2 <strong>How many parts does it consist of</strong>? Break it into atoms.</li><li>3 <strong>Other Important Questions</strong>  </li><li>Whenever You’re Get Stuck, Go Back to the Book and step 2.(<strong>pinpoint knowledge gap</strong>)</li><li>Use <strong>Analogies</strong></li><li><strong>Review</strong>: Can you further <strong>Simplify the concept</strong>?</li></ol>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>“I couldn’t reduce it to the freshman level. That means we really don’t understand it.”<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; ————Feynman</p></blockquote><a id="more"></a><h2 id="重量级学习方法"><a href="#重量级学习方法" class="headerlink" title="重量级学习方法"></a>重量级学习方法</h2><ol><li>Use this technique to deeply understand an idea in <strong>20 minutes</strong>, that will stick with you for years.</li><li>慎重选择<h2 id="适用场景及其学习阶段"><a href="#适用场景及其学习阶段" class="headerlink" title="适用场景及其学习阶段"></a>适用场景及其学习阶段</h2><h3 id="主要-理解阶段-当理解困难时"><a href="#主要-理解阶段-当理解困难时" class="headerlink" title="(主要) 理解阶段-当理解困难时"></a>(主要) 理解阶段-当理解困难时</h3></li><li>慎重选择</li><li>Feynman Technology With Books</li><li>不必当场解决，但要总结出理解有问题的点(标上问号)<h3 id="复习阶段"><a href="#复习阶段" class="headerlink" title="复习阶段"></a>复习阶段</h3>Understand ideas that you don’t really “get”To remember ideas that you can understand, but forgets on tests</li></ol><h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><p><img src="/img/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/_1565787172882.png" alt="Alt text"><strong>Question-Driven</strong></p><ol><li>Choose Your  ConceptThe first step is to choose the concept you want to understand. <strong>Take a blank piece of paper and write the name of that concept at the top of the page.</strong></li><li>Explain like I’m 5-在纸上使用<strong>简单</strong>的语言写下解释</li><li>1 <strong>What’s the concept</strong>?</li><li>2 <strong>How many parts does it consist of</strong>? Break it into atoms.</li><li>3 <strong>Other Important Questions</strong>  </li><li>Whenever You’re Get Stuck, Go Back to the Book and step 2.(<strong>pinpoint knowledge gap</strong>)</li><li>Use <strong>Analogies</strong></li><li><strong>Review</strong>: Can you further <strong>Simplify the concept</strong>?</li></ol>]]></content>
     
     <summary type="html">
     
@@ -99,6 +118,37 @@ $$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$&lt;/p&gt;
     
     
       <category term="Feynman Technology" scheme="https://wu-binson.github.io/tags/Feynman-Technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Matrix Multiplication</title>
+    <link href="https://wu-binson.github.io/math/linear_algebra/Matrix-Multiplication/"/>
+    <id>https://wu-binson.github.io/math/linear_algebra/Matrix-Multiplication/</id>
+    <published>2020-03-10T10:53:27.943Z</published>
+    <updated>2020-03-10T10:53:27.940Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Row-Matrix-and-Column-Matrix"><a href="#Row-Matrix-and-Column-Matrix" class="headerlink" title="Row Matrix and Column Matrix"></a>Row Matrix and Column Matrix</h2><ol><li>A <strong>column vector</strong>, also called <strong>column matrix</strong> is an $m\times 1$ matrix.<img src="/img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg" alt="Alt text"><a id="more"></a></li><li>A <strong>row vector</strong> or <strong>row matrix</strong> is a $1 × m$ matrix<img src="/img/probability-theory/_4e58956e7c9ecc89a70ce2b336332cf42508f0e9.svg" alt="Alt text"> </li><li>The <strong>dot product</strong> of two vectors <strong>a</strong> and <strong>b</strong> is <strong>equivalent</strong> to the <strong>matrix product</strong> of the row vector representation of <strong>a</strong> and the column vector representation of <strong>b</strong>.<img src="/img/probability-theory/_796235a4561101d9b2b41a14ebb03fb65fc946d3.svg" alt="Alt text"><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2>If <strong>A</strong> is an $n × m$ matrix and <strong>B</strong> is an $m \times p$ matrix<img src="/img/probability-theory/_16b1644351bc2041175b19cbc65da03ef78130c7.svg" alt="Alt text">the matrix product <strong>C *<em>= *</em>AB</strong> is defined to be the $n × p$ matrix<img src="/img/probability-theory/_00ac0c831c365b7424cc43239aae8cebea27c56c.svg" alt="Alt text"><img src="/img/probability-theory/_3cfeccef1c8c7e6da0ddf08daed8dbf3c6f50c5e.svg" alt="Alt text"></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Row-Matrix-and-Column-Matrix&quot;&gt;&lt;a href=&quot;#Row-Matrix-and-Column-Matrix&quot; class=&quot;headerlink&quot; title=&quot;Row Matrix and Column Matrix&quot;&gt;&lt;/a&gt;Row Matrix and Column Matrix&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;A &lt;strong&gt;column vector&lt;/strong&gt;, also called &lt;strong&gt;column matrix&lt;/strong&gt; is an $m\times 1$ matrix.
+&lt;img src=&quot;/img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg&quot; alt=&quot;Alt text&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
+    
+      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
+    
+      <category term="mathematical proof" scheme="https://wu-binson.github.io/tags/mathematical-proof/"/>
+    
+      <category term="linear algebra" scheme="https://wu-binson.github.io/tags/linear-algebra/"/>
     
   </entry>
   
@@ -146,56 +196,6 @@ $$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$&lt;/p&gt;
     
       &lt;h2 id=&quot;Unbiased-Estimators&quot;&gt;&lt;a href=&quot;#Unbiased-Estimators&quot; class=&quot;headerlink&quot; title=&quot;Unbiased Estimators&quot;&gt;&lt;/a&gt;Unbiased Estimators&lt;/h2&gt;&lt;p&gt;If $\mathbb E[\hat \theta(S_X)]=\theta$, $\hat \theta$ is called &lt;strong&gt;Unbiased Estimators&lt;/strong&gt;.
 where$\hat \theta$ is a sample statistic, obtained using a sample $S_X$ and not the real statistic $\theta$ that can be obtained only knowing $f_X$.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
-    
-      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Probability Density Function vs Probability Mass Function</title>
-    <link href="https://wu-binson.github.io/math/probability-theory/Probability-Density-Function-vs-Probability-Mass-Function/"/>
-    <id>https://wu-binson.github.io/math/probability-theory/Probability-Density-Function-vs-Probability-Mass-Function/</id>
-    <published>2020-03-10T07:42:04.654Z</published>
-    <updated>2020-03-10T07:42:04.651Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Probability-Mass-Function"><a href="#Probability-Mass-Function" class="headerlink" title="Probability Mass Function"></a>Probability Mass Function</h2><p>The <strong>probability distribution</strong> of a discrete random variable is described by a list of probabilities associated with each of its possible values.</p><a id="more"></a><p>The list of probabilities is called a <strong>probability mass function</strong><img src="./img/probability-theory/1564770746906.png" alt="Alt text"></p><h2 id="Probability-Density-Function"><a href="#Probability-Density-Function" class="headerlink" title="Probability Density Function"></a>Probability Density Function</h2><p>Because the number of values of a continuous random variable X is infinite, the probability Pr(X = c) for any c is 0. Therefore, instead of the list of probabilities, the <strong>probability distribution</strong>of a CRV (a continuous probability distribution) is described by a <strong>probability density function</strong> (pdf)<img src="./img/probability-theory/1564770909541.png" alt="Alt text"></p><h2 id="A-Question"><a href="#A-Question" class="headerlink" title="A Question"></a>A Question</h2><p><strong>Why do we call mass or density instead of something else</strong>?</p><ol><li>First, to understand why we use these terms in the first place we have to start with what we call the <strong>density function</strong>.</li><li>Let’s say we have some function $f(x)$ that we haven’t named yet but we know that $\int^b_af(x)dx$ yields the probability that we see an outcome between $a$ and $b$. What should we call $f(x)$? </li><li>We know that, in general, the units on a definite integral $\int^b_af(x)dx$ are the units of $f(x)$ times the units of $dx$.<br/>In our setting, the integral gives a probability, and $dx$ has units in say, length. So the units of $f(x)$ must be probability per unit length. <br/>This means that $f(x)$ must be telling us something about how much probability is concentrated per unit length near $x$.i.e., how <em>dense</em> the probability is near $x$. So it makes sense to call $f(x)$ a “probability density function.” </li><li>Now that we’ve named $f(x)$ a density function, what should we call the corresponding function in the <em>discrete</em> setting? It’s not a density function; <strong>its units are probability rather than probability per unit length</strong>. So what is it?</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Probability-Mass-Function&quot;&gt;&lt;a href=&quot;#Probability-Mass-Function&quot; class=&quot;headerlink&quot; title=&quot;Probability Mass Function&quot;&gt;&lt;/a&gt;Probability Mass Function&lt;/h2&gt;&lt;p&gt;The &lt;strong&gt;probability distribution&lt;/strong&gt; of a discrete random variable is described by a list of probabilities associated with each of its possible values.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
-    
-      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Random Variable</title>
-    <link href="https://wu-binson.github.io/math/probability-theory/Random-Variable/"/>
-    <id>https://wu-binson.github.io/math/probability-theory/Random-Variable/</id>
-    <published>2020-03-10T05:04:01.909Z</published>
-    <updated>2020-03-10T05:04:01.906Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Random-Variables"><a href="#Random-Variables" class="headerlink" title="Random Variables"></a>Random Variables</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>In probability and statistics, a random variable is described <strong>informally</strong> as a variable whose values depend on outcomes of a random phenomenon.</p><a id="more"></a><p>In Probability theory, a random variable is understood as a <strong>measurable function</strong> whose outcomes are typically real numbers.<img src="./img/probability-theory/640px-Random_Variable_as_a_Function-en.svg.png" alt="Alt text"></p><p>This graph shows how random variable is a function from all possible outcomes to numerical quantities and also how it is used for defining probability mass functions.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Random-Variables&quot;&gt;&lt;a href=&quot;#Random-Variables&quot; class=&quot;headerlink&quot; title=&quot;Random Variables&quot;&gt;&lt;/a&gt;Random Variables&lt;/h2&gt;&lt;h3 id=&quot;Definition&quot;&gt;&lt;a href=&quot;#Definition&quot; class=&quot;headerlink&quot; title=&quot;Definition&quot;&gt;&lt;/a&gt;Definition&lt;/h3&gt;&lt;p&gt;In probability and statistics, a random variable is described &lt;strong&gt;informally&lt;/strong&gt; as a variable whose values depend on outcomes of a random phenomenon.&lt;/p&gt;
     
     </summary>
     
