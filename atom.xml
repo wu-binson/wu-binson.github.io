@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wu-binson.github.io/"/>
-  <updated>2020-03-10T12:25:50.532Z</updated>
+  <updated>2020-03-10T12:35:32.844Z</updated>
   <id>https://wu-binson.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Feynman Technology</title>
     <link href="https://wu-binson.github.io/study-method/Feynman-Technology/"/>
     <id>https://wu-binson.github.io/study-method/Feynman-Technology/</id>
-    <published>2020-03-10T12:25:50.535Z</published>
-    <updated>2020-03-10T12:25:50.532Z</updated>
+    <published>2020-03-10T12:35:32.848Z</published>
+    <updated>2020-03-10T12:35:32.844Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>“I couldn’t reduce it to the freshman level. That means we really don’t understand it.”<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; ————Feynman</p></blockquote><a id="more"></a><h2 id="重量级学习方法"><a href="#重量级学习方法" class="headerlink" title="重量级学习方法"></a>重量级学习方法</h2><ol><li>Use this technique to deeply understand an idea in <strong>20 minutes</strong>, that will stick with you for years.</li><li>慎重选择<h2 id="适用场景及其学习阶段"><a href="#适用场景及其学习阶段" class="headerlink" title="适用场景及其学习阶段"></a>适用场景及其学习阶段</h2><h3 id="主要-理解阶段-当理解困难时"><a href="#主要-理解阶段-当理解困难时" class="headerlink" title="(主要) 理解阶段-当理解困难时"></a>(主要) 理解阶段-当理解困难时</h3></li><li>慎重选择</li><li>Feynman Technology With Books</li><li>不必当场解决，但要总结出理解有问题的点(标上问号)<h3 id="复习阶段"><a href="#复习阶段" class="headerlink" title="复习阶段"></a>复习阶段</h3>Understand ideas that you don’t really “get”To remember ideas that you can understand, but forgets on tests</li></ol><h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><p><img src="/img/study-method/_1565787172882.png" alt="Alt text"><strong>Question-Driven</strong></p><ol><li>Choose Your  ConceptThe first step is to choose the concept you want to understand. <strong>Take a blank piece of paper and write the name of that concept at the top of the page.</strong></li><li>Explain like I’m 5-在纸上使用<strong>简单</strong>的语言写下解释</li><li>1 <strong>What’s the concept</strong>?</li><li>2 <strong>How many parts does it consist of</strong>? Break it into atoms.</li><li>3 <strong>Other Important Questions</strong>  </li><li>Whenever You’re Get Stuck, Go Back to the Book and step 2.(<strong>pinpoint knowledge gap</strong>)</li><li>Use <strong>Analogies</strong></li><li><strong>Review</strong>: Can you further <strong>Simplify the concept</strong>?</li></ol>]]></content>
     
@@ -42,10 +42,41 @@
   </entry>
   
   <entry>
+    <title>Matrix Multiplication</title>
+    <link href="https://wu-binson.github.io/math/linear_algebra/Matrix-Multiplication/"/>
+    <id>https://wu-binson.github.io/math/linear_algebra/Matrix-Multiplication/</id>
+    <published>2020-03-10T12:35:20.759Z</published>
+    <updated>2020-03-10T12:35:20.756Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Row-Matrix-and-Column-Matrix"><a href="#Row-Matrix-and-Column-Matrix" class="headerlink" title="Row Matrix and Column Matrix"></a>Row Matrix and Column Matrix</h2><ol><li>A <strong>column vector</strong>, also called <strong>column matrix</strong> is an $m\times 1$ matrix.<img src="/img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg" alt="Alt text"><a id="more"></a></li><li>A <strong>row vector</strong> or <strong>row matrix</strong> is a $1 × m$ matrix<img src="/img/probability-theory/_4e58956e7c9ecc89a70ce2b336332cf42508f0e9.svg" alt="Alt text"> </li><li>The <strong>dot product</strong> of two vectors <strong>a</strong> and <strong>b</strong> is <strong>equivalent</strong> to the <strong>matrix product</strong> of the row vector representation of <strong>a</strong> and the column vector representation of <strong>b</strong>.<img src="/img/probability-theory/_796235a4561101d9b2b41a14ebb03fb65fc946d3.svg" alt="Alt text"><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2>If <strong>A</strong> is an $n × m$ matrix and <strong>B</strong> is an $m \times p$ matrix<img src="/img/probability-theory/_16b1644351bc2041175b19cbc65da03ef78130c7.svg" alt="Alt text">the matrix product <strong>C *<em>= *</em>AB</strong> is defined to be the $n × p$ matrix<img src="/img/probability-theory/_00ac0c831c365b7424cc43239aae8cebea27c56c.svg" alt="Alt text"><img src="/img/probability-theory/_3cfeccef1c8c7e6da0ddf08daed8dbf3c6f50c5e.svg" alt="Alt text"></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Row-Matrix-and-Column-Matrix&quot;&gt;&lt;a href=&quot;#Row-Matrix-and-Column-Matrix&quot; class=&quot;headerlink&quot; title=&quot;Row Matrix and Column Matrix&quot;&gt;&lt;/a&gt;Row Matrix and Column Matrix&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;A &lt;strong&gt;column vector&lt;/strong&gt;, also called &lt;strong&gt;column matrix&lt;/strong&gt; is an $m\times 1$ matrix.
+&lt;img src=&quot;/img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg&quot; alt=&quot;Alt text&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
+    
+      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
+    
+      <category term="mathematical proof" scheme="https://wu-binson.github.io/tags/mathematical-proof/"/>
+    
+      <category term="linear algebra" scheme="https://wu-binson.github.io/tags/linear-algebra/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Dot Product</title>
     <link href="https://wu-binson.github.io/math/linear_algebra/Dot-Product/"/>
     <id>https://wu-binson.github.io/math/linear_algebra/Dot-Product/</id>
-    <published>2020-03-10T10:59:49.949Z</published>
+    <published>2020-03-10T10:59:49.952Z</published>
     <updated>2020-03-10T10:59:49.949Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Algebraic-Definition"><a href="#Algebraic-Definition" class="headerlink" title="Algebraic Definition"></a>Algebraic Definition</h2><p><strong>Dot Product</strong>, also called <strong>Scalar Product</strong>:$$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$</p><a id="more"></a><h2 id="Geometric-Definition"><a href="#Geometric-Definition" class="headerlink" title="Geometric Definition"></a>Geometric Definition</h2><p><strong>Inner Product</strong>:<img src="/img/probability-theory/640px-Inner-product-angle.svg.png" alt="Alt text">$$\textbf{ab}=\left|\textbf{a}\right|\left|\textbf{b}\right|cos\theta$$</p><h2 id="The-Equivalence-of-the-definitions"><a href="#The-Equivalence-of-the-definitions" class="headerlink" title="The Equivalence of the definitions"></a>The Equivalence of the definitions</h2><ol><li>If $e_1, …, e_n$ are the standard basis vectors in $\mathbf{R}^n$, Then$e_i\cdot e_j=0$$e_i\cdot e_i=1$<img src="/img/probability-theory/1564854254181.png" alt="Alt text"></li><li>Applying Geometric Definition <img src="/img/probability-theory/1564854508569.png" alt="Alt text"></li><li>Applying Algebraic Definition and Distributivity Law<img src="/img/probability-theory/1564854448702.png" alt="Alt text"></li></ol><h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><h3 id="Commutative"><a href="#Commutative" class="headerlink" title="Commutative:"></a>Commutative:</h3><p>$a\cdot b=b\cdot a$</p><p><strong>Because</strong>:<img src="/img/probability-theory/1564854627098.png" alt="Alt text"></p><h3 id="Distributive"><a href="#Distributive" class="headerlink" title="Distributive"></a>Distributive</h3><p>$a\cdot(b+c)=a\cdot b + a \cdot c$</p><p><strong>Because</strong>:It’s algebraic definition</p><h3 id="Not-Associative"><a href="#Not-Associative" class="headerlink" title="Not Associative"></a>Not Associative</h3><p>$(a\cdot b)\cdot c$ And $a\cdot (b\cdot c)$ are both ill-defined </p><p><strong>Because</strong> the dot product between a scalar and a vector is not defined.</p><h3 id="Not-Cancellation"><a href="#Not-Cancellation" class="headerlink" title="Not Cancellation"></a>Not Cancellation</h3><p>Unlike multiplication of ordinary numbers, where if ab = ac, then b always equals c unless a is zero, the dot product does not obey the cancellation law</p>]]></content>
@@ -118,37 +149,6 @@ $$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$&lt;/p&gt;
       <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
     
       <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Matrix Multiplication</title>
-    <link href="https://wu-binson.github.io/math/linear_algebra/Matrix-Multiplication/"/>
-    <id>https://wu-binson.github.io/math/linear_algebra/Matrix-Multiplication/</id>
-    <published>2020-03-10T10:53:27.943Z</published>
-    <updated>2020-03-10T10:53:27.940Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Row-Matrix-and-Column-Matrix"><a href="#Row-Matrix-and-Column-Matrix" class="headerlink" title="Row Matrix and Column Matrix"></a>Row Matrix and Column Matrix</h2><ol><li>A <strong>column vector</strong>, also called <strong>column matrix</strong> is an $m\times 1$ matrix.<img src="/img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg" alt="Alt text"><a id="more"></a></li><li>A <strong>row vector</strong> or <strong>row matrix</strong> is a $1 × m$ matrix<img src="/img/probability-theory/_4e58956e7c9ecc89a70ce2b336332cf42508f0e9.svg" alt="Alt text"> </li><li>The <strong>dot product</strong> of two vectors <strong>a</strong> and <strong>b</strong> is <strong>equivalent</strong> to the <strong>matrix product</strong> of the row vector representation of <strong>a</strong> and the column vector representation of <strong>b</strong>.<img src="/img/probability-theory/_796235a4561101d9b2b41a14ebb03fb65fc946d3.svg" alt="Alt text"><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2>If <strong>A</strong> is an $n × m$ matrix and <strong>B</strong> is an $m \times p$ matrix<img src="/img/probability-theory/_16b1644351bc2041175b19cbc65da03ef78130c7.svg" alt="Alt text">the matrix product <strong>C *<em>= *</em>AB</strong> is defined to be the $n × p$ matrix<img src="/img/probability-theory/_00ac0c831c365b7424cc43239aae8cebea27c56c.svg" alt="Alt text"><img src="/img/probability-theory/_3cfeccef1c8c7e6da0ddf08daed8dbf3c6f50c5e.svg" alt="Alt text"></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Row-Matrix-and-Column-Matrix&quot;&gt;&lt;a href=&quot;#Row-Matrix-and-Column-Matrix&quot; class=&quot;headerlink&quot; title=&quot;Row Matrix and Column Matrix&quot;&gt;&lt;/a&gt;Row Matrix and Column Matrix&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;A &lt;strong&gt;column vector&lt;/strong&gt;, also called &lt;strong&gt;column matrix&lt;/strong&gt; is an $m\times 1$ matrix.
-&lt;img src=&quot;/img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg&quot; alt=&quot;Alt text&quot;&gt;
-    
-    </summary>
-    
-    
-      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
-    
-      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
-    
-      <category term="mathematical proof" scheme="https://wu-binson.github.io/tags/mathematical-proof/"/>
-    
-      <category term="linear algebra" scheme="https://wu-binson.github.io/tags/linear-algebra/"/>
     
   </entry>
   
