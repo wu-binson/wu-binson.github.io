@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Bayes&#39;s Rule and Parameter Estimation</title>
+    <url>/math/probability-theory/Bayes-Rule-and-Parameter-Estimation/</url>
+    <content><![CDATA[<h2 id="Unbiased-Estimators"><a href="#Unbiased-Estimators" class="headerlink" title="Unbiased Estimators"></a>Unbiased Estimators</h2><p>If $\mathbb E[\hat \theta(S_X)]=\theta$, $\hat \theta$ is called <strong>Unbiased Estimators</strong>.
+where$\hat \theta$ is a sample statistic, obtained using a sample $S_X$ and not the real statistic $\theta$ that can be obtained only knowing $f_X$.</p>
+<a id="more"></a>
+<h2 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h2><p>The conditional probability $Pr(X = x|Y = y)$:
+$$Pr(X = x|Y = y) =\frac{Pr(Y = y|X = x)Pr(X = x)}{Pr(Y = y)}$$</p>
+<h2 id="Parameter-Estimation"><a href="#Parameter-Estimation" class="headerlink" title="Parameter Estimation"></a>Parameter Estimation</h2><ol>
+<li>Now, we have a model of $X$’s distribution, and this model $f_\theta$ is a function that has some parameters in the form of a vector $\theta$.</li>
+<li>Using the principle of <strong>maximum a posterior</strong>. the best value of the parameters
+<img src="/img/probability-theory/1564927982340.png" alt="Alt text">
+where $x_i$ is a example of the dataset.</li>
+<li>If the set of possible values for $\theta$ is finite, then we calculate 
+<img src="/img/probability-theory/1564927541516.png" alt="Alt text"></li>
+<li>The initial value  $\Pr(\theta=\hat \theta)$ can be guessed such that $\sum_{\hat \theta}Pr(\theta=\hat \theta)=1$. This guess of father probabilities for different $\hat \theta$ is called <strong>prior</strong>.</li>
+<li><img src="/img/probability-theory/1564927857796.png" alt="Alt text"></li>
+<li>If the set of possible values for θ isn’t finite, then we need to optimize eq. 5 directly using a numerical optimization routine, such as gradient descent.</li>
+<li>Usually, we optimize the natural logarithm of the right-hand side expression in eq. 5 because the logarithm of a product becomes the sum of logarithms and it’s easier for the machine to work with a sum than with a product.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>mathematical foundation</tag>
+        <tag>probability theory</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Expectation, Variance, Standard Deviation</title>
     <url>/math/probability-theory/Expectation-Variance-Standard-Deviation/</url>
     <content><![CDATA[<h2 id="Probability-Space"><a href="#Probability-Space" class="headerlink" title="Probability Space"></a>Probability Space</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>A <strong>probability space</strong> or a <strong>probability triple</strong> $(\Omega, \mathcal F, P)$:</p>
@@ -181,35 +210,6 @@ It’s algebraic definition</p>
 <li>Let’s say we have some function $f(x)$ that we haven’t named yet but we know that $\int^b_af(x)dx$ yields the probability that we see an outcome between $a$ and $b$. What should we call $f(x)$? </li>
 <li>We know that, in general, the units on a definite integral $\int^b_af(x)dx$ are the units of $f(x)$ times the units of $dx$.<br/>In our setting, the integral gives a probability, and $dx$ has units in say, length. So the units of $f(x)$ must be probability per unit length. <br/>This means that $f(x)$ must be telling us something about how much probability is concentrated per unit length near $x$.i.e., how <em>dense</em> the probability is near $x$. So it makes sense to call $f(x)$ a “probability density function.” </li>
 <li>Now that we’ve named $f(x)$ a density function, what should we call the corresponding function in the <em>discrete</em> setting? It’s not a density function; <strong>its units are probability rather than probability per unit length</strong>. So what is it?</li>
-</ol>
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>mathematical foundation</tag>
-        <tag>probability theory</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Bayes&#39;s Rule and Parameter Estimation</title>
-    <url>/math/probability-theory/Bayes-Rule-and-Parameter-Estimation/</url>
-    <content><![CDATA[<h2 id="Unbiased-Estimators"><a href="#Unbiased-Estimators" class="headerlink" title="Unbiased Estimators"></a>Unbiased Estimators</h2><p>If $\mathbb E[\hat \theta(S_X)]=\theta$, $\hat \theta$ is called <strong>Unbiased Estimators</strong>.
-where$\hat \theta$ is a sample statistic, obtained using a sample $S_X$ and not the real statistic $\theta$ that can be obtained only knowing $f_X$.</p>
-<a id="more"></a>
-<h2 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h2><p>The conditional probability $Pr(X = x|Y = y)$:
-$$Pr(X = x|Y = y) =\frac{Pr(Y = y|X = x)Pr(X = x)}{Pr(Y = y)}$$</p>
-<h2 id="Parameter-Estimation"><a href="#Parameter-Estimation" class="headerlink" title="Parameter Estimation"></a>Parameter Estimation</h2><ol>
-<li>Now, we have a model of $X$’s distribution, and this model $f_\theta$ is a function that has some parameters in the form of a vector $\theta$.</li>
-<li>Using the principle of <strong>maximum a posterior</strong>. the best value of the parameters
-<img src="./img/probability-theory/1564927982340.png" alt="Alt text">
-where $x_i$ is a example of the dataset.</li>
-<li>If the set of possible values for $\theta$ is finite, then we calculate 
-<img src="./img/probability-theory/1564927541516.png" alt="Alt text"></li>
-<li>The initial value  $\Pr(\theta=\hat \theta)$ can be guessed such that $\sum_{\hat \theta}Pr(\theta=\hat \theta)=1$. This guess of father probabilities for different $\hat \theta$ is called <strong>prior</strong>.</li>
-<li><img src="./img/probability-theory/1564927857796.png" alt="Alt text"></li>
-<li>If the set of possible values for θ isn’t finite, then we need to optimize eq. 5 directly using a numerical optimization routine, such as gradient descent.</li>
-<li>Usually, we optimize the natural logarithm of the right-hand side expression in eq. 5 because the logarithm of a product becomes the sum of logarithms and it’s easier for the machine to work with a sum than with a product.</li>
 </ol>
 ]]></content>
       <categories>

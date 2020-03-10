@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wu-binson.github.io/"/>
-  <updated>2020-03-10T13:16:59.281Z</updated>
+  <updated>2020-03-10T13:24:29.034Z</updated>
   <id>https://wu-binson.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Bayes&#39;s Rule and Parameter Estimation</title>
+    <link href="https://wu-binson.github.io/math/probability-theory/Bayes-Rule-and-Parameter-Estimation/"/>
+    <id>https://wu-binson.github.io/math/probability-theory/Bayes-Rule-and-Parameter-Estimation/</id>
+    <published>2020-03-10T13:24:29.036Z</published>
+    <updated>2020-03-10T13:24:29.034Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Unbiased-Estimators"><a href="#Unbiased-Estimators" class="headerlink" title="Unbiased Estimators"></a>Unbiased Estimators</h2><p>If $\mathbb E[\hat \theta(S_X)]=\theta$, $\hat \theta$ is called <strong>Unbiased Estimators</strong>.where$\hat \theta$ is a sample statistic, obtained using a sample $S_X$ and not the real statistic $\theta$ that can be obtained only knowing $f_X$.</p><a id="more"></a><h2 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h2><p>The conditional probability $Pr(X = x|Y = y)$:$$Pr(X = x|Y = y) =\frac{Pr(Y = y|X = x)Pr(X = x)}{Pr(Y = y)}$$</p><h2 id="Parameter-Estimation"><a href="#Parameter-Estimation" class="headerlink" title="Parameter Estimation"></a>Parameter Estimation</h2><ol><li>Now, we have a model of $X$’s distribution, and this model $f_\theta$ is a function that has some parameters in the form of a vector $\theta$.</li><li>Using the principle of <strong>maximum a posterior</strong>. the best value of the parameters<img src="/img/probability-theory/1564927982340.png" alt="Alt text">where $x_i$ is a example of the dataset.</li><li>If the set of possible values for $\theta$ is finite, then we calculate <img src="/img/probability-theory/1564927541516.png" alt="Alt text"></li><li>The initial value  $\Pr(\theta=\hat \theta)$ can be guessed such that $\sum_{\hat \theta}Pr(\theta=\hat \theta)=1$. This guess of father probabilities for different $\hat \theta$ is called <strong>prior</strong>.</li><li><img src="/img/probability-theory/1564927857796.png" alt="Alt text"></li><li>If the set of possible values for θ isn’t finite, then we need to optimize eq. 5 directly using a numerical optimization routine, such as gradient descent.</li><li>Usually, we optimize the natural logarithm of the right-hand side expression in eq. 5 because the logarithm of a product becomes the sum of logarithms and it’s easier for the machine to work with a sum than with a product.</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Unbiased-Estimators&quot;&gt;&lt;a href=&quot;#Unbiased-Estimators&quot; class=&quot;headerlink&quot; title=&quot;Unbiased Estimators&quot;&gt;&lt;/a&gt;Unbiased Estimators&lt;/h2&gt;&lt;p&gt;If $\mathbb E[\hat \theta(S_X)]=\theta$, $\hat \theta$ is called &lt;strong&gt;Unbiased Estimators&lt;/strong&gt;.
+where$\hat \theta$ is a sample statistic, obtained using a sample $S_X$ and not the real statistic $\theta$ that can be obtained only knowing $f_X$.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
+    
+      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
+    
+  </entry>
   
   <entry>
     <title>Expectation, Variance, Standard Deviation</title>
@@ -170,32 +196,6 @@ $$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$&lt;/p&gt;
     <summary type="html">
     
       &lt;h2 id=&quot;Probability-Mass-Function&quot;&gt;&lt;a href=&quot;#Probability-Mass-Function&quot; class=&quot;headerlink&quot; title=&quot;Probability Mass Function&quot;&gt;&lt;/a&gt;Probability Mass Function&lt;/h2&gt;&lt;p&gt;The &lt;strong&gt;probability distribution&lt;/strong&gt; of a discrete random variable is described by a list of probabilities associated with each of its possible values.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="数学" scheme="https://wu-binson.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-      <category term="mathematical foundation" scheme="https://wu-binson.github.io/tags/mathematical-foundation/"/>
-    
-      <category term="probability theory" scheme="https://wu-binson.github.io/tags/probability-theory/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Bayes&#39;s Rule and Parameter Estimation</title>
-    <link href="https://wu-binson.github.io/math/probability-theory/Bayes-Rule-and-Parameter-Estimation/"/>
-    <id>https://wu-binson.github.io/math/probability-theory/Bayes-Rule-and-Parameter-Estimation/</id>
-    <published>2020-03-10T07:47:50.662Z</published>
-    <updated>2020-03-10T07:47:50.657Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Unbiased-Estimators"><a href="#Unbiased-Estimators" class="headerlink" title="Unbiased Estimators"></a>Unbiased Estimators</h2><p>If $\mathbb E[\hat \theta(S_X)]=\theta$, $\hat \theta$ is called <strong>Unbiased Estimators</strong>.where$\hat \theta$ is a sample statistic, obtained using a sample $S_X$ and not the real statistic $\theta$ that can be obtained only knowing $f_X$.</p><a id="more"></a><h2 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h2><p>The conditional probability $Pr(X = x|Y = y)$:$$Pr(X = x|Y = y) =\frac{Pr(Y = y|X = x)Pr(X = x)}{Pr(Y = y)}$$</p><h2 id="Parameter-Estimation"><a href="#Parameter-Estimation" class="headerlink" title="Parameter Estimation"></a>Parameter Estimation</h2><ol><li>Now, we have a model of $X$’s distribution, and this model $f_\theta$ is a function that has some parameters in the form of a vector $\theta$.</li><li>Using the principle of <strong>maximum a posterior</strong>. the best value of the parameters<img src="./img/probability-theory/1564927982340.png" alt="Alt text">where $x_i$ is a example of the dataset.</li><li>If the set of possible values for $\theta$ is finite, then we calculate <img src="./img/probability-theory/1564927541516.png" alt="Alt text"></li><li>The initial value  $\Pr(\theta=\hat \theta)$ can be guessed such that $\sum_{\hat \theta}Pr(\theta=\hat \theta)=1$. This guess of father probabilities for different $\hat \theta$ is called <strong>prior</strong>.</li><li><img src="./img/probability-theory/1564927857796.png" alt="Alt text"></li><li>If the set of possible values for θ isn’t finite, then we need to optimize eq. 5 directly using a numerical optimization routine, such as gradient descent.</li><li>Usually, we optimize the natural logarithm of the right-hand side expression in eq. 5 because the logarithm of a product becomes the sum of logarithms and it’s easier for the machine to work with a sum than with a product.</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Unbiased-Estimators&quot;&gt;&lt;a href=&quot;#Unbiased-Estimators&quot; class=&quot;headerlink&quot; title=&quot;Unbiased Estimators&quot;&gt;&lt;/a&gt;Unbiased Estimators&lt;/h2&gt;&lt;p&gt;If $\mathbb E[\hat \theta(S_X)]=\theta$, $\hat \theta$ is called &lt;strong&gt;Unbiased Estimators&lt;/strong&gt;.
-where$\hat \theta$ is a sample statistic, obtained using a sample $S_X$ and not the real statistic $\theta$ that can be obtained only knowing $f_X$.&lt;/p&gt;
     
     </summary>
     
