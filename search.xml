@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Matrix Multiplication</title>
+    <url>/math/linear_algebra/Matrix-Multiplication/</url>
+    <content><![CDATA[<h2 id="Row-Matrix-and-Column-Matrix"><a href="#Row-Matrix-and-Column-Matrix" class="headerlink" title="Row Matrix and Column Matrix"></a>Row Matrix and Column Matrix</h2><ol>
+<li>A <strong>column vector</strong>, also called <strong>column matrix</strong> is an $m\times 1$ matrix.
+<img src="./img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg" alt="Alt text"><a id="more"></a></li>
+<li>A <strong>row vector</strong> or <strong>row matrix</strong> is a $1 × m$ matrix
+<img src="./img/probability-theory/_4e58956e7c9ecc89a70ce2b336332cf42508f0e9.svg" alt="Alt text"> </li>
+<li>The <strong>dot product</strong> of two vectors <strong>a</strong> and <strong>b</strong> is <strong>equivalent</strong> to the <strong>matrix product</strong> of the row vector representation of <strong>a</strong> and the column vector representation of <strong>b</strong>.
+<img src="./img/probability-theory/_796235a4561101d9b2b41a14ebb03fb65fc946d3.svg" alt="Alt text"><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2>If <strong>A</strong> is an $n × m$ matrix and <strong>B</strong> is an $m \times p$ matrix
+<img src="./img/probability-theory/_16b1644351bc2041175b19cbc65da03ef78130c7.svg" alt="Alt text">
+the matrix product <strong>C *<em>= *</em>AB</strong> is defined to be the $n × p$ matrix
+<img src="./img/probability-theory/_00ac0c831c365b7424cc43239aae8cebea27c56c.svg" alt="Alt text">
+<img src="./img/probability-theory/_3cfeccef1c8c7e6da0ddf08daed8dbf3c6f50c5e.svg" alt="Alt text"></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>mathematical foundation</tag>
+        <tag>probability theory</tag>
+        <tag>mathematical proof</tag>
+        <tag>linear algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dot Product</title>
+    <url>/math/linear_algebra/Dot-Product/</url>
+    <content><![CDATA[<h2 id="Algebraic-Definition"><a href="#Algebraic-Definition" class="headerlink" title="Algebraic Definition"></a>Algebraic Definition</h2><p><strong>Dot Product</strong>, also called <strong>Scalar Product</strong>:
+$$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$</p>
+<a id="more"></a>
+<h2 id="Geometric-Definition"><a href="#Geometric-Definition" class="headerlink" title="Geometric Definition"></a>Geometric Definition</h2><p><strong>Inner Product</strong>:
+<img src="./img/probability-theory/640px-Inner-product-angle.svg.png" alt="Alt text">
+$$\textbf{ab}=\left|\textbf{a}\right|\left|\textbf{b}\right|cos\theta$$</p>
+<h2 id="The-Equivalence-of-the-definitions"><a href="#The-Equivalence-of-the-definitions" class="headerlink" title="The Equivalence of the definitions"></a>The Equivalence of the definitions</h2><ol>
+<li>If $e_1, …, e_n$ are the standard basis vectors in $\mathbf{R}^n$, Then
+$e_i\cdot e_j=0$
+$e_i\cdot e_i=1$
+<img src="./img/probability-theory/1564854254181.png" alt="Alt text"></li>
+<li>Applying Geometric Definition 
+<img src="./img/probability-theory/1564854508569.png" alt="Alt text"></li>
+<li>Applying Algebraic Definition and Distributivity Law
+<img src="./img/probability-theory/1564854448702.png" alt="Alt text"></li>
+</ol>
+<h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><h3 id="Commutative"><a href="#Commutative" class="headerlink" title="Commutative:"></a>Commutative:</h3><p>$a\cdot b=b\cdot a$</p>
+<p><strong>Because</strong>:
+<img src="./img/probability-theory/1564854627098.png" alt="Alt text"></p>
+<h3 id="Distributive"><a href="#Distributive" class="headerlink" title="Distributive"></a>Distributive</h3><p>$a\cdot(b+c)=a\cdot b + a \cdot c$</p>
+<p><strong>Because</strong>:
+It’s algebraic definition</p>
+<h3 id="Not-Associative"><a href="#Not-Associative" class="headerlink" title="Not Associative"></a>Not Associative</h3><p>$(a\cdot b)\cdot c$ And $a\cdot (b\cdot c)$ are both ill-defined </p>
+<p><strong>Because</strong> the dot product between a scalar and a vector is not defined.</p>
+<h3 id="Not-Cancellation"><a href="#Not-Cancellation" class="headerlink" title="Not Cancellation"></a>Not Cancellation</h3><p>Unlike multiplication of ordinary numbers, where if ab = ac, then b always equals c unless a is zero, the dot product does not obey the cancellation law</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>mathematical foundation</tag>
+        <tag>probability theory</tag>
+        <tag>mathematical proof</tag>
+        <tag>linear algebra</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Feynman Technology</title>
     <url>/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/Feynman-Technology/</url>
     <content><![CDATA[<blockquote>
@@ -136,71 +201,6 @@ where $x_i$ is a example of the dataset.</li>
       <tags>
         <tag>mathematical foundation</tag>
         <tag>probability theory</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Matrix Multiplication</title>
-    <url>/math/probability-theory/Matrix-Multiplication/</url>
-    <content><![CDATA[<h2 id="Row-Matrix-and-Column-Matrix"><a href="#Row-Matrix-and-Column-Matrix" class="headerlink" title="Row Matrix and Column Matrix"></a>Row Matrix and Column Matrix</h2><ol>
-<li>A <strong>column vector</strong>, also called <strong>column matrix</strong> is an $m\times 1$ matrix.
-<img src="./img/probability-theory/05db5e8bf137f7292654bb49889a677fd2053c3c.svg" alt="Alt text"><a id="more"></a></li>
-<li>A <strong>row vector</strong> or <strong>row matrix</strong> is a $1 × m$ matrix
-<img src="./img/probability-theory/_4e58956e7c9ecc89a70ce2b336332cf42508f0e9.svg" alt="Alt text"> </li>
-<li>The <strong>dot product</strong> of two vectors <strong>a</strong> and <strong>b</strong> is <strong>equivalent</strong> to the <strong>matrix product</strong> of the row vector representation of <strong>a</strong> and the column vector representation of <strong>b</strong>.
-<img src="./img/probability-theory/_796235a4561101d9b2b41a14ebb03fb65fc946d3.svg" alt="Alt text"><h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2>If <strong>A</strong> is an $n × m$ matrix and <strong>B</strong> is an $m \times p$ matrix
-<img src="./img/probability-theory/_16b1644351bc2041175b19cbc65da03ef78130c7.svg" alt="Alt text">
-the matrix product <strong>C *<em>= *</em>AB</strong> is defined to be the $n × p$ matrix
-<img src="./img/probability-theory/_00ac0c831c365b7424cc43239aae8cebea27c56c.svg" alt="Alt text">
-<img src="./img/probability-theory/_3cfeccef1c8c7e6da0ddf08daed8dbf3c6f50c5e.svg" alt="Alt text"></li>
-</ol>
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>mathematical foundation</tag>
-        <tag>probability theory</tag>
-        <tag>mathematical proof</tag>
-        <tag>linear algebra</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Dot Product</title>
-    <url>/math/probability-theory/Dot-Product/</url>
-    <content><![CDATA[<h2 id="Algebraic-Definition"><a href="#Algebraic-Definition" class="headerlink" title="Algebraic Definition"></a>Algebraic Definition</h2><p><strong>Dot Product</strong>, also called <strong>Scalar Product</strong>:
-$$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$</p>
-<a id="more"></a>
-<h2 id="Geometric-Definition"><a href="#Geometric-Definition" class="headerlink" title="Geometric Definition"></a>Geometric Definition</h2><p><strong>Inner Product</strong>:
-<img src="./img/probability-theory/640px-Inner-product-angle.svg.png" alt="Alt text">
-$$\textbf{ab}=\left|\textbf{a}\right|\left|\textbf{b}\right|cos\theta$$</p>
-<h2 id="The-Equivalence-of-the-definitions"><a href="#The-Equivalence-of-the-definitions" class="headerlink" title="The Equivalence of the definitions"></a>The Equivalence of the definitions</h2><ol>
-<li>If $e_1, …, e_n$ are the standard basis vectors in $\mathbf{R}^n$, Then
-$e_i\cdot e_j=0$
-$e_i\cdot e_i=1$
-<img src="./img/probability-theory/1564854254181.png" alt="Alt text"></li>
-<li>Applying Geometric Definition 
-<img src="./img/probability-theory/1564854508569.png" alt="Alt text"></li>
-<li>Applying Algebraic Definition and Distributivity Law
-<img src="./img/probability-theory/1564854448702.png" alt="Alt text"></li>
-</ol>
-<h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><h3 id="Commutative"><a href="#Commutative" class="headerlink" title="Commutative:"></a>Commutative:</h3><p>$a\cdot b=b\cdot a$</p>
-<p><strong>Because</strong>:
-<img src="./img/probability-theory/1564854627098.png" alt="Alt text"></p>
-<h3 id="Distributive"><a href="#Distributive" class="headerlink" title="Distributive"></a>Distributive</h3><p>$a\cdot(b+c)=a\cdot b + a \cdot c$</p>
-<p><strong>Because</strong>:
-It’s algebraic definition</p>
-<h3 id="Not-Associative"><a href="#Not-Associative" class="headerlink" title="Not Associative"></a>Not Associative</h3><p>$(a\cdot b)\cdot c$ And $a\cdot (b\cdot c)$ are both ill-defined </p>
-<p><strong>Because</strong> the dot product between a scalar and a vector is not defined.</p>
-<h3 id="Not-Cancellation"><a href="#Not-Cancellation" class="headerlink" title="Not Cancellation"></a>Not Cancellation</h3><p>Unlike multiplication of ordinary numbers, where if ab = ac, then b always equals c unless a is zero, the dot product does not obey the cancellation law</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>mathematical foundation</tag>
-        <tag>probability theory</tag>
-        <tag>mathematical proof</tag>
-        <tag>linear algebra</tag>
       </tags>
   </entry>
   <entry>
