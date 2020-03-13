@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Bayes&#39;s Rule and Parameter Estimation</title>
-    <url>/math/probability-theory/Bayes-Rule-and-Parameter-Estimation/</url>
-    <content><![CDATA[<h2 id="Unbiased-Estimators"><a href="#Unbiased-Estimators" class="headerlink" title="Unbiased Estimators"></a>Unbiased Estimators</h2><p>If $\mathbb E[\hat \theta(S_X)]=\theta$, $\hat \theta$ is called <strong>Unbiased Estimators</strong>.
-where$\hat \theta$ is a sample statistic, obtained using a sample $S_X$ and not the real statistic $\theta$ that can be obtained only knowing $f_X$.</p>
-<a id="more"></a>
-<h2 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h2><p>The conditional probability $Pr(X = x|Y = y)$:
-$$Pr(X = x|Y = y) =\frac{Pr(Y = y|X = x)Pr(X = x)}{Pr(Y = y)}$$</p>
-<h2 id="Parameter-Estimation"><a href="#Parameter-Estimation" class="headerlink" title="Parameter Estimation"></a>Parameter Estimation</h2><ol>
-<li>Now, we have a model of $X$’s distribution, and this model $f_\theta$ is a function that has some parameters in the form of a vector $\theta$.</li>
-<li>Using the principle of <strong>maximum a posterior</strong>. the best value of the parameters
-<img src="/img/probability-theory/1564927982340.png" alt="Alt text">
-where $x_i$ is a example of the dataset.</li>
-<li>If the set of possible values for $\theta$ is finite, then we calculate 
-<img src="/img/probability-theory/1564927541516.png" alt="Alt text"></li>
-<li>The initial value  $\Pr(\theta=\hat \theta)$ can be guessed such that $\sum_{\hat \theta}Pr(\theta=\hat \theta)=1$. This guess of father probabilities for different $\hat \theta$ is called <strong>prior</strong>.</li>
-<li><img src="/img/probability-theory/1564927857796.png" alt="Alt text"></li>
-<li>If the set of possible values for θ isn’t finite, then we need to optimize eq. 5 directly using a numerical optimization routine, such as gradient descent.</li>
-<li>Usually, we optimize the natural logarithm of the right-hand side expression in eq. 5 because the logarithm of a product becomes the sum of logarithms and it’s easier for the machine to work with a sum than with a product.</li>
+    <title>Cmake基本语法</title>
+    <url>/tool/program-tool/cmake-basic-grammar/</url>
+    <content><![CDATA[<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ol>
+<li>打印变量值<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(USER_KEY, <span class="string">"Hello World"</span>);</span><br><span class="line"><span class="keyword">MESSAGE</span>( STATUS <span class="string">"this var key = $&#123;USER_KEY&#125;."</span>)</span><br></pre></td></tr></table></figure>
+status表示这是一般的打印信息，我们还可以设置为“ERROR”，表示这是一种错误打印信息。</li>
+<li>添加包含路径<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>()</span><br></pre></td></tr></table></figure></li>
+<li>添加源文件<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">aux_source_directory</span>(&lt;dir&gt; &lt;variable&gt;)</span><br></pre></td></tr></table></figure></li>
+<li>递归子目录<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_subdirectory</span></span><br></pre></td></tr></table></figure>
+子目录需包含CmakeLists.txt文件</li>
+<li>库文件搜索路径<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">LINK_DIRECTORIES</span></span><br></pre></td></tr></table></figure></li>
+<li>字符串比较<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="variable">$&#123;CMAKE_BUILD_TYPE&#125;</span> <span class="keyword">STREQUAL</span> <span class="string">"Debug"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="项目模板样例"><a href="#项目模板样例" class="headerlink" title="项目模板样例"></a>项目模板样例</h3><h4 id="普通版本"><a href="#普通版本" class="headerlink" title="普通版本"></a>普通版本</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">PROJECT</span>(moea)</span><br><span class="line"><span class="keyword">CMAKE_MINIMUM_REQUIRED</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS_DEBUG <span class="string">"$&#123;CMAKE_CXX_FLAGS_DEBUG&#125; -std=c++11 -Wall -g -ggdb -pthread -lnlopt -lpagmo"</span>)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS_RELEASE <span class="string">"$&#123;CMAKE_CXX_FLAGS_RELEASE&#125; -std=c++11 -O2 -DNDEBUG -Wall -pthread -lnlopt -lpagmo"</span>)</span><br><span class="line"><span class="keyword">set</span>(exe moea)</span><br><span class="line"><span class="keyword">set</span>(PROJECT_DIR <span class="string">"$&#123;PROJECT_SOURCE_DIR&#125;"</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/algorithms)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/problems)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/plot)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/islands)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/experiment)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/utils)</span><br><span class="line"><span class="comment"># include head files</span></span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="comment"># source files</span></span><br><span class="line"><span class="keyword">AUX_SOURCE_DIRECTORY</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span> DIR_MAIN_SRCS)</span><br><span class="line"><span class="keyword">ADD_EXECUTABLE</span>(<span class="variable">$&#123;exe&#125;</span> <span class="variable">$&#123;DIR_MAIN_SRCS&#125;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(<span class="variable">$&#123;exe&#125;</span> ALG UTILS )</span><br></pre></td></tr></table></figure>
+
+
+</li>
 </ol>
+<p>子目录下</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="keyword">AUX_SOURCE_DIRECTORY</span>(. DIR_ALG_SRCS)</span><br><span class="line"><span class="keyword">ADD_LIBRARY</span>(ALG <span class="variable">$&#123;DIR_ALG_SRCS&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="添加MPI库文件"><a href="#添加MPI库文件" class="headerlink" title="添加MPI库文件"></a>添加MPI库文件</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(MPI REQUIRED)</span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;MPI_INCLUDE_PATH&#125;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(<span class="variable">$&#123;exe&#125;</span> pthread nlopt pagmo boost_timer boost_system <span class="variable">$&#123;MPI_C_LIBRARIES&#125;</span>)</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
-        <category>数学</category>
+        <category>tool</category>
       </categories>
       <tags>
-        <tag>mathematical foundation</tag>
-        <tag>probability theory</tag>
+        <tag>cmake</tag>
+        <tag>programming tool</tag>
       </tags>
   </entry>
   <entry>
@@ -66,7 +69,7 @@ $$\sigma^2=Var(X)=\mathbb E[(X-\mu)^2]$$
 <h3 id="Sample-Standard-Deviation"><a href="#Sample-Standard-Deviation" class="headerlink" title="Sample Standard Deviation"></a>Sample Standard Deviation</h3><p>The estimation of population standard deviation
 <img src="/img/probability-theory/1564841270504.png" alt="Alt text"></p>
 <h4 id="Why-n-1"><a href="#Why-n-1" class="headerlink" title="Why n-1 ?"></a>Why n-1 ?</h4><p><a href="https://en.m.wikipedia.org/wiki/Bessel' target="_blank" rel="noopener"s_correction">Bessel’s Correction-Wiki</a>
-[^linearity-proof]: <img src="/img/probability-theory/11565079091271.png" alt="Alt text"></p>
+[^linearity-proof]: <img src="/img/probability-theory/1565079091271.png" alt="Alt text"></p>
 ]]></content>
       <categories>
         <category>数学</category>
@@ -75,6 +78,35 @@ $$\sigma^2=Var(X)=\mathbb E[(X-\mu)^2]$$
         <tag>mathematical foundation</tag>
         <tag>probability theory</tag>
         <tag>mathematical proof</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Bayes&#39;s Rule and Parameter Estimation</title>
+    <url>/math/probability-theory/Bayes-Rule-and-Parameter-Estimation/</url>
+    <content><![CDATA[<h2 id="Unbiased-Estimators"><a href="#Unbiased-Estimators" class="headerlink" title="Unbiased Estimators"></a>Unbiased Estimators</h2><p>If $\mathbb E[\hat \theta(S_X)]=\theta$, $\hat \theta$ is called <strong>Unbiased Estimators</strong>.
+where$\hat \theta$ is a sample statistic, obtained using a sample $S_X$ and not the real statistic $\theta$ that can be obtained only knowing $f_X$.</p>
+<a id="more"></a>
+<h2 id="Bayes’-Rule"><a href="#Bayes’-Rule" class="headerlink" title="Bayes’ Rule"></a>Bayes’ Rule</h2><p>The conditional probability $Pr(X = x|Y = y)$:
+$$Pr(X = x|Y = y) =\frac{Pr(Y = y|X = x)Pr(X = x)}{Pr(Y = y)}$$</p>
+<h2 id="Parameter-Estimation"><a href="#Parameter-Estimation" class="headerlink" title="Parameter Estimation"></a>Parameter Estimation</h2><ol>
+<li>Now, we have a model of $X$’s distribution, and this model $f_\theta$ is a function that has some parameters in the form of a vector $\theta$.</li>
+<li>Using the principle of <strong>maximum a posterior</strong>. the best value of the parameters
+<img src="/img/probability-theory/1564927982340.png" alt="Alt text">
+where $x_i$ is a example of the dataset.</li>
+<li>If the set of possible values for $\theta$ is finite, then we calculate 
+<img src="/img/probability-theory/1564927541516.png" alt="Alt text"></li>
+<li>The initial value  $\Pr(\theta=\hat \theta)$ can be guessed such that $\sum_{\hat \theta}Pr(\theta=\hat \theta)=1$. This guess of father probabilities for different $\hat \theta$ is called <strong>prior</strong>.</li>
+<li><img src="/img/probability-theory/1564927857796.png" alt="Alt text"></li>
+<li>If the set of possible values for θ isn’t finite, then we need to optimize eq. 5 directly using a numerical optimization routine, such as gradient descent.</li>
+<li>Usually, we optimize the natural logarithm of the right-hand side expression in eq. 5 because the logarithm of a product becomes the sum of logarithms and it’s easier for the machine to work with a sum than with a product.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>mathematical foundation</tag>
+        <tag>probability theory</tag>
       </tags>
   </entry>
   <entry>

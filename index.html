@@ -344,6 +344,363 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wu-binson.github.io/tool/program-tool/cmake-basic-grammar/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Binson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Beyond the Machine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/tool/program-tool/cmake-basic-grammar/" itemprop="url">Cmake基本语法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-13T22:29:03+08:00">
+                2020-03-13
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-13T22:29:03+08:00">
+                2020-03-13
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tool/" itemprop="url" rel="index">
+                    <span itemprop="name">tool</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/tool/program-tool/cmake-basic-grammar/" class="leancloud_visitors" data-flag-title="Cmake基本语法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ol>
+<li>打印变量值<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span>(USER_KEY, <span class="string">"Hello World"</span>);</span><br><span class="line"><span class="keyword">MESSAGE</span>( STATUS <span class="string">"this var key = $&#123;USER_KEY&#125;."</span>)</span><br></pre></td></tr></table></figure>
+status表示这是一般的打印信息，我们还可以设置为“ERROR”，表示这是一种错误打印信息。</li>
+<li>添加包含路径<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>()</span><br></pre></td></tr></table></figure></li>
+<li>添加源文件<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">aux_source_directory</span>(&lt;dir&gt; &lt;variable&gt;)</span><br></pre></td></tr></table></figure></li>
+<li>递归子目录<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_subdirectory</span></span><br></pre></td></tr></table></figure>
+子目录需包含CmakeLists.txt文件</li>
+<li>库文件搜索路径<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LINK_DIRECTORIES</span></span><br></pre></td></tr></table></figure></li>
+<li>字符串比较<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="variable">$&#123;CMAKE_BUILD_TYPE&#125;</span> <span class="keyword">STREQUAL</span> <span class="string">"Debug"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="项目模板样例"><a href="#项目模板样例" class="headerlink" title="项目模板样例"></a>项目模板样例</h3><h4 id="普通版本"><a href="#普通版本" class="headerlink" title="普通版本"></a>普通版本</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">PROJECT</span>(moea)</span><br><span class="line"><span class="keyword">CMAKE_MINIMUM_REQUIRED</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS_DEBUG <span class="string">"$&#123;CMAKE_CXX_FLAGS_DEBUG&#125; -std=c++11 -Wall -g -ggdb -pthread -lnlopt -lpagmo"</span>)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS_RELEASE <span class="string">"$&#123;CMAKE_CXX_FLAGS_RELEASE&#125; -std=c++11 -O2 -DNDEBUG -Wall -pthread -lnlopt -lpagmo"</span>)</span><br><span class="line"><span class="keyword">set</span>(exe moea)</span><br><span class="line"><span class="keyword">set</span>(PROJECT_DIR <span class="string">"$&#123;PROJECT_SOURCE_DIR&#125;"</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/algorithms)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/problems)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/plot)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/islands)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/experiment)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/utils)</span><br><span class="line"><span class="comment"># include head files</span></span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="comment"># source files</span></span><br><span class="line"><span class="keyword">AUX_SOURCE_DIRECTORY</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span> DIR_MAIN_SRCS)</span><br><span class="line"><span class="keyword">ADD_EXECUTABLE</span>(<span class="variable">$&#123;exe&#125;</span> <span class="variable">$&#123;DIR_MAIN_SRCS&#125;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(<span class="variable">$&#123;exe&#125;</span> ALG UTILS )</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<p>子目录下</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="keyword">AUX_SOURCE_DIRECTORY</span>(. DIR_ALG_SRCS)</span><br><span class="line"><span class="keyword">ADD_LIBRARY</span>(ALG <span class="variable">$&#123;DIR_ALG_SRCS&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="添加MPI库文件"><a href="#添加MPI库文件" class="headerlink" title="添加MPI库文件"></a>添加MPI库文件</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(MPI REQUIRED)</span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;MPI_INCLUDE_PATH&#125;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(<span class="variable">$&#123;exe&#125;</span> pthread nlopt pagmo boost_timer boost_system <span class="variable">$&#123;MPI_C_LIBRARIES&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wu-binson.github.io/math/probability-theory/Expectation-Variance-Standard-Deviation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Binson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Beyond the Machine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/math/probability-theory/Expectation-Variance-Standard-Deviation/" itemprop="url">Expectation, Variance, Standard Deviation</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T21:34:44+08:00">
+                2020-03-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-10T21:34:44+08:00">
+                2020-03-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">数学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/math/probability-theory/Expectation-Variance-Standard-Deviation/" class="leancloud_visitors" data-flag-title="Expectation, Variance, Standard Deviation">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Probability-Space"><a href="#Probability-Space" class="headerlink" title="Probability Space"></a>Probability Space</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>A <strong>probability space</strong> or a <strong>probability triple</strong> $(\Omega, \mathcal F, P)$:</p>
+<ol>
+<li>A <strong>sample space</strong>, $\Omega$, which is <strong>the set of all possible outcomes</strong>.</li>
+<li><strong>A set of events</strong> $\mathcal F$, which each event is a set containing zero or more outcomes: $\mathcal F\subseteq2^\Omega$— a set of subsets of $\Omega$.</li>
+<li>The Assignment of Probability to the events; that is a <strong>function</strong> $P$ from events to probability:$P:\mathcal F \mapsto [0,1]$
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/math/probability-theory/Expectation-Variance-Standard-Deviation/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://wu-binson.github.io/math/probability-theory/Bayes-Rule-and-Parameter-Estimation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -464,179 +821,6 @@ where$\hat \theta$ is a sample statistic, obtained using a sample $S_X$ and not 
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/math/probability-theory/Bayes-Rule-and-Parameter-Estimation/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wu-binson.github.io/math/probability-theory/Expectation-Variance-Standard-Deviation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Binson">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Beyond the Machine">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/math/probability-theory/Expectation-Variance-Standard-Deviation/" itemprop="url">Expectation, Variance, Standard Deviation</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T21:16:59+08:00">
-                2020-03-10
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-10T21:16:59+08:00">
-                2020-03-10
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index">
-                    <span itemprop="name">数学</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/math/probability-theory/Expectation-Variance-Standard-Deviation/" class="leancloud_visitors" data-flag-title="Expectation, Variance, Standard Deviation">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Probability-Space"><a href="#Probability-Space" class="headerlink" title="Probability Space"></a>Probability Space</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><p>A <strong>probability space</strong> or a <strong>probability triple</strong> $(\Omega, \mathcal F, P)$:</p>
-<ol>
-<li>A <strong>sample space</strong>, $\Omega$, which is <strong>the set of all possible outcomes</strong>.</li>
-<li><strong>A set of events</strong> $\mathcal F$, which each event is a set containing zero or more outcomes: $\mathcal F\subseteq2^\Omega$— a set of subsets of $\Omega$.</li>
-<li>The Assignment of Probability to the events; that is a <strong>function</strong> $P$ from events to probability:$P:\mathcal F \mapsto [0,1]$
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/math/probability-theory/Expectation-Variance-Standard-Deviation/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1875,175 +2059,6 @@ $$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$</p>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wu-binson.github.io/study-method/How-to-Read-A-Book/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Binson">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Beyond the Machine">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/study-method/How-to-Read-A-Book/" itemprop="url">阅读的四个层次</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-09T20:52:36+08:00">
-                2020-03-09
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-09T20:52:36+08:00">
-                2020-03-09
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
-                    <span itemprop="name">学习方法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/study-method/How-to-Read-A-Book/" class="leancloud_visitors" data-flag-title="阅读的四个层次">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>虽然我们经常阅读，但不一定懂得如何高效地阅读。大多数人的阅读过程仅仅是一种<strong>消极式阅读</strong>(Passive Reading)，无法充分消化成自己的知识。《<a href="https://book.douban.com/subject/1383525//" target="_blank" rel="noopener">How to Read a Book</a>》教导我们如何阅读。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/study-method/How-to-Read-A-Book/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2097,7 +2112,7 @@ $$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$</p>
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2108,7 +2123,7 @@ $$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$</p>
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2119,7 +2134,7 @@ $$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
