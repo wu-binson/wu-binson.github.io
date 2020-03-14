@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>gdb和cgdb</title>
+    <url>/tool/program-tool/gdb/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>programming tool</tag>
+        <tag>gdb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Cmake基本语法</title>
     <url>/tool/program-tool/cmake-basic-grammar/</url>
     <content><![CDATA[<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ol>
-<li>打印变量值<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(USER_KEY, <span class="string">"Hello World"</span>);</span><br><span class="line"><span class="keyword">MESSAGE</span>( STATUS <span class="string">"this var key = $&#123;USER_KEY&#125;."</span>)</span><br></pre></td></tr></table></figure>
-status表示这是一般的打印信息，我们还可以设置为“ERROR”，表示这是一种错误打印信息。</li>
-<li>添加包含路径<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>()</span><br></pre></td></tr></table></figure></li>
-<li>添加源文件<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">aux_source_directory</span>(&lt;dir&gt; &lt;variable&gt;)</span><br></pre></td></tr></table></figure></li>
-<li>递归子目录<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_subdirectory</span></span><br></pre></td></tr></table></figure>
-子目录需包含CmakeLists.txt文件</li>
-<li>库文件搜索路径<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">LINK_DIRECTORIES</span></span><br></pre></td></tr></table></figure></li>
-<li>字符串比较<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="variable">$&#123;CMAKE_BUILD_TYPE&#125;</span> <span class="keyword">STREQUAL</span> <span class="string">"Debug"</span>)</span><br></pre></td></tr></table></figure>
+<li><p>打印变量值</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(USER_KEY, <span class="string">"Hello World"</span>);</span><br><span class="line"><span class="keyword">MESSAGE</span>( STATUS <span class="string">"this var key = $&#123;USER_KEY&#125;."</span>)</span><br></pre></td></tr></table></figure>
+<p>status表示这是一般的打印信息，我们还可以设置为“ERROR”，表示这是一种错误打印信息。</p>
+<a id="more"></a></li>
+<li><p>添加包含路径</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>()</span><br></pre></td></tr></table></figure></li>
+<li><p>添加源文件</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">aux_source_directory</span>(&lt;dir&gt; &lt;variable&gt;)</span><br></pre></td></tr></table></figure></li>
+<li><p>递归子目录</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_subdirectory</span></span><br></pre></td></tr></table></figure>
+<p>子目录需包含CmakeLists.txt文件</p>
+</li>
+<li><p>库文件搜索路径</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">LINK_DIRECTORIES</span></span><br></pre></td></tr></table></figure></li>
+<li><p>字符串比较</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="variable">$&#123;CMAKE_BUILD_TYPE&#125;</span> <span class="keyword">STREQUAL</span> <span class="string">"Debug"</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="项目模板样例"><a href="#项目模板样例" class="headerlink" title="项目模板样例"></a>项目模板样例</h3><h4 id="普通版本"><a href="#普通版本" class="headerlink" title="普通版本"></a>普通版本</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">PROJECT</span>(moea)</span><br><span class="line"><span class="keyword">CMAKE_MINIMUM_REQUIRED</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS_DEBUG <span class="string">"$&#123;CMAKE_CXX_FLAGS_DEBUG&#125; -std=c++11 -Wall -g -ggdb -pthread -lnlopt -lpagmo"</span>)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS_RELEASE <span class="string">"$&#123;CMAKE_CXX_FLAGS_RELEASE&#125; -std=c++11 -O2 -DNDEBUG -Wall -pthread -lnlopt -lpagmo"</span>)</span><br><span class="line"><span class="keyword">set</span>(exe moea)</span><br><span class="line"><span class="keyword">set</span>(PROJECT_DIR <span class="string">"$&#123;PROJECT_SOURCE_DIR&#125;"</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/algorithms)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/problems)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/plot)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/islands)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/experiment)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/utils)</span><br><span class="line"><span class="comment"># include head files</span></span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="comment"># source files</span></span><br><span class="line"><span class="keyword">AUX_SOURCE_DIRECTORY</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span> DIR_MAIN_SRCS)</span><br><span class="line"><span class="keyword">ADD_EXECUTABLE</span>(<span class="variable">$&#123;exe&#125;</span> <span class="variable">$&#123;DIR_MAIN_SRCS&#125;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(<span class="variable">$&#123;exe&#125;</span> ALG UTILS )</span><br></pre></td></tr></table></figure>
 
 
