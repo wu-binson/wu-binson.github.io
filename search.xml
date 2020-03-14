@@ -3,7 +3,25 @@
   <entry>
     <title>gdb和cgdb</title>
     <url>/tool/program-tool/gdb/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="gdb基本命令"><a href="#gdb基本命令" class="headerlink" title="gdb基本命令"></a>gdb基本命令</h3><p>下面的图红框部分是较为常用的gdb命令:</p>
+<a id="more"></a>
+<p><img src="/img/program-tool/gdb-refcard_0.png" alt="Alt text">
+除了上面和命令，还有一条非常重要的命令，但不是在gdb命令，而是在shell上运行的:</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">gdb -args [program_name] [args]</span><br></pre></td></tr></table></figure>
+<p>这样就不必在gdb mode下使用run [args]命令了。前者可以配合shell(比如zsh)强大的命令补全功能，因此效率高于后者。</p>
+<p>关于gdb, 更详细的信息可以在<a href="https://sourceware.org/gdb/download/onlinedocs/gdb/index.html" target="_blank" rel="noopener">这里</a>查到。</p>
+<h3 id="gdbinit脚本"><a href="#gdbinit脚本" class="headerlink" title=".gdbinit脚本"></a>.gdbinit脚本</h3><p>gdb启动的时候会在当前目录查找.gdbinit文件，如果存在的话就会自动加载。也可以在启动的时候加上–x [path of .gdbinit]，或者在gdb mode下使用source命令。</p>
+<p>个人的.gdbinit脚本复制来自Github的<a href="https://github.com/gdbinit/Gdbinit/blob/master/gdbinit" target="_blank" rel="noopener">.gdbinti</a>。除此之外，还加了一些内容:</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> <span class="built_in">print</span> pretty on</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">print</span> object on</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">print</span> <span class="keyword">static</span>-members on</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">print</span> vtbl on</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">print</span> demangle on</span><br><span class="line"><span class="built_in">set</span> demangle-style gnu-v3</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">print</span> sevenbit-strings off</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">print</span> symbol-filename on</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">print</span> <span class="built_in">array</span> on</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">print</span> <span class="built_in">array</span> on</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">print</span> <span class="built_in">array</span>-indexes on</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">print</span> <span class="keyword">union</span> on</span><br><span class="line"><span class="built_in">set</span> <span class="built_in">print</span> elements <span class="number">0</span></span><br><span class="line"></span><br><span class="line">define f</span><br><span class="line">    <span class="keyword">if</span> $argc == <span class="number">0</span></span><br><span class="line">        finish</span><br><span class="line">    <span class="built_in">end</span></span><br><span class="line">    <span class="keyword">if</span> $argc &gt; <span class="number">0</span></span><br><span class="line">        help finish</span><br><span class="line">    <span class="built_in">end</span></span><br><span class="line"><span class="built_in">end</span></span><br></pre></td></tr></table></figure>
+<h3 id="cgdb"><a href="#cgdb" class="headerlink" title="cgdb"></a>cgdb</h3><p>gdb以及自带的gdb GUI非常简陋，这时我们可以使用<a href="https://cgdb.github.io/docs/cgdb.html" target="_blank" rel="noopener">cgdb</a>，
+相当于给gdb穿上了一套装备。在gdb基础上除了有高亮的源代码窗口，可视化的断点，常用功能的键盘快捷键，搜索源代码功能，还有文件对话窗口等功能。</p>
+<p>用户还可以配置~/.cgdb/cgdbrc文件来调教它。以下是本人的cgbrc内容：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> ignorecase</span><br><span class="line"><span class="built_in">set</span> ts=<span class="number">4</span></span><br><span class="line"><span class="built_in">set</span> debugwincolor</span><br><span class="line"><span class="built_in">set</span> wso=horizontal</span><br><span class="line"><span class="built_in">set</span> sld=longarrow</span><br><span class="line"><span class="built_in">set</span> eld=highlight</span><br><span class="line"><span class="built_in">set</span> hls</span><br><span class="line"><span class="built_in">map</span> &lt;F9&gt; :until&lt;cr&gt;</span><br></pre></td></tr></table></figure>
+<p>上面设置了搜索大小写不敏感，tab 大小，分屏方式（默认改为左右分屏），搜索高亮，以及加了一个 F9 的快捷键，用于跳出循环。</p>
+<p>其他功能可以查看cgdb的官网。</p>
+<h3 id="gdbgui"><a href="#gdbgui" class="headerlink" title="gdbgui"></a>gdbgui</h3><p>与gdb和cgdb相比，<a href="https://www.gdbgui.com/" target="_blank" rel="noopener">gdbgui</a>是用python开发的基于浏览器的gdb前端，很漂亮，直接用鼠标点就行了，不用记快捷键。</p>
+<p>但个人觉得暂时还是cgdb的效率更高，就没怎么使用gdbgui，但gdbgui还在快速发展中，未来应该会更强大。</p>
+]]></content>
       <categories>
         <category>tool</category>
       </categories>
