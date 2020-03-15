@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Anki</title>
+    <url>/tool/memory-tool/anki/</url>
+    <content><![CDATA[<h2 id="笔记系统"><a href="#笔记系统" class="headerlink" title="笔记系统"></a>笔记系统</h2><h2 id="Anki"><a href="#Anki" class="headerlink" title="Anki"></a>Anki</h2><h2 id="重要原则"><a href="#重要原则" class="headerlink" title="重要原则"></a>重要原则</h2><h2 id="学习模式"><a href="#学习模式" class="headerlink" title="学习模式"></a>学习模式</h2><h2 id="重要插件"><a href="#重要插件" class="headerlink" title="重要插件"></a>重要插件</h2>]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>memory tool</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Evernote</title>
+    <url>/tool/memory-tool/evernote/</url>
+    <content><![CDATA[<h2 id="第二大脑Evernote"><a href="#第二大脑Evernote" class="headerlink" title="第二大脑Evernote"></a>第二大脑Evernote</h2><h2 id="Chrome插件Clip-to-Evernote"><a href="#Chrome插件Clip-to-Evernote" class="headerlink" title="Chrome插件Clip to Evernote"></a>Chrome插件Clip to Evernote</h2>]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>memory tool</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Diigo Web Collector</title>
+    <url>/tool/memory-tool/diigo-web-collector/</url>
+    <content><![CDATA[<h2 id="Chrome插件Diigo-Web-Collector"><a href="#Chrome插件Diigo-Web-Collector" class="headerlink" title="Chrome插件Diigo Web Collector"></a>Chrome插件Diigo Web Collector</h2><h2 id="移动端Diigo-Browser"><a href="#移动端Diigo-Browser" class="headerlink" title="移动端Diigo Browser"></a>移动端Diigo Browser</h2>]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>memory tool</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Cmake基本语法</title>
     <url>/tool/program-tool/cmake-basic-grammar/</url>
     <content><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ol>

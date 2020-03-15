@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wu-binson.github.io/"/>
-  <updated>2020-03-15T04:08:00.688Z</updated>
+  <updated>2020-03-15T05:20:38.910Z</updated>
   <id>https://wu-binson.github.io/</id>
   
   <author>
@@ -15,6 +15,90 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Anki</title>
+    <link href="https://wu-binson.github.io/tool/memory-tool/anki/"/>
+    <id>https://wu-binson.github.io/tool/memory-tool/anki/</id>
+    <published>2020-03-15T05:20:38.943Z</published>
+    <updated>2020-03-15T05:20:38.910Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="笔记系统"><a href="#笔记系统" class="headerlink" title="笔记系统"></a>笔记系统</h2><h2 id="Anki"><a href="#Anki" class="headerlink" title="Anki"></a>Anki</h2><h2 id="重要原则"><a href="#重要原则" class="headerlink" title="重要原则"></a>重要原则</h2><h2 id="学习模式"><a href="#学习模式" class="headerlink" title="学习模式"></a>学习模式</h2><h2 id="重要插件"><a href="#重要插件" class="headerlink" title="重要插件"></a>重要插件</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;笔记系统&quot;&gt;&lt;a href=&quot;#笔记系统&quot; class=&quot;headerlink&quot; title=&quot;笔记系统&quot;&gt;&lt;/a&gt;笔记系统&lt;/h2&gt;&lt;h2 id=&quot;Anki&quot;&gt;&lt;a href=&quot;#Anki&quot; class=&quot;headerlink&quot; title=&quot;Anki&quot;&gt;&lt;/a
+      
+    
+    </summary>
+    
+    
+      <category term="tool" scheme="https://wu-binson.github.io/categories/tool/"/>
+    
+    
+      <category term="笔记" scheme="https://wu-binson.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="memory tool" scheme="https://wu-binson.github.io/tags/memory-tool/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Evernote</title>
+    <link href="https://wu-binson.github.io/tool/memory-tool/evernote/"/>
+    <id>https://wu-binson.github.io/tool/memory-tool/evernote/</id>
+    <published>2020-03-15T04:47:57.170Z</published>
+    <updated>2020-03-15T04:47:57.132Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第二大脑Evernote"><a href="#第二大脑Evernote" class="headerlink" title="第二大脑Evernote"></a>第二大脑Evernote</h2><h2 id="Chrome插件Clip-to-Evernote"><a href="#Chrome插件Clip-to-Evernote" class="headerlink" title="Chrome插件Clip to Evernote"></a>Chrome插件Clip to Evernote</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;第二大脑Evernote&quot;&gt;&lt;a href=&quot;#第二大脑Evernote&quot; class=&quot;headerlink&quot; title=&quot;第二大脑Evernote&quot;&gt;&lt;/a&gt;第二大脑Evernote&lt;/h2&gt;&lt;h2 id=&quot;Chrome插件Clip-to-Evernote&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="tool" scheme="https://wu-binson.github.io/categories/tool/"/>
+    
+    
+      <category term="笔记" scheme="https://wu-binson.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="memory tool" scheme="https://wu-binson.github.io/tags/memory-tool/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Diigo Web Collector</title>
+    <link href="https://wu-binson.github.io/tool/memory-tool/diigo-web-collector/"/>
+    <id>https://wu-binson.github.io/tool/memory-tool/diigo-web-collector/</id>
+    <published>2020-03-15T04:46:33.577Z</published>
+    <updated>2020-03-15T04:46:33.540Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Chrome插件Diigo-Web-Collector"><a href="#Chrome插件Diigo-Web-Collector" class="headerlink" title="Chrome插件Diigo Web Collector"></a>Chrome插件Diigo Web Collector</h2><h2 id="移动端Diigo-Browser"><a href="#移动端Diigo-Browser" class="headerlink" title="移动端Diigo Browser"></a>移动端Diigo Browser</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Chrome插件Diigo-Web-Collector&quot;&gt;&lt;a href=&quot;#Chrome插件Diigo-Web-Collector&quot; class=&quot;headerlink&quot; title=&quot;Chrome插件Diigo Web Collector&quot;&gt;&lt;/a&gt;Chrom
+      
+    
+    </summary>
+    
+    
+      <category term="tool" scheme="https://wu-binson.github.io/categories/tool/"/>
+    
+    
+      <category term="笔记" scheme="https://wu-binson.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="memory tool" scheme="https://wu-binson.github.io/tags/memory-tool/"/>
+    
+  </entry>
   
   <entry>
     <title>Cmake基本语法</title>
@@ -493,78 +577,6 @@ $$\textbf{ab}=\sum^D_{j=1}a^{(j)}b^{(j)}$$&lt;/p&gt;
     
     
       <category term="critical thinking" scheme="https://wu-binson.github.io/tags/critical-thinking/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学会提问(一)之批判性提问技能</title>
-    <link href="https://wu-binson.github.io/thinking/critical_thinking/summary/"/>
-    <id>https://wu-binson.github.io/thinking/critical_thinking/summary/</id>
-    <published>2020-03-09T10:04:35.619Z</published>
-    <updated>2020-03-09T10:04:35.612Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="批判性提问技能的适用场景和重要性"><a href="#批判性提问技能的适用场景和重要性" class="headerlink" title="批判性提问技能的适用场景和重要性"></a>批判性提问技能的适用场景和重要性</h3><p>批判性提问技能是一项非常重要的技能，它的适用范围非常广，几乎可以运用到生活的各个角落。</p><p>随着互联网和物联网对现代文明的进一步渗透，以及近年来自媒体的兴起，每个上网的人都可以发出自己的声音。这些信息的质量有高有低，这个时候理性地分辨出哪些是虚假信息，哪些言论存在漏洞，哪些是经得起推敲的观点，是非常重要的。而批判性提问技能可以帮助我们在信息洪流里站稳脚跟。</p><a id="more"></a><p>在与互联网不相关的地方，比如学习和阅读，批判性提问也能够让我们比较充分地参与到这个过程中，能够帮助我们集中精神。当我们针对书籍材料的观点提出一些问题并尝试着去思考时，我们将可以对这些材料有着更深入的理解，这过程还会附带成就感。</p><p>这种技能还适用另外一个重要的场景，就是科学研究的过程。科学研究的本质就是站在前人的理论上提出自己的理论（<em>理论是特殊的观点</em>）。科学理论几乎都有着自身时代的局限性，比如牛顿力学只能解释宏观层面的现象。用批判性思维看待科学理论有助于我们提出新的，更先进的理论。除了上面提到的，还有很多其它的场景，所以这种技能的重要性便不言而喻了。结合上面的场景，个人认为，它的重要性主要体现在以下三大方面：</p><ol><li><strong>帮助你选择性过滤掉来自外界的观点。</strong>在充分思考后，你可以自主选择地支持一些观点，这时的你应该可以说出自己支持这些观点的理由，甚至还可以找到瑕疵之处。同时，你可能会不赞成一些观点，在这过程中顺便能找到反驳的理由。</li><li><strong>除了过滤外界的观点，批判性提问法能让我们审视自己的观点。</strong>在批判性看待自己的观点后，我们可以更加肯定或者修正甚至否定之前的观点。提出一个由许多小观点组成的大观点，或者写文章等类似活动类似于程序员写各种软件系统，程序员都知道，几乎很少有不存在漏洞的完美系统，而且系统越大出漏洞的概率就越大，所以我们能做的只是尽可能地填上漏洞。而批判提问法帮助我们发现自己的文章或者观点里面的漏洞所在，及时修补上。</li><li>如上面所说，<strong>批判性提问技能帮助我们充分参与到学习，阅读，各种会议等活动中</strong>。另外，我们可以凭借提出的关键问题顺藤摸瓜，搜寻到某类问题的答案。</li></ol><h3 id="何为批判性提问和批判性思维"><a href="#何为批判性提问和批判性思维" class="headerlink" title="何为批判性提问和批判性思维"></a>何为批判性提问和批判性思维</h3><p>这里先解释下批判性提问(critical-questioning)，批判性提问这个术语由两个部分组成，分别是批判性思维和提问。提问的目的自然是提出关键问题，而批判性思维就是为了这个目标所服务。至于批判性思维，书中给出了这样的解释，它主要涵盖了以下几个方面：</p><ul><li>有一套相互关联、环环相扣的关键问题的意识。</li><li>恰如其分地提出和回答关键问题的能力。</li><li>积极主动地利用关键问题的强烈愿望。</li></ul><p>书的目的便是激发读者朝这三个方面全面发展。从批判性思维用途的角度出发，可以将批判性思维分成<strong>弱势批判性思维</strong>和<strong>强势批判性思维</strong>。其中弱势批判性思维的目的是抵制和驳倒与你观点不同的论述，并不关心自己的观点能否更接近真理。弱势批判性思维最大的问题在于尽力维护的观点可能一开始就是错的。强势批判性思维的目的恰恰相反，它要求我们一视同仁地对待别人和自己的观点。</p><h3 id="批判性提问的可操作步骤"><a href="#批判性提问的可操作步骤" class="headerlink" title="批判性提问的可操作步骤"></a>批判性提问的可操作步骤</h3><h4 id="关键问题"><a href="#关键问题" class="headerlink" title="关键问题"></a>关键问题</h4><ol><li><a href="https://wubinson.github.io/note/critical_thinking/thesis/" target="_blank" rel="noopener">论题和结论是什么</a></li><li><a href="https://wubinson.github.io/note/critical_thinking/reason/" target="_blank" rel="noopener">理由是什么</a></li><li>哪些词语不明确</li><li>什么是价值观假设和描述性假设</li><li>推理过程有没有谬误</li><li>证据的效力如何</li><li>有没有替代原因</li><li>数据有没有欺骗性</li><li>有什么重要信息被省略了</li><li>能得出哪些合理的结论</li></ol><p>上面的步骤暂时仅需要初步了解下，<strong>每一个步骤都是后面的章节</strong>，后面会详细讲解。</p><h4 id="勤加练习"><a href="#勤加练习" class="headerlink" title="勤加练习"></a>勤加练习</h4><p>只知道这种技能的存在却不会使用之仅仅比不知道概念强一点，想掌握技能需要大量的练习。除了书中每章节后面的练习题，生活中的各种观点都应该被视为我们潜在的练习题。</p><h3 id="两个重要的意识"><a href="#两个重要的意识" class="headerlink" title="两个重要的意识"></a>两个重要的意识</h3><h4 id="对话交流可以促进进步"><a href="#对话交流可以促进进步" class="headerlink" title="对话交流可以促进进步"></a>对话交流可以促进进步</h4><p>不要封堵住与别人交流对话的渠道，甚至需要我们主动去创造交流的机会。与别人的交流可以修正你的观点，即使你对自己的观点很有信心，即使对方看似各方面都不如你（<em>很多时候是错觉</em>）。</p><h4 id="你有没有可能是错的"><a href="#你有没有可能是错的" class="headerlink" title="你有没有可能是错的"></a>你有没有可能是错的</h4><p>在你对自己的观点很有自信，快要到”蔑视”其它观点的时候，都应该问问自己，你有没有可能是错的。很多程序员都有这样的经历：在开发复杂的软件系统的过程，许多躲藏在思维盲区的bug会不停地冲击他们的自以为是。而实现世界又是一个极其复杂的系统。</p><h3 id="批判性思维的弊端"><a href="#批判性思维的弊端" class="headerlink" title="批判性思维的弊端"></a>批判性思维的弊端</h3><p>批判性思维的好处很多，当然它也会有弊端。它比海绵思维需要更多的注意力，在使用批判性思维这个工具的时候，它会消耗掉使用者一定的精力。人的精力是有限的，所以<strong>我们应该将这个强大的工具使用在重要的场景</strong>。掌握起来不容易也算是这个工具的弊端之一。</p><p>还有就是，生活上很多观点有很多细节是不能证实或者不能证伪的，有部分是因为人类使用的语言系统的原因，比如“很多程序员喜欢写c”这句话，里面的“很多”是很模糊的，“很多”到底是多少，占了多大的比例，这些都是不得而知的。碰到这种情况，批判性思维会建议我们保持怀疑的态度，这也是一个追求真理的学者必须具备的素质。但生活里有些情况是需要快速决断的，比如一个领导者在重大决断前面对下属的犹豫时间越长，有时候给团队带来的危害会越严重（开始是精神层面的，后面可能导致团队瓦解），甚至会比做出错误决断还要严重。</p><h3 id="一个小问题——关于批判思维的思考对象"><a href="#一个小问题——关于批判思维的思考对象" class="headerlink" title="一个小问题——关于批判思维的思考对象"></a>一个小问题——关于批判思维的思考对象</h3><p>查阅了一些关于批判性思维的材料和定义，似乎没有个统一或者明确点的说法。<strong>个人更倾向认为，批判性思维这个工具剖析的对象是各种被假设或者逻辑支撑起来的观点（<em>因为观点都是人提出来的，所以都与人相关</em>），而不是自然界客观存在的事物。至少书中教导我们的批判性提问技能就是这种</strong>。这种技能是“提出关键问题”技能的子集，前者没有后者的范围广。比如，在科研面对一些自然现象，科学家会提出一些关于客观存在的事物的关键问题，来驱动自己的研究。批判性提问技能在这里是不适用的（看看本文3.1的步骤）,它适用的场景是当你面对别人的论文和理论的时候。虽然如此，它仍然是非常重要的工具，知道它的局限性可以让我们使用起来更加游刃有余。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;批判性提问技能的适用场景和重要性&quot;&gt;&lt;a href=&quot;#批判性提问技能的适用场景和重要性&quot; class=&quot;headerlink&quot; title=&quot;批判性提问技能的适用场景和重要性&quot;&gt;&lt;/a&gt;批判性提问技能的适用场景和重要性&lt;/h3&gt;&lt;p&gt;批判性提问技能是一项非常重要的技能，它的适用范围非常广，几乎可以运用到生活的各个角落。&lt;/p&gt;
-&lt;p&gt;随着互联网和物联网对现代文明的进一步渗透，以及近年来自媒体的兴起，每个上网的人都可以发出自己的声音。这些信息的质量有高有低，这个时候理性地分辨出哪些是虚假信息，哪些言论存在漏洞，哪些是经得起推敲的观点，是非常重要的。而批判性提问技能可以帮助我们在信息洪流里站稳脚跟。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="思维" scheme="https://wu-binson.github.io/categories/%E6%80%9D%E7%BB%B4/"/>
-    
-    
-      <category term="critical thinking" scheme="https://wu-binson.github.io/tags/critical-thinking/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学会提问(二)之论题和结论</title>
-    <link href="https://wu-binson.github.io/thinking/critical_thinking/thesis/"/>
-    <id>https://wu-binson.github.io/thinking/critical_thinking/thesis/</id>
-    <published>2020-03-09T10:04:10.980Z</published>
-    <updated>2020-03-09T10:04:10.974Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="论题的分类"><a href="#论题的分类" class="headerlink" title="论题的分类"></a>论题的分类</h3><p>论题是引起对话或者讨论的问题，是后续讨论的驱动力。它主要分成两大类：</p><a id="more"></a><p>1.<strong>描述性论题</strong>。这类论题讨论的是世界过去、现在、未来是什么样。它的例子如下：</p><ul><li>PHP是不是世界上最好的语言？</li><li>中国能不能取代美国成为世界第一？</li><li>上个好大学重要吗？</li><li>一般来讲，女生学习语言的能力是不是比男生强？</li></ul><p>2.<strong>规定性论题</strong>。这类论题讨论的是世界应该是什么样子的，什么是对的是什么错的，什么该有什么不该有。它的例子如下：</p><ul><li>应不应该鼓励大学生创业？</li><li>要不要和异地的网友谈恋爱？</li><li>选择高校应不应该将城市作为重要因素来考虑？</li><li>学校应不应该规范学生的穿着？</li></ul><p>有些文章的论题很容易看出，有些却非常隐晦，这时可以先找结论，再反推论题。很多时候，这两种论题总是成对紧密地出现。比如，一篇文章的标题是“晨练好还是晚练好”，最后的结论是晚练更有益，我们应该晚练（这不是我的结论）。只看标题我们知道题目是一个描述性命题，但看到结论我们可以知道文章暗含着规定性命题，也就是“我们应该晨练还是晚练”。这里的规定性论题的结论由描述性命题的结论很自然地推出。</p><h3 id="结论与纯观点"><a href="#结论与纯观点" class="headerlink" title="结论与纯观点"></a>结论与纯观点</h3><p>结论是逐步推断出来的，来源于推理。一个结论由其他证据或者观点支撑起来。没有证据支撑的断言不能算结论，只能称为纯观点。还有，例句、数据、定义、背景资料和证据这些东西不可能是结论。</p><h3 id="当我们自己写作的时候"><a href="#当我们自己写作的时候" class="headerlink" title="当我们自己写作的时候"></a>当我们自己写作的时候</h3><p>1 将论题的范围尽量缩小2 引导读者得出你的结论</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;论题的分类&quot;&gt;&lt;a href=&quot;#论题的分类&quot; class=&quot;headerlink&quot; title=&quot;论题的分类&quot;&gt;&lt;/a&gt;论题的分类&lt;/h3&gt;&lt;p&gt;论题是引起对话或者讨论的问题，是后续讨论的驱动力。它主要分成两大类：&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="思维" scheme="https://wu-binson.github.io/categories/%E6%80%9D%E7%BB%B4/"/>
-    
-    
-      <category term="critical thinking" scheme="https://wu-binson.github.io/tags/critical-thinking/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>程序的机器级表示</title>
-    <link href="https://wu-binson.github.io/IT/csapp/asm/"/>
-    <id>https://wu-binson.github.io/IT/csapp/asm/</id>
-    <published>2020-03-09T10:03:51.411Z</published>
-    <updated>2020-03-09T10:03:51.408Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h3><p><font color="#ff0000"><strong>Intel</strong>使用术语表示16位数据类型。所以32位数被称为double word，同理，64位被称为quad word。</font></p><a id="more"></a><h3 id="整数寄存器和数据传送指令"><a href="#整数寄存器和数据传送指令" class="headerlink" title="整数寄存器和数据传送指令"></a>整数寄存器和数据传送指令</h3><p>·<img src="/img/books/csapp/chapter3/i-register.png" alt="整数寄存器">·<img src="/img/books/csapp/chapter3/mov.png" alt="mov"><font color="#ff0000">比较特别的是，当movl指令以寄存器作为目的，它会把寄存器的高4位字节设置为0.</font></p><p>以下两类数据移动指令，<strong>用于较小的源值复制到较大的目的寄存器的时候</strong>。·<img src="/img/books/csapp/chapter3/movz.png" alt="movz">·<img src="/img/books/csapp/chapter3/movs.png" alt="movs"></p><p>考虑到以下的指令:</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">src_t</span> *sp;</span><br><span class="line"><span class="keyword">dest_t</span> *dp;</span><br><span class="line"></span><br><span class="line">*dp=(<span class="keyword">dest_t</span>)*sp;</span><br></pre></td></tr></table></figure><p>假设sp和dp的值分别存储在%rdi和%rsi的寄存器里，src_t是char，dest_t是unsigned。那么*dp=(dest_t)*sp;对应的汇编代码是</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">movsbl (%rdi),%eax;</span><br><span class="line">movl %eax,(%rsi);</span><br></pre></td></tr></table></figure><h3 id="算术和逻辑操作"><a href="#算术和逻辑操作" class="headerlink" title="算术和逻辑操作"></a>算术和逻辑操作</h3><p><img src="/img/books/csapp/chapter3/arithmetic.png" alt="arithmetic">关于IMUL指令，当乘积截取到64位，无符号乘法和有符号乘法的位级是一样的。而下图的mulq和imulq指令分别实现了$*^u_{64}$和$*^t_{64}$<img src="/img/books/csapp/chapter3/sp-arithmetic.png" alt="sp-arithmetic"></p><h3 id="控制"><a href="#控制" class="headerlink" title="控制"></a>控制</h3><h4 id="条件码"><a href="#条件码" class="headerlink" title="条件码"></a>条件码</h4><p><img src="/img/books/csapp/chapter3/condition-code.png" alt="condition-code"></p><p><img src="/img/books/csapp/chapter3/diff.png" alt="difference"></p><h4 id="switch跳转表"><a href="#switch跳转表" class="headerlink" title="switch跳转表"></a>switch跳转表</h4><p>c源码：<img src="/img/books/csapp/chapter3/csource.png" alt="c-source">汇编代码：<img src="/img/books/csapp/chapter3/switch-asm.png" alt="switch-asm">跳转表(<strong>空间换时间</strong>)：<img src="/img/books/csapp/chapter3/jump-table.png" alt="jump-table"></p><h3 id="浮点的机器层级代码（次要）"><a href="#浮点的机器层级代码（次要）" class="headerlink" title="浮点的机器层级代码（次要）"></a>浮点的机器层级代码（次要）</h3><p><img src="/img/books/csapp/chapter3/float-register.png" alt="f-register"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;数据格式&quot;&gt;&lt;a href=&quot;#数据格式&quot; class=&quot;headerlink&quot; title=&quot;数据格式&quot;&gt;&lt;/a&gt;数据格式&lt;/h3&gt;&lt;p&gt;&lt;font color=&quot;#ff0000&quot;&gt;&lt;strong&gt;Intel&lt;/strong&gt;使用术语表示16位数据类型。所以32位数被称为double word，同理，64位被称为quad word。&lt;/font&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="计算机基础" scheme="https://wu-binson.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="csapp" scheme="https://wu-binson.github.io/tags/csapp/"/>
-    
-      <category term="assembly code" scheme="https://wu-binson.github.io/tags/assembly-code/"/>
     
   </entry>
   
