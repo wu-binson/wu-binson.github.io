@@ -1,35 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Zsh 和 Oh My Zsh</title>
-    <url>/tool/program-tool/zsh/</url>
-    <content><![CDATA[<h3 id="Zsh"><a href="#Zsh" class="headerlink" title="Zsh"></a>Zsh</h3><p>zsh是一个相见恨晚的shell，非常大地提高了工作效率。配合上各种插件，zsh可以智能纠正拼写，包含了
-路径补全和命令补全等补全功能，可以智能跳转到常用目录，等等。除此之外，还有各种美观的主题。</p>
-<a id="more"></a>
-
-<p>它的安装方法: <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH" target="_blank" rel="noopener">https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH</a>.安装成功之后
-用户通过 chsh -s /bin/zsh 命令将其他的shell切换成zsh。此后每次用户登录的时候，系统就会读取.zshrc文件而不是.bashrc，这时候可在.zshrc文件末
-添加：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
-<h3 id="Oh-My-Zsh"><a href="#Oh-My-Zsh" class="headerlink" title="Oh My Zsh"></a>Oh My Zsh</h3><p>虽然zsh很强大，但配置有些麻烦，往往让很多想用zsh的用户望而却步。这时候<a href="https://github.com/ohmyzsh/ohmyzsh" target="_blank" rel="noopener">oh my zsh</a>应运而生了。
-oh my zsh 是配置zsh的框架，有着强大的社区支持，拥有200多的可选插件和140中以上的主题。</p>
-]]></content>
-      <categories>
-        <category>tool</category>
-      </categories>
-      <tags>
-        <tag>programming tool</tag>
-        <tag>zsh</tag>
-        <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>gdb和cgdb</title>
     <url>/tool/program-tool/gdb/</url>
-    <content><![CDATA[<h3 id="gdb基本命令"><a href="#gdb基本命令" class="headerlink" title="gdb基本命令"></a>gdb基本命令</h3><p>下面的图红框部分是较为常用的gdb命令:</p>
+    <content><![CDATA[<h3 id="gdb基本命令"><a href="#gdb基本命令" class="headerlink" title="gdb基本命令"></a>gdb基本命令</h3><p>下面的图红框部分是较为常用的gdb命令:
+<img src="/img/program-tool/gdb-refcard_0.png" alt="Alt text"></p>
 <a id="more"></a>
-<p>!Alt text](/img/program-tool/gdb-refcard_0.png)
-除了上面和命令，还有一条非常重要的命令，但不是在gdb命令，而是在shell上运行的:</p>
+<p>除了上面和命令，还有一条非常重要的命令，但不是在gdb命令，而是在shell上运行的:</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">gdb -args [program_name] [args]</span><br></pre></td></tr></table></figure>
 <p>这样就不必在gdb mode下使用run [args]命令了。前者可以配合shell(比如zsh)强大的命令补全功能，因此效率高于后者。</p>
 <p>关于gdb, 更详细的信息可以在<a href="https://sourceware.org/gdb/download/onlinedocs/gdb/index.html" target="_blank" rel="noopener">这里</a>查到。</p>
@@ -51,6 +28,53 @@ oh my zsh 是配置zsh的框架，有着强大的社区支持，拥有200多的�
       <tags>
         <tag>programming tool</tag>
         <tag>gdb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分屏利器Tmux</title>
+    <url>/tool/program-tool/tmux/</url>
+    <content><![CDATA[<h3 id="Tmux"><a href="#Tmux" class="headerlink" title="Tmux"></a>Tmux</h3><p>Tmux是一个用于在终端窗口中运行多个终端会话的工具，即终端复用软件。</p>
+<p>它的基础概念和安装方法请看这篇<a href="https://www.ruanyifeng.com/blog/2019/10/tmux.html" target="_blank" rel="noopener">博文</a>,
+这里就不赘述了。</p>
+<a id="more"></a>
+<p>下面是tmux的效果图：
+<img src="/img/program-tool/tmux.png" alt="tmux">
+如图所示，当前窗口(window)有三个窗格(Pane)，图下方从看出有12个窗口(window)，每个窗口都有自己的名称。这些窗口和窗格之间均可以通过快捷键
+快速切换。这些窗口合在一起称为会话(session)，用户可以新建多个会话，并且可以自由切换。</p>
+<h3 id="tmux-conf"><a href="#tmux-conf" class="headerlink" title="tmux.conf"></a>tmux.conf</h3><p>Tmux强大之处在于它拥有很多便捷的快捷键，用户可以在tmux.conf文件修改或者自定义快捷键，下面是个人的tmux配置：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">#remap prefix from 'C-b' to 'C-a'</span><br><span class="line">unbind C-b</span><br><span class="line"><span class="built_in">set</span> -g prefix C-a</span><br><span class="line">bind-key C-a send-prefix</span><br><span class="line"></span><br><span class="line"><span class="meta"># new window</span></span><br><span class="line">bind -n C-t <span class="keyword">new</span>-window</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># <span class="built_in">close</span> current pane C-d</span><br><span class="line">unbind -n C-w</span><br><span class="line">bind -n C-d kill-pane</span><br><span class="line">unbind c</span><br><span class="line">bind C kill-pane</span><br><span class="line"></span><br><span class="line"># previous window</span><br><span class="line">bind -n C-Left previous-window</span><br><span class="line">bind -n C-Up previous-window</span><br><span class="line">unbind p</span><br><span class="line"># next window</span><br><span class="line">bind -n C-Right next-window</span><br><span class="line">bind -n C-Down next-window</span><br><span class="line">unbind n</span><br><span class="line"># next session</span><br><span class="line">bind n <span class="keyword">switch</span>-client -n</span><br><span class="line"></span><br><span class="line">#split window</span><br><span class="line">unbind s</span><br><span class="line">unbind v</span><br><span class="line">bind s split-window -h</span><br><span class="line">bind v split-window</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bind r source-file ~/.tmux.conf \; <span class="built_in">display</span> <span class="string">"Reloaded!"</span></span><br><span class="line"></span><br><span class="line">setw -g mode-keys vi</span><br><span class="line"></span><br><span class="line"><span class="meta">#copy mode</span></span><br><span class="line"><span class="meta">#bind -t vi-copy v begin-selection</span></span><br><span class="line"><span class="meta">#bind -t vi-copy y copy-selection</span></span><br><span class="line">bind p pasteb</span><br><span class="line"></span><br><span class="line"><span class="meta">#clipboard</span></span><br><span class="line"><span class="built_in">set</span> -g focus-events on</span><br><span class="line"></span><br><span class="line"><span class="meta"># switch panes using Alt-arrow without prefix</span></span><br><span class="line"><span class="meta">#bind -n M-Left select-pane -L</span></span><br><span class="line"><span class="meta">#bind -n M-Right select-pane -R</span></span><br><span class="line"><span class="meta">#bind -n M-UP select-pane -U</span></span><br><span class="line"><span class="meta">#bind -n M-Down select-pane -D</span></span><br><span class="line">unbind Down</span><br><span class="line">unbind Up</span><br><span class="line">unbind Left</span><br><span class="line">unbind Right</span><br><span class="line">unbind h</span><br><span class="line">unbind j</span><br><span class="line">unbind k</span><br><span class="line">unbind l</span><br><span class="line">bind Left select-pane -L</span><br><span class="line">bind Right select-pane -R</span><br><span class="line">bind Up select-pane -U</span><br><span class="line">bind Down select-pane -D</span><br><span class="line"></span><br><span class="line">#<span class="function">Enable mouse <span class="title">control</span> <span class="params">(clickable windows, panes, resizable panes)</span></span></span><br><span class="line">set -g mouse on</span><br><span class="line"></span><br><span class="line"># don't rename windows automatically</span><br><span class="line"><span class="built_in">set</span>-option -g allow-rename off</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span>-window-option -g xterm-keys on</span><br><span class="line"></span><br><span class="line">#### COLOUR (Solarized <span class="number">256</span>)</span><br><span class="line"><span class="built_in">set</span> -g <span class="keyword">default</span>-terminal <span class="string">"tmux-256color"</span></span><br><span class="line"><span class="meta"># default statusbar colors</span></span><br><span class="line"><span class="built_in">set</span>-option -g status-style fg=colour136,bg=colour235 #yellow <span class="keyword">and</span> base02</span><br><span class="line"></span><br><span class="line"># <span class="keyword">default</span> window title colors</span><br><span class="line"><span class="built_in">set</span>-window-option -g window-status-style fg=colour244,bg=<span class="keyword">default</span> #base0 <span class="keyword">and</span> <span class="keyword">default</span></span><br><span class="line">#<span class="built_in">set</span>-window-option -g window-status-style dim</span><br><span class="line"></span><br><span class="line"># active window title colors</span><br><span class="line"><span class="built_in">set</span>-window-option -g window-status-current-style fg=colour166,bg=<span class="keyword">default</span> #orange <span class="keyword">and</span> <span class="keyword">default</span></span><br><span class="line">#<span class="built_in">set</span>-window-option -g window-status-current-style bright</span><br><span class="line"></span><br><span class="line"># pane border</span><br><span class="line"><span class="built_in">set</span>-option -g pane-border-style fg=colour235 #base02</span><br><span class="line"><span class="built_in">set</span>-option -g pane-active-border-style fg=colour240 #base01</span><br><span class="line"></span><br><span class="line"># message <span class="built_in">text</span></span><br><span class="line"><span class="built_in">set</span>-option -g message-style fg=colour166,bg=colour235 #orange <span class="keyword">and</span> base02</span><br><span class="line"></span><br><span class="line"># pane number <span class="built_in">display</span></span><br><span class="line"><span class="built_in">set</span>-option -g <span class="built_in">display</span>-panes-active-colour colour33 #blue</span><br><span class="line"><span class="built_in">set</span>-option -g <span class="built_in">display</span>-panes-colour colour166 #orange</span><br><span class="line"></span><br><span class="line"># clock</span><br><span class="line"><span class="built_in">set</span>-window-option -g clock-mode-colour colour64 #green</span><br><span class="line"></span><br><span class="line"># bell</span><br><span class="line"><span class="built_in">set</span>-window-option -g window-status-bell-style fg=colour235,bg=colour160 #base02, red</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>programming tool</tag>
+        <tag>tmux</tag>
+        <tag>效率</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Zsh 和 Oh My Zsh</title>
+    <url>/tool/program-tool/zsh/</url>
+    <content><![CDATA[<h3 id="Zsh"><a href="#Zsh" class="headerlink" title="Zsh"></a>Zsh</h3><p>zsh是一个相见恨晚的shell，非常大地提高了工作效率。配合上各种插件，zsh可以智能纠正拼写，包含了
+路径补全和命令补全等补全功能，可以智能跳转到常用目录，等等。除此之外，还有各种美观的主题。</p>
+<a id="more"></a>
+
+<p>它的安装方法: <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH" target="_blank" rel="noopener">https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH</a>.安装成功之后
+用户通过 chsh -s /bin/zsh 命令将其他的shell切换成zsh。此后每次用户登录的时候，系统就会读取.zshrc文件而不是.bashrc，这时候可在.zshrc文件末
+添加：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+<h3 id="Oh-My-Zsh"><a href="#Oh-My-Zsh" class="headerlink" title="Oh My Zsh"></a>Oh My Zsh</h3><p>虽然zsh很强大，但配置有些麻烦，往往让很多想用zsh的用户望而却步。这时候<a href="https://github.com/ohmyzsh/ohmyzsh" target="_blank" rel="noopener">oh my zsh</a>应运而生了。
+oh my zsh 是配置zsh的框架，有着强大的社区支持，拥有200多的可选插件和140中以上的主题。</p>
+]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>programming tool</tag>
+        <tag>zsh</tag>
+        <tag>shell</tag>
+        <tag>效率</tag>
       </tags>
   </entry>
   <entry>
