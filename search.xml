@@ -1,6 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Cmake基本语法</title>
+    <url>/tool/program-tool/cmake-basic-grammar/</url>
+    <content><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ol>
+<li><p>打印变量值</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(USER_KEY, <span class="string">"Hello World"</span>);</span><br><span class="line"><span class="keyword">MESSAGE</span>( STATUS <span class="string">"this var key = $&#123;USER_KEY&#125;."</span>)</span><br></pre></td></tr></table></figure>
+<p>status表示这是一般的打印信息，我们还可以设置为“ERROR”，表示这是一种错误打印信息。</p>
+<a id="more"></a></li>
+<li><p>添加包含路径</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>()</span><br></pre></td></tr></table></figure></li>
+<li><p>添加源文件</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">aux_source_directory</span>(&lt;dir&gt; &lt;variable&gt;)</span><br></pre></td></tr></table></figure></li>
+<li><p>递归子目录</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_subdirectory</span></span><br></pre></td></tr></table></figure>
+<p>子目录需包含CmakeLists.txt文件</p>
+</li>
+<li><p>库文件搜索路径</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">LINK_DIRECTORIES</span></span><br></pre></td></tr></table></figure></li>
+<li><p>字符串比较</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="variable">$&#123;CMAKE_BUILD_TYPE&#125;</span> <span class="keyword">STREQUAL</span> <span class="string">"Debug"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="项目模板样例"><a href="#项目模板样例" class="headerlink" title="项目模板样例"></a>项目模板样例</h2><h4 id="普通版本"><a href="#普通版本" class="headerlink" title="普通版本"></a>普通版本</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">PROJECT</span>(moea)</span><br><span class="line"><span class="keyword">CMAKE_MINIMUM_REQUIRED</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS_DEBUG <span class="string">"$&#123;CMAKE_CXX_FLAGS_DEBUG&#125; -std=c++11 -Wall -g -ggdb -pthread -lnlopt -lpagmo"</span>)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS_RELEASE <span class="string">"$&#123;CMAKE_CXX_FLAGS_RELEASE&#125; -std=c++11 -O2 -DNDEBUG -Wall -pthread -lnlopt -lpagmo"</span>)</span><br><span class="line"><span class="keyword">set</span>(exe moea)</span><br><span class="line"><span class="keyword">set</span>(PROJECT_DIR <span class="string">"$&#123;PROJECT_SOURCE_DIR&#125;"</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/algorithms)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/problems)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/plot)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/islands)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/experiment)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/utils)</span><br><span class="line"><span class="comment"># include head files</span></span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="comment"># source files</span></span><br><span class="line"><span class="keyword">AUX_SOURCE_DIRECTORY</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span> DIR_MAIN_SRCS)</span><br><span class="line"><span class="keyword">ADD_EXECUTABLE</span>(<span class="variable">$&#123;exe&#125;</span> <span class="variable">$&#123;DIR_MAIN_SRCS&#125;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(<span class="variable">$&#123;exe&#125;</span> ALG UTILS )</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<p>子目录下</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="keyword">AUX_SOURCE_DIRECTORY</span>(. DIR_ALG_SRCS)</span><br><span class="line"><span class="keyword">ADD_LIBRARY</span>(ALG <span class="variable">$&#123;DIR_ALG_SRCS&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="添加MPI库文件"><a href="#添加MPI库文件" class="headerlink" title="添加MPI库文件"></a>添加MPI库文件</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(MPI REQUIRED)</span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;MPI_INCLUDE_PATH&#125;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(<span class="variable">$&#123;exe&#125;</span> pthread nlopt pagmo boost_timer boost_system <span class="variable">$&#123;MPI_C_LIBRARIES&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>cmake</tag>
+        <tag>programming tool</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vim</title>
+    <url>/tool/program-tool/vim/</url>
+    <content><![CDATA[<h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><p>vim无疑是编辑器的王者，可定制性极其强大，结合各类插件可以打造成功能齐全的IDE，缺点是学习难度较大，对新手不友好。</p>
+<p>vim的入门可以通过在终端键入vimtutor来学习基本操作，这是官方出品，当然是最好的入门教程，可能没有之一。进阶的教程可以看看<a href="https://vimjc.com/" target="_blank" rel="noopener">vimjc</a>
+这个网站。</p>
+<p>vim如果要自己配置.vimrc，将要花费很多时间精力，象oh my zsh一样，<a href="vim.spf13.com">vim-spf13</a>为我们提供一个配置的方法，简单无脑配置后，
+便拥有一个强大版本的vim了。</p>
+<a id="more"></a>
+
+<h2 id="重要插件"><a href="#重要插件" class="headerlink" title="重要插件"></a>重要插件</h2><p>下面将列举一些重要的插件，有些被包含在vim-spf13，有些没有。每种插件的使用教程可以在vim里键入;help [插件名称]之后看到。</p>
+<h4 id="vundle"><a href="#vundle" class="headerlink" title="vundle"></a>vundle</h4><p>Vundle是一个Vim插件管理器，用于方便地安装、更新和卸载插件。</p>
+<ol>
+<li>安装新插件:找到插件的github网址，放进.vimrcm里面，再打开vim，键入:PluginInstall的命令便会自动安装。</li>
+<li>卸载插件:先在.vimrc删掉相关插件的配置信息，再打开vim，键入:PluginClean命令。</li>
+<li>更新插件:在vim里键入:PluginUpdate</li>
+</ol>
+<h4 id="nerdtree"><a href="#nerdtree" class="headerlink" title="nerdtree"></a>nerdtree</h4><p>nerdtree是vim的分屏和文件导航插件，效果图如下：
+<img src="/img/program-tool/vim-nerdtree.png" alt="nerdtree">
+ 如图所示，左栏显示当前目录，用户可以在上面切换目录，查看文件存不存在，或者打开文件。右边两栏则是左右分屏的文件编辑栏。</p>
+<h4 id="easymotion"><a href="#easymotion" class="headerlink" title="easymotion"></a>easymotion</h4><p>easymotion则是在vim的基本跳转功能的基础上增加了新的跳转命令，用户在普通模式下键入<leader><leader>w(其中<leader>默认是逗号)或者<leader><leader>b,
+便可看到类似下面的画面:
+<img src="/img/program-tool/vim-easymotion.png" alt="easymotion">
+再依次键入红色或者黄色处的键值，便能跳到该处的词首。</p>
+<h4 id="vim-signature"><a href="#vim-signature" class="headerlink" title="vim-signature"></a>vim-signature</h4><p>除了easymotion这种跳转，用户还可以安装vim-signature插件。在普通模式下，用户可以键入比如”ma”的命令，这时vim的左边便会出现’a’的红色符号:
+<img src="/img/program-tool/vim-signature.png" alt="signature">
+表示在这行有了一个mark，用字母a标记。然后在其他地方便可以依据这个mark跳转到这个标记位置，当然用户还可以增加其他字母标记的mark或者删除这些mark。</p>
+<h4 id="ctags"><a href="#ctags" class="headerlink" title="ctags"></a>ctags</h4><p>ctags的跳转则是针对编程而言，在函数或者变量处按下’Ctrl+]’便可以跳到定义处，再按下’Ctrl+t’便可以跳回原处。</p>
+<p>使用ctags插件的前提是机器也要安装ctags，然后在相关目录下输入’ctags -R’, 让当前目录下所有ctags支持的语言格式文件生成tags。</p>
+<h4 id="tabnine"><a href="#tabnine" class="headerlink" title="tabnine"></a>tabnine</h4><p>tabnine是一个强大且支持大多数流行语言的补全插件，与传统的补全工具不同，tabnine会根据用户的习惯进行补全，而且可以长句地补全，效率非常高。</p>
+<h2 id="vim-vs-visual-studio-code"><a href="#vim-vs-visual-studio-code" class="headerlink" title="vim vs visual studio code"></a>vim vs visual studio code</h2><p>visual studio code是最近崛起且还在快速发展的IDE，拥有丰富的插件系统，安装配置简单，使用方便，学习难度小。短期接触后也比较喜欢，但个人还是觉得
+vim的效率更高，且占用内存小，启动更快，还有一个其他IDE无法比拟的优势，就是远程到服务器，仍然可以在终端命令行使用vim。</p>
+]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>programming tool</tag>
+        <tag>效率</tag>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>分屏利器Tmux</title>
     <url>/tool/program-tool/tmux/</url>
     <content><![CDATA[<h3 id="Tmux"><a href="#Tmux" class="headerlink" title="Tmux"></a>Tmux</h3><p>Tmux是一个用于在终端窗口中运行多个终端会话的工具，即终端复用软件。
@@ -75,46 +157,6 @@ oh my zsh 是配置zsh的框架，有着强大的社区支持，拥有200多的�
         <tag>zsh</tag>
         <tag>shell</tag>
         <tag>效率</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cmake基本语法</title>
-    <url>/tool/program-tool/cmake-basic-grammar/</url>
-    <content><![CDATA[<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ol>
-<li><p>打印变量值</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(USER_KEY, <span class="string">"Hello World"</span>);</span><br><span class="line"><span class="keyword">MESSAGE</span>( STATUS <span class="string">"this var key = $&#123;USER_KEY&#125;."</span>)</span><br></pre></td></tr></table></figure>
-<p>status表示这是一般的打印信息，我们还可以设置为“ERROR”，表示这是一种错误打印信息。</p>
-<a id="more"></a></li>
-<li><p>添加包含路径</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>()</span><br></pre></td></tr></table></figure></li>
-<li><p>添加源文件</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">aux_source_directory</span>(&lt;dir&gt; &lt;variable&gt;)</span><br></pre></td></tr></table></figure></li>
-<li><p>递归子目录</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">add_subdirectory</span></span><br></pre></td></tr></table></figure>
-<p>子目录需包含CmakeLists.txt文件</p>
-</li>
-<li><p>库文件搜索路径</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">LINK_DIRECTORIES</span></span><br></pre></td></tr></table></figure></li>
-<li><p>字符串比较</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="variable">$&#123;CMAKE_BUILD_TYPE&#125;</span> <span class="keyword">STREQUAL</span> <span class="string">"Debug"</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="项目模板样例"><a href="#项目模板样例" class="headerlink" title="项目模板样例"></a>项目模板样例</h3><h4 id="普通版本"><a href="#普通版本" class="headerlink" title="普通版本"></a>普通版本</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">PROJECT</span>(moea)</span><br><span class="line"><span class="keyword">CMAKE_MINIMUM_REQUIRED</span>(VERSION <span class="number">2.8</span>)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS_DEBUG <span class="string">"$&#123;CMAKE_CXX_FLAGS_DEBUG&#125; -std=c++11 -Wall -g -ggdb -pthread -lnlopt -lpagmo"</span>)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_FLAGS_RELEASE <span class="string">"$&#123;CMAKE_CXX_FLAGS_RELEASE&#125; -std=c++11 -O2 -DNDEBUG -Wall -pthread -lnlopt -lpagmo"</span>)</span><br><span class="line"><span class="keyword">set</span>(exe moea)</span><br><span class="line"><span class="keyword">set</span>(PROJECT_DIR <span class="string">"$&#123;PROJECT_SOURCE_DIR&#125;"</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/algorithms)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/problems)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/plot)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/islands)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/experiment)</span><br><span class="line"><span class="keyword">ADD_SUBDIRECTORY</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>/utils)</span><br><span class="line"><span class="comment"># include head files</span></span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="comment"># source files</span></span><br><span class="line"><span class="keyword">AUX_SOURCE_DIRECTORY</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span> DIR_MAIN_SRCS)</span><br><span class="line"><span class="keyword">ADD_EXECUTABLE</span>(<span class="variable">$&#123;exe&#125;</span> <span class="variable">$&#123;DIR_MAIN_SRCS&#125;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(<span class="variable">$&#123;exe&#125;</span> ALG UTILS )</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<p>子目录下</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;PROJECT_DIR&#125;</span>)</span><br><span class="line"><span class="keyword">AUX_SOURCE_DIRECTORY</span>(. DIR_ALG_SRCS)</span><br><span class="line"><span class="keyword">ADD_LIBRARY</span>(ALG <span class="variable">$&#123;DIR_ALG_SRCS&#125;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="添加MPI库文件"><a href="#添加MPI库文件" class="headerlink" title="添加MPI库文件"></a>添加MPI库文件</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(MPI REQUIRED)</span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;MPI_INCLUDE_PATH&#125;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(<span class="variable">$&#123;exe&#125;</span> pthread nlopt pagmo boost_timer boost_system <span class="variable">$&#123;MPI_C_LIBRARIES&#125;</span>)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>tool</category>
-      </categories>
-      <tags>
-        <tag>cmake</tag>
-        <tag>programming tool</tag>
       </tags>
   </entry>
   <entry>
