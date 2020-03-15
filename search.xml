@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Anki</title>
+    <url>/tool/memory-tool/anki/</url>
+    <content><![CDATA[<h2 id="Anki"><a href="#Anki" class="headerlink" title="Anki"></a>Anki</h2><p>Anki是一款闪卡(Flash Card)式的辅助记忆软件，背后最重要的理论便是著名的艾宾浩斯遗忘曲线。
+用户只需要添加新卡片，Anki会在特定时间安排卡片以问题的形式让用户回答，然后根据用户回答的效果做出下一次
+安排。经过多次复习，用户可以高效率地记住卡片内容。</p>
+<p>Anki的教程可以粗略看下<a href="https://alexvermeer.com/anki-essentials/" target="_blank" rel="noopener">Anki Essentials</a>，还可以看看
+<a href="http://augmentingcognition.com/ltm.html" target="_blank" rel="noopener">Augmenting Long-term Memory</a>这篇文章。这篇文章的作者是理论物理学家，文章所写是作者在使用Anki的反思总结。</p>
+<a id="more"></a>
+<h2 id="制作卡片的重要原则"><a href="#制作卡片的重要原则" class="headerlink" title="制作卡片的重要原则"></a>制作卡片的重要原则</h2><p>个人觉得制作卡片的最重要原则就是<strong>保持简单</strong>(Keep it Simple)，最好一张卡片一个问题，谨记Bad cards = bad learning。
+其他更详细的原则可以看Anki Essentials的第七章。其中比较重要的原则有：</p>
+<ol>
+<li>不完全理解卡片内容之前不要制作新卡片。</li>
+<li>尽量使用基本的卡片类型，避免使用花里胡哨且复杂的卡片。</li>
+<li>尽量避免使用集合(Set)和枚举(Enumeration)。比如，一张卡片的问题:G8有哪些国家? 答案:美国，加拿大，英国，法国，德国，意大利，
+日本以及俄罗斯。 这种使用了集合的卡片很难记忆，要尽量避免。</li>
+</ol>
+<h2 id="学习模式"><a href="#学习模式" class="headerlink" title="学习模式"></a>学习模式</h2><p>学习模式可以分成长期记忆和短期强记，默认是长期记忆模式，特点是每天只提供定量的卡片供我们学习。与之相比，短期强记是指每天制作了多少卡片，
+便学多少卡片。短期强记是为了考试之类的目的，平时必须慎用，因为复习的卡片数量将在几天后达到高峰，学习量可能很大。还有就是，短期强记模式可以
+自己调整参数来设置。</p>
+<h2 id="重要插件"><a href="#重要插件" class="headerlink" title="重要插件"></a>重要插件</h2><p>Anki插件的选择应该追求少且精，不必下些没必要的插件干扰了自己的注意力，下面推荐几个插件:</p>
+<h4 id="Image-Occlusion-Enhanced"><a href="#Image-Occlusion-Enhanced" class="headerlink" title="Image Occlusion Enhanced"></a>Image Occlusion Enhanced</h4><p><img src="/img/memory-tool/anki-image-occlusion.png" alt="imgae-occlusion">
+这个插件可以遮住图片的部分位置，让用户回忆遮掩部分的内容。</p>
+<h4 id="Speed-Focus-Mode"><a href="#Speed-Focus-Mode" class="headerlink" title="Speed Focus Mode"></a>Speed Focus Mode</h4><p>如果用户不在规定时间回答卡片的问题，这插件便会认定用户不熟悉这张卡片的知识，再安排下次学习时间。</p>
+<h4 id="Progress-Graphs-and-Stats-for-Learned-and-Matured-Cards"><a href="#Progress-Graphs-and-Stats-for-Learned-and-Matured-Cards" class="headerlink" title="Progress Graphs and Stats for Learned and Matured Cards"></a>Progress Graphs and Stats for Learned and Matured Cards</h4><p><img src="/img/memory-tool/anki-progress-graphs.png" alt="progress-graphs">
+这插件主要统计了学习卡片的信息，准确率和预期卡片数量等等信息，用户可以看这些信息分析自己的学习情况。</p>
+<h4 id="Enhanced-main-window"><a href="#Enhanced-main-window" class="headerlink" title="Enhanced main window"></a>Enhanced main window</h4><p><img src="/img/memory-tool/anki-enhanced-main-window.png" alt="enhanced-main-window">
+这插件丰富了主界面的内容，统计了各个Desk的信息。</p>
+]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>笔记</tag>
+        <tag>memory tool</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Diigo Web Collector</title>
     <url>/tool/memory-tool/diigo-web-collector/</url>
     <content><![CDATA[<h2 id="Chrome插件Diigo-Web-Collector"><a href="#Chrome插件Diigo-Web-Collector" class="headerlink" title="Chrome插件Diigo Web Collector"></a>Chrome插件Diigo Web Collector</h2><p>以前在编程或者配置环境碰到问题的时候会在浏览器上查找解决方法，这些网站如果不保存的话，下面碰到类似的问题，又得查找一遍，比较浪费时间。
 但如果保存的话，假如保存在书签或者Evernote里，这些内容简短，难成体系，且量大，会造成书签或者Evernote的琐碎笔记内容增长得很快，不够美观优雅。
-这样又会导致查找困难，当你忘记查过这些方法后，再收藏类似方法甚至统一方法又造成内容冗余，相当麻烦。</p>
+这样又会导致查找困难，当你忘记查过这些方法后，再收藏类似方法甚至同一方法又造成内容冗余，相当麻烦。</p>
 <a id="more"></a>
 <p>直到碰到Chrome插件Diigo Web Collector，可以较大程度地解决上面的难题。这个插件允许我们在网页上高亮或者添加便签，经过设置之后，
 当你下次打开相同网页的时候，它会自动显示之前的笔记，这时候你会记起以前看过这网页，更重要的是，你可以快速定位到以前的笔记，快速
